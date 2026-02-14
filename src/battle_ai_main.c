@@ -1332,12 +1332,12 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
         {
             if (weather & B_WEATHER_SUN_PRIMAL)
             {
-                if (moveType == TYPE_WATER)
+                if (moveTypes[0] == TYPE_WATER)
                     RETURN_SCORE_MINUS(30);
             }
             else if (weather & B_WEATHER_RAIN_PRIMAL)
             {
-                if (moveType == TYPE_FIRE)
+                if (moveTypes[0] == TYPE_FIRE)
                     RETURN_SCORE_MINUS(30);
             }
         }
