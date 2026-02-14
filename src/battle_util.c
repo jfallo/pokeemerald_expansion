@@ -10516,16 +10516,24 @@ bool32 TargetFullyImmuneToCurrMove(u32 battlerAtk, u32 battlerDef)
          || DoesBattlerHaveAbilityImmunity(battlerAtk, battlerDef, moveType));
 }
 
-enum Type GetBattleMoveType(u32 move)
+void GetBattleMoveTypes(u32 move, enum Type moveTypes[2])
 {
     if (gMain.inBattle && gBattleStruct->dynamicMoveType)
-        return gBattleStruct->dynamicMoveType & DYNAMIC_TYPE_MASK;
+    {
+        moveTypes[0] = gBattleStruct->dynamicMoveType & DYNAMIC_TYPE_MASK;
+        moveTypes[1] = TYPE_NONE;
+        return;
+    }
     else if (B_UPDATED_MOVE_TYPES < GEN_5
          && (move == MOVE_BEAT_UP
           || move == MOVE_FUTURE_SIGHT
           || move == MOVE_DOOM_DESIRE))
-          return TYPE_MYSTERY;
-    return GetMoveType(move);
+    {
+        moveTypes[0] = TYPE_MYSTERY;
+        moveTypes[1] = TYPE_NONE;
+        return;
+    }
+    GetMoveTypes(move, moveTypes);
 }
 
 void TryActivateSleepClause(u32 battler, u32 indexInParty)

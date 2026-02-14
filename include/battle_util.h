@@ -401,7 +401,7 @@ enum Type GetBattlerType(u32 battler, u32 typeIndex, bool32 ignoreTera);
 bool8 CanMonParticipateInSkyBattle(struct Pokemon *mon);
 bool8 IsMonBannedFromSkyBattles(u16 species);
 void RemoveBattlerType(u32 battler, enum Type type);
-enum Type GetBattleMoveType(u32 move);
+void GetBattleMoveTypes(u32 move, enum Type moveTypes[2]);
 void TryActivateSleepClause(u32 battler, u32 indexInParty);
 void TryDeactivateSleepClause(u32 battlerSide, u32 indexInParty);
 bool32 IsSleepClauseActiveForSide(u32 battlerSide);

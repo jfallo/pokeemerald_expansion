@@ -194,11 +194,6 @@ static inline const u8 *GetMoveDescription(u32 moveId)
     return gMovesInfo[moveId].description;
 }
 
-static inline enum Type GetMoveType(u32 moveId)
-{
-    return gMovesInfo[SanitizeMoveId(moveId)].type;
-}
-
 static inline void GetMoveTypes(u32 moveId, enum Type moveTypes[2])
 {
     u32 id = SanitizeMoveId(moveId);

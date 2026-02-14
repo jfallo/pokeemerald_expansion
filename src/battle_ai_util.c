@@ -584,8 +584,11 @@ bool32 MovesWithCategoryUnusable(u32 attacker, u32 target, enum DamageCategory c
         if (GetBattleMoveCategory(moves[i]) == category)
         {
             SetTypeBeforeUsingMove(moves[i], attacker);
+            enum Type moveTypes[2];
+            GetBattleMoveTypes(moves[i], moveTypes);
             ctx.move = ctx.chosenMove = moves[i];
-            ctx.moveType = GetBattleMoveType(moves[i]);
+            ctx.moveTypes[0] = moveTypes[0];
+            ctx.moveTypes[1] = moveTypes[1];
 
             if (CalcTypeEffectivenessMultiplier(&ctx))
                 usable |= 1u << i;
@@ -660,21 +663,21 @@ bool32 IsDamageMoveUnusable(struct DamageContext *ctx)
     if (CanAbilityBlockMove(ctx->battlerAtk, ctx->battlerDef, ctx->abilityAtk, battlerDefAbility, ctx->move, AI_CHECK))
         return TRUE;
 
-    if (CanAbilityAbsorbMove(ctx->battlerAtk, ctx->battlerDef, battlerDefAbility, ctx->move, ctx->moveType, AI_CHECK))
+    if (CanAbilityAbsorbMove(ctx->battlerAtk, ctx->battlerDef, battlerDefAbility, ctx->move, ctx->moveTypes, AI_CHECK))
         return TRUE;
 
     // Limited to Lighning Rod and Storm Drain because otherwise the AI would consider Water Absorb, etc...
     if (partnerDefAbility == ABILITY_LIGHTNING_ROD || partnerDefAbility == ABILITY_STORM_DRAIN)
     {
-        if (CanAbilityAbsorbMove(ctx->battlerAtk, BATTLE_PARTNER(ctx->battlerDef), partnerDefAbility, ctx->move, ctx->moveType, AI_CHECK))
+        if (CanAbilityAbsorbMove(ctx->battlerAtk, BATTLE_PARTNER(ctx->battlerDef), partnerDefAbility, ctx->move, ctx->moveTypes, AI_CHECK))
             return TRUE;
     }
 
     if (HasWeatherEffect())
     {
-        if (ctx->weather & B_WEATHER_SUN_PRIMAL && ctx->moveType == TYPE_WATER)
+        if (ctx->weather & B_WEATHER_SUN_PRIMAL && (ctx->moveTypes[0] == TYPE_WATER || ctx->moveTypes[1] == TYPE_WATER))
             return TRUE;
-        if (ctx->weather & B_WEATHER_RAIN_PRIMAL && ctx->moveType == TYPE_FIRE)
+        if (ctx->weather & B_WEATHER_RAIN_PRIMAL && (ctx->moveTypes[0] == TYPE_FIRE || ctx->moveTypes[1] == TYPE_FIRE))
             return TRUE;
     }
 
@@ -934,7 +937,10 @@ struct SimulatedDamage AI_CalcDamage(u32 move, u32 battlerAtk, u32 battlerDef, u
     ctx.battlerAtk = battlerAtk;
     ctx.battlerDef = battlerDef;
     ctx.move = ctx.chosenMove = move;
-    ctx.moveType = GetBattleMoveType(move);
+    enum Type moveTypes[2];
+    GetBattleMoveTypes(move, moveTypes);
+    ctx.moveTypes[0] = moveTypes[0];
+    ctx.moveTypes[1] = moveTypes[1];
     ctx.isCrit = ShouldCalcCritDamage(battlerAtk, battlerDef, move, aiData);
     ctx.randomFactor = FALSE;
     ctx.updateFlags = FALSE;
@@ -954,7 +960,7 @@ struct SimulatedDamage AI_CalcDamage(u32 move, u32 battlerAtk, u32 battlerDef, u
     {
         enum Type types[3];
         AI_StoreBattlerTypes(battlerAtk, types);
-        ProteanTryChangeType(battlerAtk, aiData->abilities[battlerAtk], move, ctx.moveType);
+        ProteanTryChangeType(battlerAtk, aiData->abilities[battlerAtk], move, ctx.moveTypes);
 
         s32 fixedDamage = DoFixedDamageMoveCalc(&ctx);
         if (fixedDamage != INT32_MAX)
@@ -1390,7 +1396,10 @@ uq4_12_t AI_GetMoveEffectiveness(u32 move, u32 battlerAtk, u32 battlerDef)
     ctx.battlerAtk = battlerAtk;
     ctx.battlerDef = battlerDef;
     ctx.move = ctx.chosenMove = move;
-    ctx.moveType = GetBattleMoveType(move);
+    enum Type moveTypes[2];
+    GetBattleMoveTypes(move, moveTypes);
+    ctx.moveTypes[0] = moveTypes[0];
+    ctx.moveTypes[1] = moveTypes[1];
     ctx.updateFlags = FALSE;
     ctx.abilityAtk = gAiLogicData->abilities[battlerAtk];
     ctx.abilityDef = gAiLogicData->abilities[battlerDef];
@@ -2427,9 +2436,11 @@ bool32 HasMoveWithType(u32 battler, enum Type type)
     s32 i;
     u16 *moves = GetMovesArray(battler);
 
+    enum Type moveTypes[2];
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
-        if (moves[i] != MOVE_NONE && moves[i] != MOVE_UNAVAILABLE && GetMoveType(moves[i]) == type)
+        GetMoveTypes(moves[i], moveTypes);
+        if (moves[i] != MOVE_NONE && moves[i] != MOVE_UNAVAILABLE && (moveTypes[0] == type || moveTypes[1] == type))
             return TRUE;
     }
 
@@ -3032,18 +3043,18 @@ bool32 HasDamagingMoveOfType(u32 battler, enum Type type)
 {
     s32 i;
     u16 *moves = GetMovesArray(battler);
+    enum Type moveTypes[2];
 
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
         if (moves[i] != MOVE_NONE && moves[i] != MOVE_UNAVAILABLE && GetMovePower(moves[i]) > 0)
         {
-            enum Type moveType = GetDynamicMoveType(GetBattlerMon(battler), moves[i], battler, MON_IN_BATTLE);
+            GetBattleMoveTypes(moves[i], moveTypes);
+            if (moveTypes[0] == type || moveTypes[1] == type)
+                return TRUE;
 
-            if (moveType != TYPE_NONE && type == moveType)
-                return TRUE;
-            if (GetMoveType(moves[i]) == type)
-                return TRUE;
-            if (GetMoveEffect(moves[i]) == EFFECT_NATURE_POWER && GetMoveType(GetNaturePowerMove(moves[i])) == type)
+            GetMoveTypes(GetNaturePowerMove(moves[i]), moveTypes);
+            if (GetMoveEffect(moves[i]) == EFFECT_NATURE_POWER && (moveTypes[0] == type || moveTypes[1] == type))
                 return TRUE;
         }
     }
@@ -5148,6 +5159,9 @@ bool32 ShouldUseZMove(u32 battlerAtk, u32 battlerDef, u32 chosenMove)
         u32 predictedMoveSpeedCheck = GetIncomingMoveSpeedCheck(battlerAtk, battlerDef, gAiLogicData);
         bool32 isSlower = AI_IsSlower(battlerAtk, battlerDef, chosenMove, predictedMoveSpeedCheck, CONSIDER_PRIORITY);
 
+        enum Type moveTypes[2];
+        GetBattleMoveTypes(chosenMove, moveTypes);
+
         switch (baseEffect)
         {
         case EFFECT_BELLY_DRUM:
@@ -5157,7 +5171,7 @@ bool32 ShouldUseZMove(u32 battlerAtk, u32 battlerDef, u32 chosenMove)
             isEager = TRUE;
             break;
         case EFFECT_PROTECT:
-            if (HasDamagingMoveOfType(battlerAtk, GetMoveType(gMovesInfo[chosenMove].type)))
+            if (HasDamagingMoveOfType(battlerAtk, moveTypes[0]) || HasDamagingMoveOfType(battlerAtk, moveTypes[1]))
                 return FALSE;
             else
                 isEager = TRUE;
@@ -5166,7 +5180,7 @@ bool32 ShouldUseZMove(u32 battlerAtk, u32 battlerDef, u32 chosenMove)
             isEager = TRUE;
             break;
         case EFFECT_TRANSFORM:
-            if (IsBattlerTrapped(battlerDef, battlerAtk) && !HasDamagingMoveOfType(battlerDef, GetMoveType(gMovesInfo[chosenMove].type)))
+            if (IsBattlerTrapped(battlerDef, battlerAtk) && (!HasDamagingMoveOfType(battlerDef, moveTypes[0]) && !HasDamagingMoveOfType(battlerDef, moveTypes[1])))
                 return TRUE;
             if (isSlower)
                 isEager = TRUE;

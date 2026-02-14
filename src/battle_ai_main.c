@@ -529,10 +529,14 @@ void Ai_UpdateFaintData(u32 battler)
 void RecordMovesBasedOnStab(u32 battler)
 {
     u32 i;
+    enum Type moveTypes[2];
+
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
         u32 playerMove = gBattleMons[battler].moves[i];
-        if (IsSpeciesOfType(gBattleMons[battler].species, GetMoveType(playerMove)) && GetMovePower(playerMove != 0))
+        GetMoveTypes(playerMove, moveTypes);
+        if ((IsSpeciesOfType(gBattleMons[battler].species, moveTypes[0]) || IsSpeciesOfType(gBattleMons[battler].species, moveTypes[1])) 
+          && GetMovePower(playerMove) > 0)
             RecordKnownMove(battler, playerMove);
     }
 }
@@ -717,8 +721,9 @@ static u32 PpStallReduction(u32 move, u32 battlerAtk)
         u32 species = GetMonData(&gPlayerParty[partyIndex], MON_DATA_SPECIES);
         enum Ability abilityAtk = ABILITY_NONE;
         enum Ability abilityDef = GetPartyMonAbility(&gPlayerParty[partyIndex]);
-        enum Type moveType = GetBattleMoveType(move); //  Probably doesn't handle dynamic types right now
-        if (CanAbilityAbsorbMove(battlerAtk, tempBattleMonIndex, abilityDef, move, moveType, CHECK_TRIGGER)
+        enum Type moveTypes[2];
+        GetBattleMoveTypes(move, moveTypes); //  Probably doesn't handle dynamic types right now
+        if (CanAbilityAbsorbMove(battlerAtk, tempBattleMonIndex, abilityDef, move, moveTypes, CHECK_TRIGGER)
          || CanAbilityBlockMove(battlerAtk, tempBattleMonIndex, abilityAtk, abilityDef, move, CHECK_TRIGGER)
          || (CalcPartyMonTypeEffectivenessMultiplier(move, species, abilityDef) == 0))
         {
@@ -1075,7 +1080,7 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
     // move data
     enum BattleMoveEffects moveEffect = GetMoveEffect(move);
     u32 nonVolatileStatus = GetMoveNonVolatileStatus(move);
-    enum Type moveType;
+    enum Type moveTypes[2];
     u32 moveTarget = GetBattlerMoveTargetType(battlerAtk, move);
     struct AiLogicData *aiData = gAiLogicData;
     uq4_12_t effectiveness = aiData->effectiveness[battlerAtk][battlerDef][gAiThinkingStruct->movesetIndex];
@@ -1091,7 +1096,7 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
     s32 atkPriority = GetBattleMovePriority(battlerAtk, abilityAtk, move);
 
     SetTypeBeforeUsingMove(move, battlerAtk);
-    moveType = GetBattleMoveType(move);
+    GetBattleMoveTypes(move, moveTypes);
 
     if (IsPowderMove(move) && !IsAffectedByPowderMove(battlerDef, aiData->abilities[battlerDef], aiData->holdEffects[battlerDef]))
         RETURN_SCORE_MINUS(10);
@@ -1116,13 +1121,15 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
     }
 
     // Don't use anything but super effective thawing moves if target is frozen if any other attack available
-    if (((GetMoveType(move) == TYPE_FIRE && GetMovePower(move) != 0) || CanBurnHitThaw(move)) && effectiveness < UQ_4_12(2.0) && (gBattleMons[battlerDef].status1 & STATUS1_ICY_ANY))
+    if ((((moveTypes[0] == TYPE_FIRE || moveTypes[1] == TYPE_FIRE) && GetMovePower(move) != 0) || CanBurnHitThaw(move)) && effectiveness < UQ_4_12(2.0) && (gBattleMons[battlerDef].status1 & STATUS1_ICY_ANY))
     {
         u32 aiMove;
+        enum Type aiMoveTypes[2];
         for (i = 0; i < MAX_MON_MOVES; i++)
         {
             aiMove = gBattleMons[battlerAtk].moves[i];
-            if (GetMoveType(aiMove) != TYPE_FIRE && !CanBurnHitThaw(aiMove) && GetMovePower(gBattleMons[battlerAtk].moves[i]) != 0)
+            GetBattleMoveTypes(aiMove, aiMoveTypes);
+            if ((aiMoveTypes[0] != TYPE_FIRE && aiMoveTypes[1] != TYPE_FIRE) && !CanBurnHitThaw(aiMove) && GetMovePower(gBattleMons[battlerAtk].moves[i]) != 0)
             {
                 ADJUST_SCORE(-1);
                 break;
@@ -1151,7 +1158,7 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
         if (CanAbilityBlockMove(battlerAtk, battlerDef, abilityAtk, abilityDef, move, AI_CHECK))
             RETURN_SCORE_MINUS(20);
 
-        if (CanAbilityAbsorbMove(battlerAtk, battlerDef, abilityDef, move, moveType, AI_CHECK))
+        if (CanAbilityAbsorbMove(battlerAtk, battlerDef, abilityDef, move, moveTypes, AI_CHECK))
             RETURN_SCORE_MINUS(20);
 
         switch (abilityDef)
@@ -1186,12 +1193,14 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                 RETURN_SCORE_MINUS(20);
             break;
         case ABILITY_JUSTIFIED:
-            if (moveType == TYPE_DARK && !IsBattleMoveStatus(move) && !IsTargetingPartner(battlerAtk, battlerDef))
+            if ((moveTypes[0] == TYPE_DARK || moveTypes[1] == TYPE_DARK) 
+             && !IsBattleMoveStatus(move) && !IsTargetingPartner(battlerAtk, battlerDef))
                 RETURN_SCORE_MINUS(10);
             break;
         case ABILITY_RATTLED:
             if (!IsBattleMoveStatus(move)
-              && (moveType == TYPE_DARK || moveType == TYPE_GHOST || moveType == TYPE_BUG))
+              && (moveTypes[0] == TYPE_DARK || moveTypes[0] == TYPE_GHOST || moveTypes[0] == TYPE_BUG
+               || moveTypes[1] == TYPE_DARK || moveTypes[1] == TYPE_GHOST || moveTypes[1] == TYPE_BUG))
                 RETURN_SCORE_MINUS(10);
             break;
         case ABILITY_AROMA_VEIL:
@@ -1238,11 +1247,13 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             switch (aiData->abilities[BATTLE_PARTNER(battlerDef)])
             {
             case ABILITY_LIGHTNING_ROD:
-                if (moveType == TYPE_ELECTRIC && !IsMoveRedirectionPrevented(battlerAtk, move, aiData->abilities[battlerAtk]))
+                if ((moveTypes[0] == TYPE_ELECTRIC || moveTypes[1] == TYPE_ELECTRIC) 
+                 && !IsMoveRedirectionPrevented(battlerAtk, move, aiData->abilities[battlerAtk]))
                     RETURN_SCORE_MINUS(20);
                 break;
             case ABILITY_STORM_DRAIN:
-                if (moveType == TYPE_WATER && !IsMoveRedirectionPrevented(battlerAtk, move, aiData->abilities[battlerAtk]))
+                if ((moveTypes[0] == TYPE_WATER || moveTypes[1] == TYPE_WATER) 
+                 && !IsMoveRedirectionPrevented(battlerAtk, move, aiData->abilities[battlerAtk]))
                     RETURN_SCORE_MINUS(20);
                 break;
             case ABILITY_MAGIC_BOUNCE:
@@ -2167,10 +2178,14 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                 ADJUST_SCORE(-10);
             break;
         case EFFECT_CONVERSION:
+        {
             //Check first move type
-            if (IS_BATTLER_OF_TYPE(battlerAtk, GetMoveType(gBattleMons[battlerAtk].moves[0])))
+            enum Type firstMoveTypes[2];
+            GetMoveTypes(gBattleMons[battlerAtk].moves[0], firstMoveTypes);
+            if (IS_BATTLER_OF_TYPE(battlerAtk, firstMoveTypes[0]) && IS_BATTLER_OF_TYPE(battlerAtk, firstMoveTypes[1]))
                 ADJUST_SCORE(-10);
             break;
+        }
         case EFFECT_REST:
             if (!CanBeSlept(battlerAtk, battlerAtk, aiData->abilities[battlerAtk], NOT_BLOCKED_BY_SLEEP_CLAUSE))
                 ADJUST_SCORE(-10);
@@ -3079,7 +3094,8 @@ static s32 AI_TryToFaint(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
 static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
 {
     // move data
-    enum Type moveType = GetMoveType(move);
+    enum Type moveTypes[2];
+    GetMoveTypes(move, moveTypes);
     enum BattleMoveEffects effect = GetMoveEffect(move);
     u32 moveTarget = GetBattlerMoveTargetType(battlerAtk, move);
     // ally data
@@ -3094,7 +3110,7 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
     u32 predictedMoveSpeedCheck = GetIncomingMoveSpeedCheck(battlerAtk, battlerDef, gAiLogicData);
 
     SetTypeBeforeUsingMove(move, battlerAtk);
-    moveType = GetBattleMoveType(move);
+    GetBattleMoveTypes(move, moveTypes);
 
     bool32 hasTwoOpponents = HasTwoOpponents(battlerAtk);
     bool32 hasPartner = HasPartner(battlerAtk);
@@ -3394,7 +3410,7 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             case ABILITY_LIGHTNING_ROD:
             case ABILITY_MOTOR_DRIVE:
             case ABILITY_VOLT_ABSORB:
-                if (moveType == TYPE_ELECTRIC)
+                if (moveTypes[0] == TYPE_ELECTRIC || moveTypes[1] == TYPE_ELECTRIC)
                 {
                     if (GetConfig(B_REDIRECT_ABILITY_IMMUNITY) < GEN_5 && atkPartnerAbility == ABILITY_LIGHTNING_ROD)
                     {
@@ -3421,7 +3437,7 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                 break;
             case ABILITY_EARTH_EATER:
             case ABILITY_LEVITATE:
-                if (moveType == TYPE_GROUND)
+                if (moveTypes[0] == TYPE_GROUND || moveTypes[1] == TYPE_GROUND)
                 {
                     if (moveTarget == MOVE_TARGET_FOES_AND_ALLY)
                     {
@@ -3440,7 +3456,7 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             case ABILITY_DRY_SKIN:
             case ABILITY_WATER_ABSORB:
             case ABILITY_STORM_DRAIN:
-            if (moveType == TYPE_WATER)
+            if (moveTypes[0] == TYPE_WATER || moveTypes[1] == TYPE_WATER)
                 {
                     if (GetConfig(B_REDIRECT_ABILITY_IMMUNITY) < GEN_5 && atkPartnerAbility == ABILITY_STORM_DRAIN)
                     {
@@ -3466,7 +3482,7 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                 }
                 break;
             case ABILITY_WATER_COMPACTION:
-                if (moveType == TYPE_WATER && isFriendlyFireOK
+                if ((moveTypes[0] == TYPE_WATER || moveTypes[1] == TYPE_WATER) && isFriendlyFireOK
                     && ShouldTriggerAbility(battlerAtk, battlerAtkPartner, atkPartnerAbility))
                 {
                     if (moveTarget == MOVE_TARGET_FOES_AND_ALLY)
@@ -3485,7 +3501,8 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                 }
                 break;
             case ABILITY_STEAM_ENGINE:
-                if (isFriendlyFireOK && (moveType == TYPE_WATER || moveType == TYPE_FIRE)
+                if (isFriendlyFireOK 
+                    && (moveTypes[0] == TYPE_WATER || moveTypes[1] == TYPE_WATER || moveTypes[0] == TYPE_FIRE || moveTypes[1] == TYPE_FIRE)
                     && ShouldTriggerAbility(battlerAtk, battlerAtkPartner, atkPartnerAbility))
                 {
                     if (moveTarget == MOVE_TARGET_FOES_AND_ALLY)
@@ -3500,7 +3517,7 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                 }
                 break;
             case ABILITY_THERMAL_EXCHANGE:
-                if (moveType == TYPE_FIRE && isFriendlyFireOK
+                if ((moveTypes[0] == TYPE_FIRE || moveTypes[1] == TYPE_FIRE) && isFriendlyFireOK
                     && !IsBattleMoveStatus(move)
                     && ShouldTriggerAbility(battlerAtk, battlerAtkPartner, atkPartnerAbility))
                 {
@@ -3523,7 +3540,7 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                 break;
             case ABILITY_FLASH_FIRE:
             case ABILITY_WELL_BAKED_BODY:
-                if (moveType == TYPE_FIRE)
+                if (moveTypes[0] == TYPE_FIRE || moveTypes[1] == TYPE_FIRE)
                 {
                     if (moveTarget == MOVE_TARGET_FOES_AND_ALLY)
                     {
@@ -3540,7 +3557,7 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                 }
                 break;
             case ABILITY_SAP_SIPPER:
-                if (moveType == TYPE_GRASS)
+                if (moveTypes[0] == TYPE_GRASS || moveTypes[1] == TYPE_GRASS)
                 {
                     if (moveTarget == MOVE_TARGET_FOES_AND_ALLY)
                     {
@@ -3558,7 +3575,7 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                 }
                 break;
             case ABILITY_JUSTIFIED:
-                if (moveType == TYPE_DARK && isFriendlyFireOK
+                if ((moveTypes[0] == TYPE_DARK || moveTypes[1] == TYPE_DARK) && isFriendlyFireOK
                     && !IsBattleMoveStatus(move)
                     && ShouldTriggerAbility(battlerAtk, battlerAtkPartner, atkPartnerAbility))
                 {
@@ -3581,7 +3598,8 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                 break;
             case ABILITY_RATTLED:
                 if (!IsBattleMoveStatus(move) && isFriendlyFireOK
-                    && (moveType == TYPE_DARK || moveType == TYPE_GHOST || moveType == TYPE_BUG)
+                    && (moveTypes[0] == TYPE_DARK || moveTypes[0] == TYPE_GHOST || moveTypes[0] == TYPE_BUG
+                     || moveTypes[1] == TYPE_DARK || moveTypes[1] == TYPE_GHOST || moveTypes[1] == TYPE_BUG)
                     && ShouldTriggerAbility(battlerAtk, battlerAtkPartner, atkPartnerAbility))
                 {
                     if (moveTarget == MOVE_TARGET_FOES_AND_ALLY)
@@ -3678,7 +3696,7 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                 break;
             case EFFECT_BEAT_UP:
                 if (atkPartnerAbility == ABILITY_JUSTIFIED
-                  && moveType == TYPE_DARK
+                  && (moveTypes[0] == TYPE_DARK || moveTypes[1] == TYPE_DARK)
                   && !DoesBattlerIgnoreAbilityChecks(battlerAtk, aiData->abilities[battlerAtk], move)
                   && !IsBattleMoveStatus(move)
                   && HasMoveWithCategory(battlerAtkPartner, DAMAGE_CATEGORY_PHYSICAL)
@@ -4088,7 +4106,8 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
     s32 score = 0;
     u32 predictedMove = GetIncomingMove(battlerAtk, battlerDef, aiData);
     u32 predictedMoveSpeedCheck = GetIncomingMoveSpeedCheck(battlerAtk, battlerDef, aiData);
-    enum Type predictedType = GetMoveType(predictedMove);
+    enum Type predictedMoveTypes[2];
+    GetMoveTypes(predictedMove, predictedMoveTypes);
     u32 predictedMoveSlot = GetMoveSlot(GetMovesArray(battlerDef), predictedMove);
     bool32 isBattle1v1 = IsBattle1v1();
     bool32 hasTwoOpponents = HasTwoOpponents(battlerAtk);
@@ -4390,7 +4409,10 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
             ADJUST_SCORE(-2);
         break;
     case EFFECT_CONVERSION:
-        if (!IS_BATTLER_OF_TYPE(battlerAtk, GetMoveType(gBattleMons[battlerAtk].moves[0])))
+    {
+        enum Type firstMoveTypes[2];
+        GetMoveTypes(gBattleMons[battlerAtk].moves[0], firstMoveTypes);
+        if (!IS_BATTLER_OF_TYPE(battlerAtk, firstMoveTypes[0]) && !IS_BATTLER_OF_TYPE(battlerAtk, firstMoveTypes[1]))
         {
             ADJUST_SCORE(WEAK_EFFECT);
             if (aiData->abilities[battlerAtk] == ABILITY_ADAPTABILITY)
@@ -4399,6 +4421,7 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
                 ADJUST_SCORE(BEST_EFFECT);
         }
         break;
+    }
     case EFFECT_SWALLOW:
         if (gDisableStructs[battlerAtk].stockpileCounter == 0)
         {
@@ -5396,7 +5419,7 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
         if ((aiData->abilities[battlerAtk] == ABILITY_VOLT_ABSORB
           || aiData->abilities[battlerAtk] == ABILITY_MOTOR_DRIVE
           || (GetConfig(B_REDIRECT_ABILITY_IMMUNITY) >= GEN_5 && aiData->abilities[battlerAtk] == ABILITY_LIGHTNING_ROD))
-          && predictedType == TYPE_NORMAL)
+          && (predictedMoveTypes[0] == TYPE_NORMAL || predictedMoveTypes[1] == TYPE_NORMAL))
             ADJUST_SCORE(DECENT_EFFECT);
         break;
     case EFFECT_FLING:
@@ -5427,7 +5450,8 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
             ADJUST_SCORE(DECENT_EFFECT);
         break;
     case EFFECT_POWDER:
-        if (predictedMove != MOVE_NONE && !IsBattleMoveStatus(predictedMove) && predictedType == TYPE_FIRE)
+        if (predictedMove != MOVE_NONE && !IsBattleMoveStatus(predictedMove) 
+         && (predictedMoveTypes[0] == TYPE_FIRE || predictedMoveTypes[1] == TYPE_FIRE))
             ADJUST_SCORE(DECENT_EFFECT);
         break;
     case EFFECT_TELEKINESIS:
@@ -5522,7 +5546,7 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
         {
             if (AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, CONSIDER_PRIORITY)) // Attacker goes first
            {
-                if (predictedType == TYPE_GROUND)
+                if (predictedMoveTypes[0] == TYPE_GROUND || predictedMoveTypes[1] == TYPE_GROUND)
                     ADJUST_SCORE(GOOD_EFFECT); // Cause the enemy's move to fail
                 break;
             }
@@ -6316,17 +6340,20 @@ static s32 AI_PreferBatonPass(u32 battlerAtk, u32 battlerDef, u32 move, s32 scor
 static s32 AI_HPAware(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
 {
     enum BattleMoveEffects effect = GetMoveEffect(move);
-    enum Type moveType = 0;
+    enum Type moveTypes[2];
 
     SetTypeBeforeUsingMove(move, battlerAtk);
-    moveType = GetBattleMoveType(move);
+    GetBattleMoveTypes(move, moveTypes);
 
     if (IsTargetingPartner(battlerAtk, battlerDef))
     {
         if ((effect == EFFECT_HEAL_PULSE || effect == EFFECT_HIT_ENEMY_HEAL_ALLY)
-         || (moveType == TYPE_ELECTRIC && gAiLogicData->abilities[BATTLE_PARTNER(battlerAtk)] == ABILITY_VOLT_ABSORB)
-         || (moveType == TYPE_GROUND && gAiLogicData->abilities[BATTLE_PARTNER(battlerAtk)] == ABILITY_EARTH_EATER)
-         || (moveType == TYPE_WATER && (gAiLogicData->abilities[BATTLE_PARTNER(battlerAtk)] == ABILITY_DRY_SKIN || gAiLogicData->abilities[BATTLE_PARTNER(battlerAtk)] == ABILITY_WATER_ABSORB)))
+         || ((moveTypes[0] == TYPE_ELECTRIC || moveTypes[1] == TYPE_ELECTRIC) 
+          && gAiLogicData->abilities[BATTLE_PARTNER(battlerAtk)] == ABILITY_VOLT_ABSORB)
+         || ((moveTypes[0] == TYPE_GROUND || moveTypes[1] == TYPE_GROUND)
+          && gAiLogicData->abilities[BATTLE_PARTNER(battlerAtk)] == ABILITY_EARTH_EATER)
+         || ((moveTypes[0] == TYPE_WATER || moveTypes[1] == TYPE_WATER)
+          && (gAiLogicData->abilities[BATTLE_PARTNER(battlerAtk)] == ABILITY_DRY_SKIN || gAiLogicData->abilities[BATTLE_PARTNER(battlerAtk)] == ABILITY_WATER_ABSORB)))
         {
             if (gBattleMons[battlerDef].volatiles.healBlock)
                 return 0;
