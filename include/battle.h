@@ -837,6 +837,13 @@ static inline bool32 IsBattleMoveStatus(u32 move)
     gBattleMons[battler].types[2] = TYPE_MYSTERY;    \
 }
 
+#define SET_BATTLER_TYPES(battler, type1, type2)              \
+{                                                    \
+    gBattleMons[battler].types[0] = type1;            \
+    gBattleMons[battler].types[1] = type2;            \
+    gBattleMons[battler].types[2] = TYPE_MYSTERY;    \
+}
+
 #define RESTORE_BATTLER_TYPE(battler)                                                \
 {                                                                                    \
     gBattleMons[battler].types[0] = GetSpeciesType(gBattleMons[battler].species, 0); \

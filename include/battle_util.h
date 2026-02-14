@@ -158,7 +158,7 @@ struct DamageContext
     u32 battlerAtk:3;
     u32 battlerDef:3;
     u32 move:16;
-    enum Type moveType:5;
+    enum Type moveTypes[2];
     u32 isCrit:1;
     u32 randomFactor:1;
     u32 updateFlags:1;
