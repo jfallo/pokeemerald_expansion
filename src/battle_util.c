@@ -3560,7 +3560,7 @@ bool32 CanAbilityBlockMove(u32 battlerAtk, u32 battlerDef, enum Ability abilityA
     return TRUE;
 }
 
-bool32 CanAbilityAbsorbMove(u32 battlerAtk, u32 battlerDef, enum Ability abilityDef, u32 move, enum Type moveType, enum FunctionCallOption option)
+bool32 CanAbilityAbsorbMove(u32 battlerAtk, u32 battlerDef, enum Ability abilityDef, u32 move, enum Type moveTypes[2], enum FunctionCallOption option)
 {
     enum MoveAbsorbed effect = MOVE_ABSORBED_BY_NO_ABILITY;
     const u8 *battleScript = NULL;
@@ -3573,48 +3573,49 @@ bool32 CanAbilityAbsorbMove(u32 battlerAtk, u32 battlerDef, enum Ability ability
         effect = MOVE_ABSORBED_BY_NO_ABILITY;
         break;
     case ABILITY_VOLT_ABSORB:
-        if (moveType == TYPE_ELECTRIC && GetBattlerMoveTargetType(battlerAtk, move) != MOVE_TARGET_ALL_BATTLERS)
+        if ((moveTypes[0] == TYPE_ELECTRIC || moveTypes[1] == TYPE_ELECTRIC) && GetBattlerMoveTargetType(battlerAtk, move) != MOVE_TARGET_ALL_BATTLERS)
             effect = MOVE_ABSORBED_BY_DRAIN_HP_ABILITY;
         break;
     case ABILITY_WATER_ABSORB:
     case ABILITY_DRY_SKIN:
-        if (moveType == TYPE_WATER)
+        if (moveTypes[0] == TYPE_WATER || moveTypes[1] == TYPE_WATER)
             effect = MOVE_ABSORBED_BY_DRAIN_HP_ABILITY;
         break;
     case ABILITY_EARTH_EATER:
-        if (moveType == TYPE_GROUND)
+        if (moveTypes[0] == TYPE_GROUND || moveTypes[1] == TYPE_GROUND)
             effect = MOVE_ABSORBED_BY_DRAIN_HP_ABILITY;
         break;
     case ABILITY_MOTOR_DRIVE:
-        if (moveType == TYPE_ELECTRIC && GetBattlerMoveTargetType(battlerAtk, move) != MOVE_TARGET_ALL_BATTLERS)
+        if ((moveTypes[0] == TYPE_ELECTRIC || moveTypes[1] == TYPE_ELECTRIC) && GetBattlerMoveTargetType(battlerAtk, move) != MOVE_TARGET_ALL_BATTLERS)
         {
             effect = MOVE_ABSORBED_BY_STAT_INCREASE_ABILITY;
             statId = STAT_SPEED;
         }
         break;
     case ABILITY_LIGHTNING_ROD:
-        if (GetConfig(B_REDIRECT_ABILITY_IMMUNITY) >= GEN_5 && moveType == TYPE_ELECTRIC && GetBattlerMoveTargetType(battlerAtk, move) != MOVE_TARGET_ALL_BATTLERS)
+        if (GetConfig(B_REDIRECT_ABILITY_IMMUNITY) >= GEN_5 && (moveTypes[0] == TYPE_ELECTRIC || moveTypes[1] == TYPE_ELECTRIC) 
+         && GetBattlerMoveTargetType(battlerAtk, move) != MOVE_TARGET_ALL_BATTLERS)
         {
             effect = MOVE_ABSORBED_BY_STAT_INCREASE_ABILITY;
             statId = STAT_SPATK;
         }
         break;
     case ABILITY_STORM_DRAIN:
-        if (GetConfig(B_REDIRECT_ABILITY_IMMUNITY) >= GEN_5 && moveType == TYPE_WATER)
+        if (GetConfig(B_REDIRECT_ABILITY_IMMUNITY) >= GEN_5 && (moveTypes[0] == TYPE_WATER || moveTypes[1] == TYPE_WATER))
         {
             effect = MOVE_ABSORBED_BY_STAT_INCREASE_ABILITY;
             statId = STAT_SPATK;
         }
         break;
     case ABILITY_SAP_SIPPER:
-        if (moveType == TYPE_GRASS)
+        if (moveTypes[0] == TYPE_GRASS || moveTypes[1] == TYPE_GRASS)
         {
             effect = MOVE_ABSORBED_BY_STAT_INCREASE_ABILITY;
             statId = STAT_ATK;
         }
         break;
     case ABILITY_WELL_BAKED_BODY:
-        if (moveType == TYPE_FIRE)
+        if (moveTypes[0] == TYPE_FIRE || moveTypes[1] == TYPE_FIRE)
         {
             effect = MOVE_ABSORBED_BY_STAT_INCREASE_ABILITY;
             statAmount = 2;
@@ -3629,7 +3630,8 @@ bool32 CanAbilityAbsorbMove(u32 battlerAtk, u32 battlerDef, enum Ability ability
         }
         break;
     case ABILITY_FLASH_FIRE:
-        if (moveType == TYPE_FIRE && (B_FLASH_FIRE_FROZEN >= GEN_5 || !(gBattleMons[battlerDef].status1 & STATUS1_FREEZE)))
+        if ((moveTypes[0] == TYPE_FIRE || moveTypes[1] == TYPE_FIRE) 
+         && (B_FLASH_FIRE_FROZEN >= GEN_5 || !(gBattleMons[battlerDef].status1 & STATUS1_FREEZE)))
             effect = MOVE_ABSORBED_BY_BOOST_FLASH_FIRE;
         break;
     }
@@ -10514,6 +10516,18 @@ bool32 TargetFullyImmuneToCurrMove(u32 battlerAtk, u32 battlerDef)
          || IsBattlerProtected(battlerAtk, battlerDef, gCurrentMove)
          || !BreaksThroughSemiInvulnerablity(battlerDef, gCurrentMove)
          || DoesBattlerHaveAbilityImmunity(battlerAtk, battlerDef, moveType));
+}
+
+enum Type GetBattleMoveType(u32 move)
+{
+    if (gMain.inBattle && gBattleStruct->dynamicMoveType)
+        return gBattleStruct->dynamicMoveType & DYNAMIC_TYPE_MASK;
+    else if (B_UPDATED_MOVE_TYPES < GEN_5
+         && (move == MOVE_BEAT_UP
+          || move == MOVE_FUTURE_SIGHT
+          || move == MOVE_DOOM_DESIRE))
+          return TYPE_MYSTERY;
+    return GetMoveType(move);
 }
 
 void GetBattleMoveTypes(u32 move, enum Type moveTypes[2])

@@ -481,7 +481,8 @@ static bool32 FindMonThatAbsorbsOpponentsMove(u32 battler)
     u16 aiMove;
     u32 opposingBattler = GetOppositeBattler(battler);
     u32 incomingMove = GetIncomingMove(battler, opposingBattler, gAiLogicData);
-    enum Type incomingType = CheckDynamicMoveType(GetBattlerMon(opposingBattler), incomingMove, opposingBattler, MON_IN_BATTLE);
+    enum Type incomingMoveTypes[2];
+    CheckDynamicMoveTypes(GetBattlerMon(opposingBattler), incomingMove, opposingBattler, MON_IN_BATTLE, incomingMoveTypes);
     bool32 isOpposingBattlerChargingOrInvulnerable = !BreaksThroughSemiInvulnerablity(opposingBattler, incomingMove) || IsTwoTurnNotSemiInvulnerableMove(opposingBattler, incomingMove);
     s32 i, j;
 
@@ -528,29 +529,33 @@ static bool32 FindMonThatAbsorbsOpponentsMove(u32 battler)
     }
 
     // Create an array of possible absorb abilities so the AI considers all of them
-    if (incomingType == TYPE_FIRE)
+    if (incomingMoveTypes[0] == TYPE_FIRE || incomingMoveTypes[1] == TYPE_FIRE)
     {
         absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_FLASH_FIRE;
     }
-    if (incomingType == TYPE_WATER || (isOpposingBattlerChargingOrInvulnerable && incomingType == TYPE_WATER))
+    if ((incomingMoveTypes[0] == TYPE_WATER || incomingMoveTypes[1] == TYPE_WATER) 
+     || (isOpposingBattlerChargingOrInvulnerable && (incomingMoveTypes[0] == TYPE_WATER || incomingMoveTypes[1] == TYPE_WATER)))
     {
         absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_WATER_ABSORB;
         absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_DRY_SKIN;
         if (GetConfig(B_REDIRECT_ABILITY_IMMUNITY) >= GEN_5)
             absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_STORM_DRAIN;
     }
-    if (incomingType == TYPE_ELECTRIC || (isOpposingBattlerChargingOrInvulnerable && incomingType == TYPE_ELECTRIC))
+    if ((incomingMoveTypes[0] == TYPE_ELECTRIC || incomingMoveTypes[1] == TYPE_ELECTRIC) 
+     || (isOpposingBattlerChargingOrInvulnerable && (incomingMoveTypes[0] == TYPE_ELECTRIC || incomingMoveTypes[1] == TYPE_ELECTRIC)))
     {
         absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_VOLT_ABSORB;
         absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_MOTOR_DRIVE;
         if (GetConfig(B_REDIRECT_ABILITY_IMMUNITY) >= GEN_5)
             absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_LIGHTNING_ROD;
     }
-    if (incomingType == TYPE_GRASS || (isOpposingBattlerChargingOrInvulnerable && incomingType == TYPE_GRASS))
+    if ((incomingMoveTypes[0] == TYPE_GRASS|| incomingMoveTypes[1] == TYPE_GRASS) 
+     || (isOpposingBattlerChargingOrInvulnerable && (incomingMoveTypes[0] == TYPE_GRASS || incomingMoveTypes[1] == TYPE_GRASS)))
     {
         absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_SAP_SIPPER;
     }
-    if (incomingType == TYPE_GROUND || (isOpposingBattlerChargingOrInvulnerable && incomingType == TYPE_GROUND))
+    if ((incomingMoveTypes[0] == TYPE_GROUND || incomingMoveTypes[1] == TYPE_GROUND) 
+     || (isOpposingBattlerChargingOrInvulnerable && (incomingMoveTypes[0] == TYPE_GROUND || incomingMoveTypes[1] == TYPE_GROUND)))
     {
         absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_EARTH_EATER;
         absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_LEVITATE;
@@ -1037,9 +1042,11 @@ static bool32 ShouldSwitchIfBadChoiceLock(u32 battler)
     u32 lastUsedMove = gAiLogicData->lastUsedMove[battler];
     u32 opposingBattler = GetOppositeBattler(battler);
     bool32 moveAffectsTarget = TRUE;
+    enum Type moveTypes[2];
+    CheckDynamicMoveTypes(GetBattlerMon(battler), lastUsedMove, battler, MON_IN_BATTLE, moveTypes);
 
     if (lastUsedMove != MOVE_NONE && (AI_GetMoveEffectiveness(lastUsedMove, battler, opposingBattler) == UQ_4_12(0.0)
-        || CanAbilityAbsorbMove(battler, opposingBattler, gAiLogicData->abilities[opposingBattler], lastUsedMove, CheckDynamicMoveType(GetBattlerMon(battler), lastUsedMove, battler, MON_IN_BATTLE), AI_CHECK)
+        || CanAbilityAbsorbMove(battler, opposingBattler, gAiLogicData->abilities[opposingBattler], lastUsedMove, moveTypes, AI_CHECK)
         || CanAbilityBlockMove(battler, opposingBattler, gAiLogicData->abilities[battler], gAiLogicData->abilities[opposingBattler], lastUsedMove, AI_CHECK)))
         moveAffectsTarget = FALSE;
 

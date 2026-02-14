@@ -909,6 +909,7 @@ void HealBoxPokemon(struct BoxPokemon *boxMon);
 void UpdateDaysPassedSinceFormChange(u16 days);
 void TrySetDayLimitToFormChange(struct Pokemon *mon);
 enum Type CheckDynamicMoveType(struct Pokemon *mon, u32 move, u32 battler, enum MonState state);
+void CheckDynamicMoveTypes(struct Pokemon *mon, u32 move, u32 battler, enum MonState state, enum Type moveTypes[2]);
 uq4_12_t GetDynamaxLevelHPMultiplier(u32 dynamaxLevel, bool32 inverseMultiplier);
 u32 GetRegionalFormByRegion(u32 species, u32 region);
 bool32 IsSpeciesForeignRegionalForm(u32 species, u32 currentRegion);

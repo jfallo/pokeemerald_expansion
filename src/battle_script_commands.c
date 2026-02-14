@@ -1019,16 +1019,17 @@ static bool32 NoTargetPresent(u8 battler, u32 move)
     return FALSE;
 }
 
-bool32 ProteanTryChangeType(u32 battler, enum Ability ability, u32 move, enum Type moveType)
+bool32 ProteanTryChangeType(u32 battler, enum Ability ability, u32 move, enum Type moveTypes[2])
 {
-      if ((ability == ABILITY_PROTEAN || ability == ABILITY_LIBERO)
-         && !gDisableStructs[gBattlerAttacker].usedProteanLibero
-         && (gBattleMons[battler].types[0] != moveType || gBattleMons[battler].types[1] != moveType
-             || (gBattleMons[battler].types[2] != moveType && gBattleMons[battler].types[2] != TYPE_MYSTERY))
-         && move != MOVE_STRUGGLE
-         && GetActiveGimmick(battler) != GIMMICK_TERA)
+    bool32 typesMatch = (gBattleMons[battler].types[0] == moveTypes[0] && gBattleMons[battler].types[1] == moveTypes[1]) 
+                     || (gBattleMons[battler].types[0] == moveTypes[1] && gBattleMons[battler].types[1] == moveTypes[0]);
+    if ((ability == ABILITY_PROTEAN || ability == ABILITY_LIBERO)
+     && !gDisableStructs[gBattlerAttacker].usedProteanLibero
+     && !typesMatch
+     && move != MOVE_STRUGGLE
+     && GetActiveGimmick(battler) != GIMMICK_TERA)
     {
-        SET_BATTLER_TYPE(battler, moveType);
+        SET_BATTLER_TYPES(battler, moveTypes[0], moveTypes[1]);
         return TRUE;
     }
     return FALSE;

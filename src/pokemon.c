@@ -7405,6 +7405,18 @@ enum Type CheckDynamicMoveType(struct Pokemon *mon, u32 move, u32 battler, enum 
     return GetMoveType(move);
 }
 
+void CheckDynamicMoveTypes(struct Pokemon *mon, u32 move, u32 battler, enum MonState state, enum Type moveTypes[2])
+{
+    enum Type moveType = GetDynamicMoveType(mon, move, battler, state);
+    if (moveType != TYPE_NONE)
+    {
+        moveTypes[0] = moveType;
+        moveTypes[1] = TYPE_NONE;
+        return;
+    }
+    GetMoveTypes(move, moveTypes);
+}
+
 uq4_12_t GetDynamaxLevelHPMultiplier(u32 dynamaxLevel, bool32 inverseMultiplier)
 {
     if (inverseMultiplier)
