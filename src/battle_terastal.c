@@ -142,8 +142,8 @@ uq4_12_t GetTeraMultiplier(struct DamageContext *ctx)
     // Stellar-type checks.
     if (teraType == TYPE_STELLAR)
     {
-        bool32 shouldBoost = IsTypeStellarBoosted(ctx->battlerAtk, ctx->moveType);
-        if (IS_BATTLER_OF_BASE_TYPE(ctx->battlerAtk, ctx->moveType))
+        bool32 shouldBoost = IsTypeStellarBoosted(ctx->battlerAtk, ctx->moveTypes[0]);
+        if (IS_BATTLER_OF_BASE_TYPE(ctx->battlerAtk, ctx->moveTypes[0]))
         {
             if (shouldBoost)
                 return UQ_4_12(2.0);
@@ -156,7 +156,7 @@ uq4_12_t GetTeraMultiplier(struct DamageContext *ctx)
             return UQ_4_12(1.0);
     }
     // Base and Tera type.
-    if (ctx->moveType == teraType && IS_BATTLER_OF_BASE_TYPE(ctx->battlerAtk, ctx->moveType))
+    if (ctx->moveTypes[0] == teraType && IS_BATTLER_OF_BASE_TYPE(ctx->battlerAtk, ctx->moveTypes[0]))
     {
         if (ctx->abilityAtk == ABILITY_ADAPTABILITY)
             return UQ_4_12(2.25);
@@ -164,8 +164,8 @@ uq4_12_t GetTeraMultiplier(struct DamageContext *ctx)
             return UQ_4_12(2.0);
     }
     // Base or Tera type only.
-    else if ((ctx->moveType == teraType && !IS_BATTLER_OF_BASE_TYPE(ctx->battlerAtk, ctx->moveType))
-             || (ctx->moveType != teraType && IS_BATTLER_OF_BASE_TYPE(ctx->battlerAtk, ctx->moveType)))
+    else if ((ctx->moveTypes[0] == teraType && !IS_BATTLER_OF_BASE_TYPE(ctx->battlerAtk, ctx->moveTypes[0]))
+             || (ctx->moveTypes[0] != teraType && IS_BATTLER_OF_BASE_TYPE(ctx->battlerAtk, ctx->moveTypes[0])))
     {
         if (ctx->abilityAtk == ABILITY_ADAPTABILITY)
             return UQ_4_12(2.0);

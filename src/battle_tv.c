@@ -1276,7 +1276,7 @@ static void TrySetBattleSeminarShow(void)
             ctx.battlerAtk = gBattlerAttacker;
             ctx.battlerDef = gBattlerTarget;
             ctx.move = ctx.chosenMove = gCurrentMove;
-            ctx.moveType = GetMoveType(gCurrentMove);
+            GetMoveTypes(gCurrentMove, ctx.moveTypes);
             ctx.isCrit = FALSE;
             ctx.randomFactor = FALSE;
             ctx.updateFlags = FALSE;
