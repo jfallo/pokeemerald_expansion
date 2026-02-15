@@ -306,7 +306,7 @@ s32 ApplyModifiersAfterDmgRoll(struct DamageContext *ctx, s32 dmg);
 uq4_12_t CalcTypeEffectivenessMultiplier(struct DamageContext *ctx);
 uq4_12_t CalcPartyMonTypeEffectivenessMultiplier(u16 move, u16 speciesDef, enum Ability abilityDef);
 uq4_12_t GetTypeModifier(enum Type atkType, enum Type defType);
-uq4_12_t GetOverworldTypeEffectiveness(struct Pokemon *mon, enum Type moveType);
+uq4_12_t GetOverworldTypeEffectiveness(struct Pokemon *mon, enum Type moveTypes[2]);
 void UpdateMoveResultFlags(uq4_12_t modifier, u16 *resultFlags);
 s32 GetStealthHazardDamage(enum TypeSideHazard hazardType, u32 battler);
 s32 GetStealthHazardDamageByTypesAndHP(enum TypeSideHazard hazardType, enum Type type1, enum Type type2, u32 maxHp);
