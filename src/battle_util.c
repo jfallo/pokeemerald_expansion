@@ -9073,7 +9073,7 @@ static uq4_12_t GetInverseTypeMultiplier(uq4_12_t multiplier)
     }
 }
 
-uq4_12_t GetOverworldTypeEffectiveness(struct Pokemon *mon, enum Type moveTypes[2])
+uq4_12_t GetOverworldTypeEffectiveness(struct Pokemon *mon, enum Type moveType)
 {
     uq4_12_t modifier = UQ_4_12(1.0);
     enum Ability abilityDef = GetMonAbility(mon);
@@ -9081,27 +9081,20 @@ uq4_12_t GetOverworldTypeEffectiveness(struct Pokemon *mon, enum Type moveTypes[
     enum Type type1 = GetSpeciesType(speciesDef, 0);
     enum Type type2 = GetSpeciesType(speciesDef, 1);
 
-    if (moveTypes[0] == TYPE_MYSTERY)
+    if (moveType == TYPE_MYSTERY)
         return modifier;
 
     struct DamageContext ctx = {0};
     ctx.move = ctx.chosenMove = MOVE_POUND;
-    ctx.moveTypes[0] = moveTypes[0];
-    ctx.moveTypes[1] = moveTypes[1];
+    ctx.moveTypes[0] = moveType;
     ctx.updateFlags = FALSE;
 
-    MulByTypeEffectiveness(&ctx, &modifier, moveTypes[0], type1);
-    if (moveTypes[1] != TYPE_NONE)
-        MulByTypeEffectiveness(&ctx, &modifier, moveTypes[1], type1);
+    MulByTypeEffectiveness(&ctx, &modifier, moveType, type1);
     if (type2 != type1)
-    {
-        MulByTypeEffectiveness(&ctx, &modifier, moveTypes[0], type2);
-        if (moveTypes[1] != TYPE_NONE)
-            MulByTypeEffectiveness(&ctx, &modifier, moveTypes[1], type2);
-    }
+        MulByTypeEffectiveness(&ctx, &modifier, moveType, type2);
 
     if ((modifier <= UQ_4_12(1.0) && abilityDef == ABILITY_WONDER_GUARD)
-     || CanAbilityAbsorbMove(0, 0, abilityDef, MOVE_NONE, moveTypes, CHECK_TRIGGER))
+     || CanAbilityAbsorbMove(0, 0, abilityDef, MOVE_NONE, ctx.moveTypes, CHECK_TRIGGER))
         modifier = UQ_4_12(0.0);
 
     return modifier;
