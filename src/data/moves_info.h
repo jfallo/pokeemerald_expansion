@@ -531,7 +531,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "of wind whipped up by wings."),
         .effect = EFFECT_HIT,
         .power = 40,
-        .type = B_UPDATED_MOVE_TYPES >= GEN_2 ? TYPE_FLYING : TYPE_NORMAL,
+        .type = TYPE_FLYING,
         .accuracy = 100,
         .pp = 35,
         .target = MOVE_TARGET_SELECTED,
@@ -554,7 +554,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Strikes the foe with wings\n"
             "spread wide."),
         .effect = EFFECT_HIT,
-        .power = B_UPDATED_MOVE_DATA >= GEN_2 ? 60 : 35,
+        .power = 60,
         .type = TYPE_FLYING,
         .accuracy = 100,
         .pp = 35,
@@ -933,7 +933,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .effect = EFFECT_MULTI_HIT,
         .power = 15,
         .type = TYPE_NORMAL,
-        .accuracy = 85,
+        .accuracy = 95,
         .pp = 20,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
@@ -1151,10 +1151,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Poison Sting"),
         .description = COMPOUND_STRING(
-            "A toxic attack with barbs,\n"
-            "etc., that may poison."),
+            "The foe is poked with barbs\n"
+            "or stingers that may poison."),
         .effect = EFFECT_HIT,
-        .power = 15,
+        .power = 20,
         .type = TYPE_POISON,
         .accuracy = 100,
         .pp = 35,
@@ -1176,11 +1176,12 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Twineedle"),
         .description = COMPOUND_STRING(
-            "Foreleg stingers jab foe\n"
-            "twice. May poison."),
+            "Toxic stingers jab the\n"
+            "foe twice. May poison."),
         .effect = EFFECT_HIT,
-        .power = 25,
+        .power = 20,
         .type = TYPE_BUG,
+        .dualType = TYPE_POISON,
         .accuracy = 100,
         .pp = 20,
         .target = MOVE_TARGET_SELECTED,
@@ -1207,9 +1208,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Sharp pins are fired to\n"
             "strike 2 to 5 times."),
         .effect = EFFECT_MULTI_HIT,
-        .power = B_UPDATED_MOVE_DATA >= GEN_6 ? 25 : 14,
+        .power = 15,
         .type = TYPE_BUG,
-        .accuracy = B_UPDATED_MOVE_DATA >= GEN_6 ? 95 : 85,
+        .accuracy = 95,
         .pp = 20,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
@@ -1794,7 +1795,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Attacks the foe with a\n"
             "jabbing beak, etc."),
         .effect = EFFECT_HIT,
-        .power = 35,
+        .power = 40,
         .type = TYPE_FLYING,
         .accuracy = 100,
         .pp = 35,
@@ -2523,7 +2524,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .effect = EFFECT_NON_VOLATILE_STATUS,
         .power = 0,
         .type = TYPE_POISON,
-        .accuracy = B_UPDATED_MOVE_DATA >= GEN_5 ? 90 : 85,
+        .accuracy = 90,
         .pp = 10,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
@@ -3819,10 +3820,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "An attack that steals half\n"
             "the damage inflicted."),
         .effect = EFFECT_ABSORB,
-        .power = B_UPDATED_MOVE_DATA >= GEN_7 ? 80 : 20,
+        .power = 80,
         .type = TYPE_BUG,
         .accuracy = 100,
-        .pp = B_UPDATED_MOVE_DATA >= GEN_7 ? 10 : 15,
+        .pp = 10,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
@@ -6361,7 +6362,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "varies with the weather."),
         .effect = EFFECT_MOONLIGHT,
         .power = 0,
-        .type = B_UPDATED_MOVE_TYPES >= GEN_6 ? TYPE_FAIRY : TYPE_NORMAL,
+        .type = TYPE_NORMAL,
         .accuracy = 0,
         .pp = 5,
         .target = MOVE_TARGET_USER,
@@ -8420,7 +8421,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Hacks with razorlike wind.\n"
             "High critical-hit ratio."),
         .effect = EFFECT_HIT,
-        .power = B_UPDATED_MOVE_DATA >= GEN_6 ? 60 : 55,
+        .power = 60,
         .type = TYPE_FLYING,
         .accuracy = 95,
         .criticalHitStage = B_UPDATED_MOVE_DATA >= GEN_3 ? 1 : 2,
@@ -8525,8 +8526,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .effect = EFFECT_HIT,
         .power = 60,
         .type = TYPE_BUG,
+        .dualType = TYPE_FLYING,
         .accuracy = 100,
-        .pp = 5,
+        .pp = 10,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
@@ -8877,7 +8879,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "An extremely speedy and\n"
             "unavoidable attack."),
         .effect = EFFECT_HIT,
-        .power = 60,
+        .power = 70,
         .type = TYPE_FLYING,
         .accuracy = 0,
         .pp = 20,
@@ -9299,7 +9301,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Slashes with a sharp leaf.\n"
             "High critical-hit ratio."),
         .effect = EFFECT_HIT,
-        .power = B_UPDATED_MOVE_DATA >= GEN_4 ? 90 : 70,
+        .power = 90,
         .type = TYPE_GRASS,
         .accuracy = 100,
         .criticalHitStage = B_UPDATED_MOVE_DATA >= GEN_3 ? 1 : 2,
@@ -9571,7 +9573,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Hammer Arm"),
         .description = COMPOUND_STRING(
             "A swinging fist attack.\n"
-            "Lowers the User's Speed."),
+            "Lowers the user's Speed."),
         .effect = EFFECT_HIT,
         .power = 100,
         .type = TYPE_FIGHTING,
@@ -9745,7 +9747,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .power = 0,
         .type = TYPE_FLYING,
         .accuracy = 0,
-        .pp = B_UPDATED_MOVE_DATA >= GEN_6 ? 15 : 30,
+        .pp = 15,
         .target = MOVE_TARGET_USER,
         .priority = 0,
         .category = DAMAGE_CATEGORY_STATUS,
@@ -10632,7 +10634,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .power = 75,
         .type = TYPE_FLYING,
         .accuracy = 95,
-        .pp = B_UPDATED_MOVE_DATA >= GEN_6 ? 15 : 20,
+        .pp = 15,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
@@ -12588,8 +12590,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Quiver Dance"),
         .description = COMPOUND_STRING(
-            "Dances to raise Sp. Atk\n"
-            "Sp. Def and Speed."),
+            "Dances to raise Sp. Atk,\n"
+            "Sp. Def, and Speed."),
         .effect = EFFECT_QUIVER_DANCE,
         .power = 0,
         .type = TYPE_BUG,
@@ -13520,13 +13522,13 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Resisting, the user attacks\n"
             "the foes. Lowers Sp. Atk."),
         .effect = EFFECT_HIT,
-        .power = B_UPDATED_MOVE_DATA >= GEN_6 ? 50 : 30,
+        .power = 50,
         .type = TYPE_BUG,
         .accuracy = 100,
         .pp = 20,
         .target = MOVE_TARGET_BOTH,
         .priority = 0,
-        .category = DAMAGE_CATEGORY_SPECIAL,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_SP_ATK_MINUS_1,
             .chance = 100,
@@ -15076,8 +15078,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Attacks with the power of\n"
             "the moon. May lower Sp. Atk."),
         .effect = EFFECT_HIT,
-        .power = 95,
-        .type = TYPE_FAIRY,
+        .power = 80,
+        .type = TYPE_NORMAL,
         .accuracy = 100,
         .pp = 15,
         .target = MOVE_TARGET_SELECTED,
@@ -18933,7 +18935,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Dual Wingbeat"),
         .description = COMPOUND_STRING(
             "User slams the target with\n"
-            "wings and hits twice in a row."),
+            "wings twice in a row."),
         .effect = EFFECT_HIT,
         .power = 40,
         .type = TYPE_FLYING,
