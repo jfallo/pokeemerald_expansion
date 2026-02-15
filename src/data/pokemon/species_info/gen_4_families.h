@@ -288,7 +288,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .levelUpLearnset = sChimcharLevelUpLearnset,
         .teachableLearnset = sChimcharTeachableLearnset,
         .eggMoveLearnset = sChimcharEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 14, SPECIES_MONFERNO}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 18, SPECIES_MONFERNO}),
     },
 
     [SPECIES_MONFERNO] =
