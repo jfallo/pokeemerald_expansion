@@ -137,6 +137,15 @@
     textVar[3] = B_BUFF_EOS;                                                \
 }
 
+#define PREPARE_TYPES_BUFFER(textVar, type1Id, type2Id)                     \
+{                                                                           \
+    textVar[0] = B_BUFF_PLACEHOLDER_BEGIN;                                  \
+    textVar[1] = B_BUFF_TYPE;                                               \
+    textVar[2] = type1Id;                                                   \
+    textVar[3] = type2Id;                                                   \
+    textVar[4] = B_BUFF_EOS;                                                \
+}
+
 #define PREPARE_BYTE_NUMBER_BUFFER(textVar, maxDigits, number)  \
 {                                                               \
     textVar[0] = B_BUFF_PLACEHOLDER_BEGIN;                      \
