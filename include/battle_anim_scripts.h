@@ -813,7 +813,7 @@ extern const u8 gBattleAnimMove_ChillyReception[];
 extern const u8 gBattleAnimMove_TidyUp[];
 extern const u8 gBattleAnimMove_Snowscape[];
 extern const u8 gBattleAnimMove_Pounce[];
-extern const u8 gBattleAnimMove_Trailblaze[];
+extern const u8 gBattleAnimMove_LeafRush[];
 extern const u8 gBattleAnimMove_ChillingWater[];
 extern const u8 gBattleAnimMove_HyperDrill[];
 extern const u8 gBattleAnimMove_TwinBeam[];

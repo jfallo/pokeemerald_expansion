@@ -17285,17 +17285,17 @@ gBattleAnimMove_TemperFlare::
 	waitforvisualfinish
 	end
 
-gBattleAnimMove_Trailblaze::
+gBattleAnimMove_LeafRush::
 	loadspritegfx ANIM_TAG_LEAF
 	loadspritegfx ANIM_TAG_IMPACT
 	loadspritegfx ANIM_TAG_FLOWER
 	monbg ANIM_TARGET
 	loopsewithpan SE_M_FLAME_WHEEL, SOUND_PAN_ATTACKER, 0x20, 0x6
 	createvisualtask AnimTask_TranslateMonEllipticalRespectSide, 2, ANIM_ATTACKER, 12, 6, 4, 3
-	call TrailblazeVortex
-	call TrailblazeVortex
-	call TrailblazeVortex
-	call TrailblazeVortex
+	call LeafRushVortex
+	call LeafRushVortex
+	call LeafRushVortex
+	call LeafRushVortex
 	waitforvisualfinish
 	createsprite gSlideMonToOffsetSpriteTemplate, ANIM_ATTACKER, 2, ANIM_ATTACKER, 24, 0, 0, 5
 	delay 3
@@ -17316,7 +17316,7 @@ gBattleAnimMove_Trailblaze::
 	waitforvisualfinish
 	clearmonbg ANIM_TARGET
 	end
-TrailblazeVortex:
+LeafRushVortex:
 	createsprite gLeafTornadoVortexTemplate, ANIM_ATTACKER, 2, 0x0, 0x1c, 0x210, 0x1e, 0xd, 0x32, ANIM_ATTACKER
 	delay 2
 	createsprite gLeafTornadoVortexTemplate, ANIM_ATTACKER, 2, 0x0, 0x20, 0x1e0, 0x14, 0x10, 0xffd2, ANIM_ATTACKER

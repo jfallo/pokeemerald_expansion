@@ -491,7 +491,7 @@ static inline bool32 IsMoveSheerForceBoosted(u32 move)
         case MOVE_THUNDER_FANG:
         case MOVE_THUNDERBOLT:
         case MOVE_THUNDER_PUNCH:
-        case MOVE_TRAILBLAZE:
+        case MOVE_LEAF_RUSH:
         case MOVE_TWISTER:
         case MOVE_UPPER_HAND:
         case MOVE_WATER_PULSE:
