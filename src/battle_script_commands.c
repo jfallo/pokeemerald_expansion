@@ -1213,12 +1213,14 @@ static void Cmd_attackcanceler(void)
 
     if (GetMoveNonVolatileStatus(ctx.currentMove) == MOVE_EFFECT_PARALYSIS)
     {
+        enum Type moveTypes[2];
+        GetBattleMoveTypes(ctx.currentMove, moveTypes);
         if (CanAbilityAbsorbMove(
                 ctx.battlerAtk,
                 ctx.battlerDef,
                 ctx.abilities[ctx.battlerDef],
                 ctx.currentMove,
-                GetBattleMoveType(ctx.currentMove),
+                moveTypes,
                 RUN_SCRIPT))
             return;
     }
@@ -1368,7 +1370,7 @@ static void Cmd_attackcanceler(void)
     }
 }
 
-static void JumpIfMoveFailed(u32 adder, u32 move, u32 moveType, const u8 *failInstr)
+static void JumpIfMoveFailed(u32 adder, u32 move, enum Type moveTypes[2], const u8 *failInstr)
 {
     if (gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NO_EFFECT)
     {
@@ -1383,7 +1385,7 @@ static void JumpIfMoveFailed(u32 adder, u32 move, u32 moveType, const u8 *failIn
                                  gBattlerTarget,
                                  GetBattlerAbility(gBattlerTarget),
                                  move,
-                                 moveType,
+                                 moveTypes,
                                  RUN_SCRIPT))
             return;
     }
@@ -1411,7 +1413,11 @@ static bool32 JumpIfMoveAffectedByProtect(u32 move, u32 battler, u32 shouldJump,
     {
         gBattleStruct->moveResultFlags[battler] |= MOVE_RESULT_MISSED;
         if (shouldJump)
-            JumpIfMoveFailed(7, move, GetBattleMoveType(move), failInstr);
+        {
+            enum Type moveTypes[2];
+            GetBattleMoveTypes(move, moveTypes);
+            JumpIfMoveFailed(7, move, moveTypes, failInstr);
+        }
     }
     return affected;
 }
@@ -1454,12 +1460,16 @@ static void AccuracyCheck(bool32 recalcDragonDarts, const u8 *nextInstr, const u
             if (gProtectStructs[gBattlerTarget].protected == PROTECT_MAX_GUARD)
                 gBattlescriptCurrInstr = nextInstr;
             else
+            {
+                enum Type gMoveTypes[2];
+                GetBattleMoveTypes(gCurrentMove, gMoveTypes);
                 CanAbilityAbsorbMove(gBattlerAttacker,
                                      gBattlerTarget,
                                      GetBattlerAbility(gBattlerTarget),
                                      gCurrentMove,
-                                     GetBattleMoveType(gCurrentMove),
+                                     gMoveTypes,
                                      RUN_SCRIPT);
+            }
         }
         return;
     }
@@ -1481,8 +1491,9 @@ static void AccuracyCheck(bool32 recalcDragonDarts, const u8 *nextInstr, const u
         u32 battlerDef,
             numTargets = 0,
             numMisses = 0,
-            moveType = GetBattleMoveType(move),
             moveTarget = GetBattlerMoveTargetType(gBattlerAttacker, move);
+        enum Type moveTypes[2];
+        GetBattleMoveTypes(move, moveTypes);
         bool32 calcSpreadMove = IsSpreadMove(moveTarget) && !IsBattleMoveStatus(move);
 
         for (battlerDef = 0; battlerDef < gBattlersCount; battlerDef++)
@@ -1539,7 +1550,8 @@ static void AccuracyCheck(bool32 recalcDragonDarts, const u8 *nextInstr, const u
                     ctx.battlerDef = battlerDef;
                     ctx.move = move;
                     ctx.chosenMove = gChosenMove;
-                    ctx.moveType = moveType;
+                    ctx.moveTypes[0] = moveTypes[0];
+                    ctx.moveTypes[1] = moveTypes[1];
                     ctx.updateFlags = TRUE;
                     ctx.abilityAtk = abilityAtk;
                     ctx.abilityDef = abilityDef;
@@ -1560,7 +1572,7 @@ static void AccuracyCheck(bool32 recalcDragonDarts, const u8 *nextInstr, const u
         if (calcSpreadMove)
             gBattleStruct->calculatedSpreadMoveAccuracy = TRUE;
 
-        JumpIfMoveFailed(7, move, moveType, failInstr);
+        JumpIfMoveFailed(7, move, moveTypes, failInstr);
     }
 }
 
@@ -1840,7 +1852,7 @@ static void Cmd_damagecalc(void)
     ctx.battlerAtk = gBattlerAttacker;
     ctx.move = gCurrentMove;
     ctx.chosenMove = gChosenMove;
-    ctx.moveType = GetBattleMoveType(gCurrentMove);
+    GetBattleMoveTypes(gCurrentMove, ctx.moveTypes);
     ctx.randomFactor = TRUE;
     ctx.updateFlags = TRUE;
 
@@ -1878,7 +1890,7 @@ static void Cmd_typecalc(void)
         ctx.battlerDef = gBattlerTarget;
         ctx.move = gCurrentMove;
         ctx.chosenMove = gChosenMove;
-        ctx.moveType = GetBattleMoveType(gCurrentMove);
+        GetBattleMoveTypes(gCurrentMove, ctx.moveTypes);
         ctx.updateFlags = TRUE;
         ctx.abilityAtk = GetBattlerAbility(gBattlerAttacker);
         ctx.abilityDef = GetBattlerAbility(gBattlerTarget);
