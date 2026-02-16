@@ -7468,8 +7468,8 @@ BattleScript_RockyHelmetActivatesDmg:
 	call BattleScript_HurtAttacker
 	return
 
-BattleScript_SpikyShieldEffect::
-	jumpifabsent BS_ATTACKER, BattleScript_SpikyShieldRet
+BattleScript_ThornyShieldEffect::
+	jumpifabsent BS_ATTACKER, BattleScript_ThornyShieldRet
 	clearmoveresultflags MOVE_RESULT_NO_EFFECT
 	healthbarupdate BS_ATTACKER, PASSIVE_HP_UPDATE
 	datahpupdate BS_ATTACKER, PASSIVE_HP_UPDATE
@@ -7477,7 +7477,7 @@ BattleScript_SpikyShieldEffect::
 	waitmessage B_WAIT_TIME_LONG
 	tryfaintmon BS_ATTACKER
 	setmoveresultflags MOVE_RESULT_MISSED
-BattleScript_SpikyShieldRet::
+BattleScript_ThornyShieldRet::
 	return
 
 BattleScript_KingsShieldEffect::

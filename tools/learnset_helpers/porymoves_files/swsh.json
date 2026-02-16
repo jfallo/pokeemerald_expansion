@@ -43815,7 +43815,7 @@
     "LevelMoves": [
       {
         "Level": 1,
-        "Move": "MOVE_SPIKY_SHIELD"
+        "Move": "MOVE_THORNY_SHIELD"
       },
       {
         "Level": 1,
@@ -64705,7 +64705,7 @@
       },
       {
         "Level": 60,
-        "Move": "MOVE_SPIKY_SHIELD"
+        "Move": "MOVE_THORNY_SHIELD"
       }
     ],
     "PreEvoMoves": [],

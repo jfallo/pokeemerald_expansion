@@ -6136,15 +6136,15 @@ static void Cmd_moveend(void)
                 enum ProtectMethod method = gProtectStructs[gBattlerTarget].protected;
                 switch (method)
                 {
-                case PROTECT_SPIKY_SHIELD:
+                case PROTECT_THORNY_SHIELD:
                     if (moveEffect != EFFECT_COUNTER
                      && !IsProtectivePadsProtected(gBattlerAttacker, GetBattlerHoldEffect(gBattlerAttacker))
                      && !IsAbilityAndRecord(gBattlerAttacker, GetBattlerAbility(gBattlerAttacker), ABILITY_MAGIC_GUARD))
                     {
                         gProtectStructs[gBattlerAttacker].touchedProtectLike = FALSE;
                         SetPassiveDamageAmount(gBattlerAttacker, GetNonDynamaxMaxHP(gBattlerAttacker) / 8);
-                        PREPARE_MOVE_BUFFER(gBattleTextBuff1, MOVE_SPIKY_SHIELD);
-                        BattleScriptCall(BattleScript_SpikyShieldEffect);
+                        PREPARE_MOVE_BUFFER(gBattleTextBuff1, MOVE_THORNY_SHIELD);
+                        BattleScriptCall(BattleScript_ThornyShieldEffect);
                         effect = 1;
                     }
                     break;

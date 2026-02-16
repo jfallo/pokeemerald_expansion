@@ -237,7 +237,7 @@ gSongTable::
 	song se_m_morning_sun, MUSIC_PLAYER_SE1, 1
 	song se_m_flatter, MUSIC_PLAYER_SE1, 1
 	song se_m_sand_tomb, MUSIC_PLAYER_SE1, 1
-	song se_m_grasswhistle, MUSIC_PLAYER_SE1, 1
+	song se_m_leafwhistle, MUSIC_PLAYER_SE1, 1
 	song se_m_spit_up, MUSIC_PLAYER_SE1, 1
 	song se_m_dive, MUSIC_PLAYER_SE1, 1
 	song se_m_earthquake, MUSIC_PLAYER_SE2, 2

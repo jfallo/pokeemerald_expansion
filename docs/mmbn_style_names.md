@@ -139,7 +139,7 @@ Move | ExtremeSpeed | Extreme Speed
 Move | AncientPower | Ancient Power
 Move | SmellngSalts | Smelling Salts
 Move | FeatherDance | Feather Dance
-Move | GrassWhistle | Grass Whistle
+Move | LeafWhistle  | Leaf Whistle
 Move | PhantomForce | Phantom Force
 Move | TrickOrTreat | Trick-or-Treat
 Move | ParabolcChrg | Parabolic Charge

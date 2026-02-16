@@ -37497,11 +37497,11 @@
     "LevelMoves": [
       {
         "Level": 0,
-        "Move": "MOVE_SPIKY_SHIELD"
+        "Move": "MOVE_THORNY_SHIELD"
       },
       {
         "Level": 1,
-        "Move": "MOVE_SPIKY_SHIELD"
+        "Move": "MOVE_THORNY_SHIELD"
       },
       {
         "Level": 1,

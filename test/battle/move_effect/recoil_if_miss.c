@@ -54,34 +54,34 @@ SINGLE_BATTLE_TEST("Recoil if miss: Jump Kick has no recoil if no target")
     }
 }
 
-SINGLE_BATTLE_TEST("Recoil if miss: Jump Kick's recoil happens after Spiky Shield damage and Pokemon can faint from either of these")
+SINGLE_BATTLE_TEST("Recoil if miss: Jump Kick's recoil happens after Thorny Shield damage and Pokemon can faint from either of these")
 {
     s16 hp, maxHp = 256;
-    bool32 faintOnSpiky = FALSE, faintOnJumpKick = FALSE;
+    bool32 faintOnThorny = FALSE, faintOnJumpKick = FALSE;
 
     PARAMETRIZE { hp = maxHp; }
     PARAMETRIZE { hp = maxHp / 2; faintOnJumpKick = TRUE; } // Faints after Jump Kick's recoil
-    PARAMETRIZE { hp = maxHp / 8; faintOnSpiky = TRUE; } // Faints after Spiky Shield's recoil
+    PARAMETRIZE { hp = maxHp / 8; faintOnThorny = TRUE; } // Faints after Thorny Shield's recoil
 
     GIVEN {
-        ASSUME(GetMoveEffect(MOVE_SPIKY_SHIELD) == EFFECT_PROTECT);
+        ASSUME(GetMoveEffect(MOVE_THORNY_SHIELD) == EFFECT_PROTECT);
         PLAYER(SPECIES_WOBBUFFET) { HP(hp); MaxHP(maxHp); }
         PLAYER(SPECIES_WYNAUT);
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
-        if (!faintOnJumpKick && !faintOnSpiky) {
-            TURN { MOVE(opponent, MOVE_SPIKY_SHIELD); MOVE(player, MOVE_JUMP_KICK, hit: FALSE); }
+        if (!faintOnJumpKick && !faintOnThorny) {
+            TURN { MOVE(opponent, MOVE_THORNY_SHIELD); MOVE(player, MOVE_JUMP_KICK, hit: FALSE); }
         } else {
-            TURN { MOVE(opponent, MOVE_SPIKY_SHIELD); MOVE(player, MOVE_JUMP_KICK, hit: FALSE); SEND_OUT(player, 1); }
+            TURN { MOVE(opponent, MOVE_THORNY_SHIELD); MOVE(player, MOVE_JUMP_KICK, hit: FALSE); SEND_OUT(player, 1); }
         }
         TURN {}
     } SCENE {
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_SPIKY_SHIELD, opponent);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_THORNY_SHIELD, opponent);
         MESSAGE("Wobbuffet used Jump Kick!");
         MESSAGE("The opposing Wobbuffet protected itself!");
         HP_BAR(player, damage: maxHp / 8);
-        MESSAGE("Wobbuffet was hurt by the opposing Wobbuffet's Spiky Shield!");
-        if (faintOnSpiky){
+        MESSAGE("Wobbuffet was hurt by the opposing Wobbuffet's Thorny Shield!");
+        if (faintOnThorny){
             MESSAGE("Wobbuffet fainted!");
             SEND_IN_MESSAGE("Wynaut");
             NONE_OF {
@@ -99,19 +99,19 @@ SINGLE_BATTLE_TEST("Recoil if miss: Jump Kick's recoil happens after Spiky Shiel
     }
 }
 
-SINGLE_BATTLE_TEST("Recoil if miss: Jump Kick recoil happens after Spiky Shield damage")
+SINGLE_BATTLE_TEST("Recoil if miss: Jump Kick recoil happens after Thorny Shield damage")
 {
     GIVEN {
         ASSUME(!MoveIgnoresProtect(MOVE_JUMP_KICK));
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
-        TURN { MOVE(opponent, MOVE_SPIKY_SHIELD); MOVE(player, MOVE_JUMP_KICK); }
+        TURN { MOVE(opponent, MOVE_THORNY_SHIELD); MOVE(player, MOVE_JUMP_KICK); }
     } SCENE {
         s32 maxHP = GetMonData(&PLAYER_PARTY[0], MON_DATA_MAX_HP);
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_SPIKY_SHIELD, opponent);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_THORNY_SHIELD, opponent);
         NOT ANIMATION(ANIM_TYPE_MOVE, MOVE_JUMP_KICK, player);
-        MESSAGE("Wobbuffet was hurt by the opposing Wobbuffet's Spiky Shield!");
+        MESSAGE("Wobbuffet was hurt by the opposing Wobbuffet's Thorny Shield!");
         MESSAGE("Wobbuffet kept going and crashed!");
         HP_BAR(player, damage: maxHP / 2);
     }

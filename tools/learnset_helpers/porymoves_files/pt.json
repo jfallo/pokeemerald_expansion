@@ -93,7 +93,7 @@
       "MOVE_AMNESIA",
       "MOVE_CHARM",
       "MOVE_CURSE",
-      "MOVE_GRASS_WHISTLE",
+      "MOVE_LEAF_WHISTLE",
       "MOVE_INGRAIN",
       "MOVE_LEAF_STORM",
       "MOVE_LIGHT_SCREEN",
@@ -216,7 +216,7 @@
       "MOVE_AMNESIA",
       "MOVE_CHARM",
       "MOVE_CURSE",
-      "MOVE_GRASS_WHISTLE",
+      "MOVE_LEAF_WHISTLE",
       "MOVE_INGRAIN",
       "MOVE_LEAF_STORM",
       "MOVE_LIGHT_SCREEN",
@@ -352,7 +352,7 @@
       "MOVE_AMNESIA",
       "MOVE_CHARM",
       "MOVE_CURSE",
-      "MOVE_GRASS_WHISTLE",
+      "MOVE_LEAF_WHISTLE",
       "MOVE_INGRAIN",
       "MOVE_LEAF_STORM",
       "MOVE_LIGHT_SCREEN",
@@ -17686,7 +17686,7 @@
       "MOVE_AROMATHERAPY",
       "MOVE_COUNTER",
       "MOVE_FLAIL",
-      "MOVE_GRASS_WHISTLE",
+      "MOVE_LEAF_WHISTLE",
       "MOVE_INGRAIN",
       "MOVE_LEAF_STORM",
       "MOVE_LEECH_SEED",
@@ -17809,7 +17809,7 @@
       "MOVE_AROMATHERAPY",
       "MOVE_COUNTER",
       "MOVE_FLAIL",
-      "MOVE_GRASS_WHISTLE",
+      "MOVE_LEAF_WHISTLE",
       "MOVE_INGRAIN",
       "MOVE_LEAF_STORM",
       "MOVE_LEECH_SEED",
@@ -17940,7 +17940,7 @@
       "MOVE_AROMATHERAPY",
       "MOVE_COUNTER",
       "MOVE_FLAIL",
-      "MOVE_GRASS_WHISTLE",
+      "MOVE_LEAF_WHISTLE",
       "MOVE_INGRAIN",
       "MOVE_LEAF_STORM",
       "MOVE_LEECH_SEED",
@@ -22296,7 +22296,7 @@
       },
       {
         "Level": 13,
-        "Move": "MOVE_GRASS_WHISTLE"
+        "Move": "MOVE_LEAF_WHISTLE"
       },
       {
         "Level": 17,
@@ -22365,7 +22365,7 @@
     "EggMoves": [
       "MOVE_CURSE",
       "MOVE_ENCORE",
-      "MOVE_GRASS_WHISTLE",
+      "MOVE_LEAF_WHISTLE",
       "MOVE_HELPING_HAND",
       "MOVE_INGRAIN",
       "MOVE_LEECH_SEED",
@@ -22405,7 +22405,7 @@
       },
       {
         "Level": 13,
-        "Move": "MOVE_GRASS_WHISTLE"
+        "Move": "MOVE_LEAF_WHISTLE"
       },
       {
         "Level": 17,
@@ -22481,7 +22481,7 @@
     "EggMoves": [
       "MOVE_CURSE",
       "MOVE_ENCORE",
-      "MOVE_GRASS_WHISTLE",
+      "MOVE_LEAF_WHISTLE",
       "MOVE_HELPING_HAND",
       "MOVE_INGRAIN",
       "MOVE_LEECH_SEED",
@@ -29585,7 +29585,7 @@
       "MOVE_DOUBLE_KICK",
       "MOVE_DRAGON_BREATH",
       "MOVE_ENDEAVOR",
-      "MOVE_GRASS_WHISTLE",
+      "MOVE_LEAF_WHISTLE",
       "MOVE_LEAF_STORM",
       "MOVE_LEECH_SEED",
       "MOVE_MAGICAL_LEAF",
@@ -29719,7 +29719,7 @@
       "MOVE_DOUBLE_KICK",
       "MOVE_DRAGON_BREATH",
       "MOVE_ENDEAVOR",
-      "MOVE_GRASS_WHISTLE",
+      "MOVE_LEAF_WHISTLE",
       "MOVE_LEAF_STORM",
       "MOVE_LEECH_SEED",
       "MOVE_MAGICAL_LEAF",
@@ -29866,7 +29866,7 @@
       "MOVE_DOUBLE_KICK",
       "MOVE_DRAGON_BREATH",
       "MOVE_ENDEAVOR",
-      "MOVE_GRASS_WHISTLE",
+      "MOVE_LEAF_WHISTLE",
       "MOVE_LEAF_STORM",
       "MOVE_LEECH_SEED",
       "MOVE_MAGICAL_LEAF",
@@ -36835,7 +36835,7 @@
       },
       {
         "Level": 22,
-        "Move": "MOVE_GRASS_WHISTLE"
+        "Move": "MOVE_LEAF_WHISTLE"
       },
       {
         "Level": 25,
@@ -38855,7 +38855,7 @@
       "MOVE_ACID",
       "MOVE_COUNTER",
       "MOVE_DYNAMIC_PUNCH",
-      "MOVE_GRASS_WHISTLE",
+      "MOVE_LEAF_WHISTLE",
       "MOVE_LOW_KICK",
       "MOVE_MAGICAL_LEAF",
       "MOVE_SEED_BOMB",
@@ -38997,7 +38997,7 @@
       "MOVE_ACID",
       "MOVE_COUNTER",
       "MOVE_DYNAMIC_PUNCH",
-      "MOVE_GRASS_WHISTLE",
+      "MOVE_LEAF_WHISTLE",
       "MOVE_LOW_KICK",
       "MOVE_MAGICAL_LEAF",
       "MOVE_SEED_BOMB",
@@ -47505,7 +47505,7 @@
       "MOVE_ABSORB",
       "MOVE_AROMATHERAPY",
       "MOVE_GIGA_DRAIN",
-      "MOVE_GRASS_WHISTLE",
+      "MOVE_LEAF_WHISTLE",
       "MOVE_GROWTH",
       "MOVE_INGRAIN",
       "MOVE_LEECH_SEED",
@@ -48832,7 +48832,7 @@
     ],
     "EggMoves": [
       "MOVE_AROMATHERAPY",
-      "MOVE_GRASS_WHISTLE",
+      "MOVE_LEAF_WHISTLE",
       "MOVE_NATURE_POWER",
       "MOVE_RAZOR_LEAF",
       "MOVE_SWEET_SCENT",
@@ -48929,7 +48929,7 @@
     ],
     "EggMoves": [
       "MOVE_AROMATHERAPY",
-      "MOVE_GRASS_WHISTLE",
+      "MOVE_LEAF_WHISTLE",
       "MOVE_NATURE_POWER",
       "MOVE_RAZOR_LEAF",
       "MOVE_SWEET_SCENT",
@@ -53300,7 +53300,7 @@
       },
       {
         "Level": 13,
-        "Move": "MOVE_GRASS_WHISTLE"
+        "Move": "MOVE_LEAF_WHISTLE"
       },
       {
         "Level": 17,
@@ -53417,7 +53417,7 @@
       },
       {
         "Level": 13,
-        "Move": "MOVE_GRASS_WHISTLE"
+        "Move": "MOVE_LEAF_WHISTLE"
       },
       {
         "Level": 17,
@@ -54807,7 +54807,7 @@
       },
       {
         "Level": 57,
-        "Move": "MOVE_GRASS_WHISTLE"
+        "Move": "MOVE_LEAF_WHISTLE"
       },
       {
         "Level": 64,

@@ -377,7 +377,7 @@ TO_DO_BATTLE_TEST("Parental Bond tests");
 /*
 In battle
 
-Since Parental Bond turns moves into two-hit multi-strike moves, each strike has a separate chance to be a critical hit, items and Abilities that trigger upon strike or contact such as Cursed Body and Rocky Helmet occur for each strike, and Spiky Shield and King's Shield only damage and decrease Attack (respectively) once if they protect a Pokémon from a contact move used by a Pokémon with Parental Bond. Additionally, there is only one accuracy check, so either both strikes hit or both strikes miss.
+Since Parental Bond turns moves into two-hit multi-strike moves, each strike has a separate chance to be a critical hit, items and Abilities that trigger upon strike or contact such as Cursed Body and Rocky Helmet occur for each strike, and Thorny Shield and King's Shield only damage and decrease Attack (respectively) once if they protect a Pokémon from a contact move used by a Pokémon with Parental Bond. Additionally, there is only one accuracy check, so either both strikes hit or both strikes miss.
 
 Any attack which has a secondary effect (except Secret Power) has the same secondary effect on both strikes (such as Power-Up Punch); if a secondary effect has a certain chance of occurring, each strike has an independent chance of activating that effect. Even if the Pokémon's Ability is changed to Mummy after the first strike, it will continue to make a second strike regardless. Pay Day scatters coins after the first strike only. Incinerate destroys applicable held items after each strike.
 

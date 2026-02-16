@@ -7,7 +7,7 @@ ASSUMPTIONS
     ASSUME(GetMoveEffect(MOVE_DETECT) == EFFECT_PROTECT);
     ASSUME(GetMoveEffect(MOVE_KINGS_SHIELD) == EFFECT_PROTECT);
     ASSUME(GetMoveEffect(MOVE_SILK_TRAP) == EFFECT_PROTECT);
-    ASSUME(GetMoveEffect(MOVE_SPIKY_SHIELD) == EFFECT_PROTECT);
+    ASSUME(GetMoveEffect(MOVE_THORNY_SHIELD) == EFFECT_PROTECT);
     ASSUME(GetMoveEffect(MOVE_WIDE_GUARD) == EFFECT_PROTECT);
     ASSUME(GetMoveEffect(MOVE_QUICK_GUARD) == EFFECT_PROTECT);
     ASSUME(GetMoveEffect(MOVE_CRAFTY_SHIELD) == EFFECT_PROTECT);
@@ -20,13 +20,13 @@ ASSUMPTIONS
     ASSUME(!(MoveMakesContact(MOVE_WATER_GUN)));
 }
 
-SINGLE_BATTLE_TEST("Protect: Protect, Detect, Spiky Shield, Baneful Bunker and Burning Bulwark protect from all moves")
+SINGLE_BATTLE_TEST("Protect: Protect, Detect, Thorny Shield, Baneful Bunker and Burning Bulwark protect from all moves")
 {
     u32 j;
     static const u16 protectMoves[] = {
         MOVE_PROTECT,
         MOVE_DETECT,
-        MOVE_SPIKY_SHIELD,
+        MOVE_THORNY_SHIELD,
         MOVE_BANEFUL_BUNKER,
         MOVE_BURNING_BULWARK,
     };
@@ -155,7 +155,7 @@ SINGLE_BATTLE_TEST("Protect: King's Shield, Silk Trap and Obstruct don't lower s
     }
 }
 
-SINGLE_BATTLE_TEST("Protect: Spiky Shield does 1/8 dmg of max hp of attackers making contact and may faint them")
+SINGLE_BATTLE_TEST("Protect: Thorny Shield does 1/8 dmg of max hp of attackers making contact and may faint them")
 {
     u16 usedMove = MOVE_NONE;
     u16 hp = 400, maxHp = 400;
@@ -171,13 +171,13 @@ SINGLE_BATTLE_TEST("Protect: Spiky Shield does 1/8 dmg of max hp of attackers ma
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         if (hp == 1) {
-            TURN { MOVE(opponent, MOVE_SPIKY_SHIELD); MOVE(player, usedMove); SEND_OUT(player, 1); }
+            TURN { MOVE(opponent, MOVE_THORNY_SHIELD); MOVE(player, usedMove); SEND_OUT(player, 1); }
         } else {
-            TURN { MOVE(opponent, MOVE_SPIKY_SHIELD); MOVE(player, usedMove); }
+            TURN { MOVE(opponent, MOVE_THORNY_SHIELD); MOVE(player, usedMove); }
         }
         TURN {}
     } SCENE {
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_SPIKY_SHIELD, opponent);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_THORNY_SHIELD, opponent);
         MESSAGE("The opposing Wobbuffet protected itself!");
         NOT ANIMATION(ANIM_TYPE_MOVE, usedMove, player);
         MESSAGE("The opposing Wobbuffet protected itself!");
@@ -192,7 +192,7 @@ SINGLE_BATTLE_TEST("Protect: Spiky Shield does 1/8 dmg of max hp of attackers ma
     }
 }
 
-SINGLE_BATTLE_TEST("Protect: Spiky Shield doesn't hurt attacker when charging a two turn move")
+SINGLE_BATTLE_TEST("Protect: Thorny Shield doesn't hurt attacker when charging a two turn move")
 {
     u32 move;
     PARAMETRIZE { move = MOVE_BOUNCE; }
@@ -206,9 +206,9 @@ SINGLE_BATTLE_TEST("Protect: Spiky Shield doesn't hurt attacker when charging a 
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
-        TURN { MOVE(player, MOVE_SPIKY_SHIELD); MOVE(opponent, move); }
+        TURN { MOVE(player, MOVE_THORNY_SHIELD); MOVE(opponent, move); }
     } SCENE {
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_SPIKY_SHIELD, player);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_THORNY_SHIELD, player);
 
         ANIMATION(ANIM_TYPE_MOVE, move, opponent);
         NONE_OF {
@@ -377,7 +377,7 @@ SINGLE_BATTLE_TEST("Protect: Burning Bulwark doesn't burn attacker when charging
 SINGLE_BATTLE_TEST("Protect: Recoil damage is not applied if target was protected")
 {
     u32 j, k;
-    static const u16 protectMoves[] = {MOVE_PROTECT, MOVE_DETECT, MOVE_KINGS_SHIELD, MOVE_BANEFUL_BUNKER, MOVE_SILK_TRAP, MOVE_OBSTRUCT, MOVE_SPIKY_SHIELD};
+    static const u16 protectMoves[] = {MOVE_PROTECT, MOVE_DETECT, MOVE_KINGS_SHIELD, MOVE_BANEFUL_BUNKER, MOVE_SILK_TRAP, MOVE_OBSTRUCT, MOVE_THORNY_SHIELD};
     static const u16 recoilMoves[] = {MOVE_VOLT_TACKLE, MOVE_HEAD_SMASH, MOVE_TAKE_DOWN, MOVE_DOUBLE_EDGE};
     u16 protectMove = MOVE_NONE;
     u16 recoilMove = MOVE_NONE;
@@ -427,7 +427,7 @@ SINGLE_BATTLE_TEST("Protect: Multi-hit moves don't hit a protected target and fa
     PARAMETRIZE { move = MOVE_BANEFUL_BUNKER; }
     PARAMETRIZE { move = MOVE_SILK_TRAP; }
     PARAMETRIZE { move = MOVE_OBSTRUCT; }
-    PARAMETRIZE { move = MOVE_SPIKY_SHIELD; }
+    PARAMETRIZE { move = MOVE_THORNY_SHIELD; }
 
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_ARM_THRUST) == EFFECT_MULTI_HIT);
@@ -445,7 +445,7 @@ SINGLE_BATTLE_TEST("Protect: Multi-hit moves don't hit a protected target and fa
         // Each effect happens only once.
         if (move == MOVE_KINGS_SHIELD || move == MOVE_SILK_TRAP || move == MOVE_OBSTRUCT) {
             ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, player);
-        } else if (move == MOVE_SPIKY_SHIELD) {
+        } else if (move == MOVE_THORNY_SHIELD) {
             HP_BAR(player);
         } else if (move == MOVE_BANEFUL_BUNKER) {
             STATUS_ICON(player, STATUS1_POISON);
@@ -453,7 +453,7 @@ SINGLE_BATTLE_TEST("Protect: Multi-hit moves don't hit a protected target and fa
         NONE_OF {
             if (move == MOVE_KINGS_SHIELD || move == MOVE_SILK_TRAP || move == MOVE_OBSTRUCT) {
                 ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, player);
-            } else if (move == MOVE_SPIKY_SHIELD) {
+            } else if (move == MOVE_THORNY_SHIELD) {
                 HP_BAR(player);
             }
             MESSAGE("The Pokémon was hit 2 time(s)!");

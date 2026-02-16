@@ -3872,7 +3872,7 @@ static void DebugAction_DestroyFollowerNPC(u8 taskId)
     X(SE_M_MORNING_SUN)             \
     X(SE_M_FLATTER)                 \
     X(SE_M_SAND_TOMB)               \
-    X(SE_M_GRASSWHISTLE)            \
+    X(SE_M_LEAFWHISTLE)            \
     X(SE_M_SPIT_UP)                 \
     X(SE_M_DIVE)                    \
     X(SE_M_EARTHQUAKE)              \

@@ -1,28 +1,28 @@
 	.include "MPlayDef.s"
 
-	.equ	se_m_grasswhistle_grp, voicegroup_rs_sfx_2
-	.equ	se_m_grasswhistle_pri, 4
-	.equ	se_m_grasswhistle_rev, reverb_set+50
-	.equ	se_m_grasswhistle_mvl, 127
-	.equ	se_m_grasswhistle_key, 0
-	.equ	se_m_grasswhistle_tbs, 1
-	.equ	se_m_grasswhistle_exg, 0
-	.equ	se_m_grasswhistle_cmp, 1
+	.equ	se_m_leafwhistle_grp, voicegroup_rs_sfx_2
+	.equ	se_m_leafwhistle_pri, 4
+	.equ	se_m_leafwhistle_rev, reverb_set+50
+	.equ	se_m_leafwhistle_mvl, 127
+	.equ	se_m_leafwhistle_key, 0
+	.equ	se_m_leafwhistle_tbs, 1
+	.equ	se_m_leafwhistle_exg, 0
+	.equ	se_m_leafwhistle_cmp, 1
 
 	.section .rodata
-	.global	se_m_grasswhistle
+	.global	se_m_leafwhistle
 	.align	2
 
 @********************** Track  1 **********************@
 
-se_m_grasswhistle_1:
-	.byte	KEYSH , se_m_grasswhistle_key+0
-	.byte	TEMPO , 100*se_m_grasswhistle_tbs/2
+se_m_leafwhistle_1:
+	.byte	KEYSH , se_m_leafwhistle_key+0
+	.byte	TEMPO , 100*se_m_leafwhistle_tbs/2
 	.byte		VOICE , 64
 	.byte		BENDR , 2
 	.byte		LFOS  , 40
 	.byte		PAN   , c_v+0
-	.byte		VOL   , 70*se_m_grasswhistle_mvl/mxv
+	.byte		VOL   , 70*se_m_leafwhistle_mvl/mxv
 	.byte		BEND  , c_v-16
 	.byte		N21   , Gn5 , v112
 	.byte	W03
@@ -52,24 +52,24 @@ se_m_grasswhistle_1:
 	.byte	W12
 	.byte	W12
 	.byte	W06
-	.byte		VOL   , 61*se_m_grasswhistle_mvl/mxv
+	.byte		VOL   , 61*se_m_leafwhistle_mvl/mxv
 	.byte	W06
-	.byte		        51*se_m_grasswhistle_mvl/mxv
+	.byte		        51*se_m_leafwhistle_mvl/mxv
 	.byte	W06
-	.byte		        36*se_m_grasswhistle_mvl/mxv
+	.byte		        36*se_m_leafwhistle_mvl/mxv
 	.byte	W06
-	.byte		        18*se_m_grasswhistle_mvl/mxv
+	.byte		        18*se_m_leafwhistle_mvl/mxv
 	.byte	W12
 	.byte	FINE
 
 @********************** Track  2 **********************@
 
-se_m_grasswhistle_2:
-	.byte	KEYSH , se_m_grasswhistle_key+0
+se_m_leafwhistle_2:
+	.byte	KEYSH , se_m_leafwhistle_key+0
 	.byte		VOICE , 64
 	.byte		BENDR , 2
 	.byte		LFOS  , 40
-	.byte		VOL   , 70*se_m_grasswhistle_mvl/mxv
+	.byte		VOL   , 70*se_m_leafwhistle_mvl/mxv
 	.byte	W12
 	.byte		PAN   , c_v+12
 	.byte		BEND  , c_v-16
@@ -103,28 +103,28 @@ se_m_grasswhistle_2:
 	.byte		MOD   , 10
 	.byte	W12
 	.byte	W06
-	.byte		VOL   , 61*se_m_grasswhistle_mvl/mxv
+	.byte		VOL   , 61*se_m_leafwhistle_mvl/mxv
 	.byte	W06
-	.byte		        51*se_m_grasswhistle_mvl/mxv
+	.byte		        51*se_m_leafwhistle_mvl/mxv
 	.byte	W06
-	.byte		        36*se_m_grasswhistle_mvl/mxv
+	.byte		        36*se_m_leafwhistle_mvl/mxv
 	.byte	W06
-	.byte		        18*se_m_grasswhistle_mvl/mxv
+	.byte		        18*se_m_leafwhistle_mvl/mxv
 	.byte	W12
 	.byte	FINE
 
 @******************************************************@
 	.align	2
 
-se_m_grasswhistle:
+se_m_leafwhistle:
 	.byte	2	@ NumTrks
 	.byte	0	@ NumBlks
-	.byte	se_m_grasswhistle_pri	@ Priority
-	.byte	se_m_grasswhistle_rev	@ Reverb.
+	.byte	se_m_leafwhistle_pri	@ Priority
+	.byte	se_m_leafwhistle_rev	@ Reverb.
 
-	.word	se_m_grasswhistle_grp
+	.word	se_m_leafwhistle_grp
 
-	.word	se_m_grasswhistle_1
-	.word	se_m_grasswhistle_2
+	.word	se_m_leafwhistle_1
+	.word	se_m_leafwhistle_2
 
 	.end

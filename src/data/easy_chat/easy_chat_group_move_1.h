@@ -48,7 +48,7 @@ const u16 gEasyChatGroup_Move1[] = {
     MOVE_FOCUS_PUNCH,
     MOVE_FOLLOW_ME,
     MOVE_GIGA_DRAIN,
-    MOVE_GRASS_WHISTLE,
+    MOVE_LEAF_WHISTLE,
     MOVE_GROWTH,
     MOVE_GRUDGE,
     MOVE_GUST,

@@ -93,7 +93,7 @@ SINGLE_BATTLE_TEST("Clear Amulet protects from Protect's secondary effects")
 {
     u32 move;
 
-    PARAMETRIZE { move = MOVE_SPIKY_SHIELD; }
+    PARAMETRIZE { move = MOVE_THORNY_SHIELD; }
     PARAMETRIZE { move = MOVE_BANEFUL_BUNKER; }
     PARAMETRIZE { move = MOVE_BURNING_BULWARK; }
     PARAMETRIZE { move = MOVE_KINGS_SHIELD; }

@@ -8666,7 +8666,7 @@ gBattleAnimMove_MysticalFire::
 	call UnsetPsychicBg
 	end
 
-gBattleAnimMove_SpikyShield::
+gBattleAnimMove_ThornyShield::
 	loadspritegfx ANIM_TAG_PROTECT
 	loadspritegfx ANIM_TAG_GREEN_SPIKE
 	monbg ANIM_ATK_PARTNER
@@ -24896,13 +24896,13 @@ gBattleAnimMove_OdorSleuth::
 	playsewithpan SE_M_LEER, SOUND_PAN_ATTACKER
 	end
 
-gBattleAnimMove_GrassWhistle::
+gBattleAnimMove_LeafWhistle::
 	loadspritegfx ANIM_TAG_MUSIC_NOTES
 	simple_palette_blend selector=F_PAL_BG, delay=2, initial_blend_y=0, target_blend_y=4, color=RGB(18, 31, 12)
 	waitforvisualfinish
 	createvisualtask AnimTask_MusicNotesRainbowBlend, 2
 	waitforvisualfinish
-	panse SE_M_GRASSWHISTLE, SOUND_PAN_ATTACKER, SOUND_PAN_TARGET, +2, 0
+	panse SE_M_LEAFWHISTLE, SOUND_PAN_ATTACKER, SOUND_PAN_TARGET, +2, 0
 	createsprite gWavyMusicNotesSpriteTemplate, ANIM_TARGET, 2, 7, 1, 0
 	delay 5
 	createsprite gWavyMusicNotesSpriteTemplate, ANIM_TARGET, 2, 6, 1, 0
@@ -36144,7 +36144,7 @@ gBattleAnimMove_OceanicOperetta::
 	createsprite gWhirlpoolSpriteTemplate, ANIM_TARGET, 2, 0x0, 0x20, 0xf0, 0x28, 0xb, 0xffd2, ANIM_ATTACKER
 	delay 2
 	createsprite gOceanOperaBlueRingSpriteTemplate, ANIM_ATTACKER, 40, 0x0, 0x0, 0x0, 0x0
-	playsewithpan SE_M_GRASSWHISTLE, SOUND_PAN_ATTACKER
+	playsewithpan SE_M_LEAFWHISTLE, SOUND_PAN_ATTACKER
 	createsprite gOceanOperaBlueRingSpriteTemplate, ANIM_ATTACKER, 40, 0x0, 0x0, 0x0, 0x0
 	createsprite gWhirlpoolSpriteTemplate, ANIM_TARGET, 2, 0x0, 0x21, 0x1a0, 0x28, 0x4, 0x2a, ANIM_ATTACKER
 	delay 2

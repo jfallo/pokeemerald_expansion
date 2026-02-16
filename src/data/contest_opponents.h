@@ -932,7 +932,7 @@ const struct ContestPokemon gContestOpponents[] =
         {
             MOVE_PETAL_DANCE,
             MOVE_MAGICAL_LEAF,
-            MOVE_GRASS_WHISTLE,
+            MOVE_LEAF_WHISTLE,
             MOVE_INGRAIN
         },
         .cool = 50,

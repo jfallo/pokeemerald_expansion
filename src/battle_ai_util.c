@@ -1993,7 +1993,7 @@ bool32 IsAllyProtectingFromMove(u32 battlerAtk, u32 attackerMove, u32 allyMove)
     case PROTECT_WIDE_GUARD:
         return IsSpreadMove(GetBattlerMoveTargetType(battlerAtk, attackerMove));
     case PROTECT_NORMAL:
-    case PROTECT_SPIKY_SHIELD:
+    case PROTECT_THORNY_SHIELD:
     case PROTECT_MAX_GUARD:
     case PROTECT_BANEFUL_BUNKER:
     case PROTECT_BURNING_BULWARK:

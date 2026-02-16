@@ -11,7 +11,7 @@ SINGLE_BATTLE_TEST("Counter is not affected by Protect effects")
 {
     u32 move;
 
-    PARAMETRIZE { move = MOVE_SPIKY_SHIELD; }
+    PARAMETRIZE { move = MOVE_THORNY_SHIELD; }
     PARAMETRIZE { move = MOVE_BANEFUL_BUNKER; }
     PARAMETRIZE { move = MOVE_BURNING_BULWARK; }
     PARAMETRIZE { move = MOVE_KINGS_SHIELD; }
@@ -27,7 +27,7 @@ SINGLE_BATTLE_TEST("Counter is not affected by Protect effects")
         ANIMATION(ANIM_TYPE_MOVE, move, opponent);
         NONE_OF {
             ANIMATION(ANIM_TYPE_MOVE, MOVE_COUNTER, player);
-            if (move == MOVE_SPIKY_SHIELD) {
+            if (move == MOVE_THORNY_SHIELD) {
                 HP_BAR(player);
             } else if (move == MOVE_BANEFUL_BUNKER) {
                 STATUS_ICON(player, STATUS1_POISON);

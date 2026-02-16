@@ -10,7 +10,7 @@ static const u16 sBulbasaurEggMoveLearnset[] = {
     MOVE_CHARM,
     MOVE_PETAL_DANCE,
     MOVE_MAGICAL_LEAF,
-    MOVE_GRASS_WHISTLE,
+    MOVE_LEAF_WHISTLE,
     MOVE_CURSE,
     MOVE_INGRAIN,
     MOVE_NATURE_POWER,
@@ -1477,7 +1477,7 @@ static const u16 sChikoritaEggMoveLearnset[] = {
     MOVE_FLAIL,
     MOVE_NATURE_POWER,
     MOVE_INGRAIN,
-    MOVE_GRASS_WHISTLE,
+    MOVE_LEAF_WHISTLE,
     MOVE_LEAF_STORM,
     MOVE_AROMATHERAPY,
     MOVE_WRING_OUT,
@@ -1785,7 +1785,7 @@ static const u16 sAipomEggMoveLearnset[] = {
 
 #if P_FAMILY_SUNKERN
 static const u16 sSunkernEggMoveLearnset[] = {
-    MOVE_GRASS_WHISTLE,
+    MOVE_LEAF_WHISTLE,
     MOVE_ENCORE,
     MOVE_LEECH_SEED,
     MOVE_NATURE_POWER,
@@ -2351,7 +2351,7 @@ static const u16 sTreeckoEggMoveLearnset[] = {
     MOVE_CRUSH_CLAW,
     MOVE_WORRY_SEED,
     MOVE_DOUBLE_KICK,
-    MOVE_GRASS_WHISTLE,
+    MOVE_LEAF_WHISTLE,
     MOVE_SYNTHESIS,
     MOVE_MAGICAL_LEAF,
     MOVE_LEAF_STORM,
@@ -2839,7 +2839,7 @@ static const u16 sBudewEggMoveLearnset[] = {
     MOVE_SEED_BOMB,
     MOVE_GIGA_DRAIN,
     MOVE_NATURAL_GIFT,
-    MOVE_GRASS_WHISTLE,
+    MOVE_LEAF_WHISTLE,
     MOVE_UNAVAILABLE,
 };
 #endif //P_GEN_4_CROSS_EVOS
@@ -2855,7 +2855,7 @@ static const u16 sRoseliaEggMoveLearnset[] = {
     MOVE_SEED_BOMB,
     MOVE_GIGA_DRAIN,
     MOVE_NATURAL_GIFT,
-    MOVE_GRASS_WHISTLE,
+    MOVE_LEAF_WHISTLE,
     MOVE_BULLET_SEED,
     MOVE_POWER_WHIP,
     MOVE_UNAVAILABLE,
@@ -3005,7 +3005,7 @@ static const u16 sTrapinchEggMoveLearnset[] = {
 
 #if P_FAMILY_CACNEA
 static const u16 sCacneaEggMoveLearnset[] = {
-    MOVE_GRASS_WHISTLE,
+    MOVE_LEAF_WHISTLE,
     MOVE_ACID,
     MOVE_TEETER_DANCE,
     MOVE_DYNAMIC_PUNCH,
@@ -3611,7 +3611,7 @@ static const u16 sCherubiEggMoveLearnset[] = {
     MOVE_SWEET_SCENT,
     MOVE_TICKLE,
     MOVE_NATURE_POWER,
-    MOVE_GRASS_WHISTLE,
+    MOVE_LEAF_WHISTLE,
     MOVE_AROMATHERAPY,
     MOVE_WEATHER_BALL,
     MOVE_HEAL_PULSE,
@@ -3864,7 +3864,7 @@ static const u16 sCarnivineEggMoveLearnset[] = {
     MOVE_WORRY_SEED,
     MOVE_GIGA_DRAIN,
     MOVE_RAGE_POWDER,
-    MOVE_GRASS_WHISTLE,
+    MOVE_LEAF_WHISTLE,
     MOVE_ACID_SPRAY,
     MOVE_UNAVAILABLE,
 };
@@ -4012,12 +4012,12 @@ static const u16 sPansageEggMoveLearnset[] = {
     MOVE_NASTY_PLOT,
     MOVE_ROLE_PLAY,
     MOVE_ASTONISH,
-    MOVE_GRASS_WHISTLE,
+    MOVE_LEAF_WHISTLE,
     MOVE_MAGICAL_LEAF,
     MOVE_BULLET_SEED,
     MOVE_LEAF_STORM,
     MOVE_DISARMING_VOICE,
-    MOVE_SPIKY_SHIELD,
+    MOVE_THORNY_SHIELD,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_PANSAGE
@@ -4237,7 +4237,7 @@ static const u16 sCottoneeEggMoveLearnset[] = {
     MOVE_ENCORE,
     MOVE_TICKLE,
     MOVE_FAKE_TEARS,
-    MOVE_GRASS_WHISTLE,
+    MOVE_LEAF_WHISTLE,
     MOVE_MEMENTO,
     MOVE_BEAT_UP,
     MOVE_SWITCHEROO,
@@ -4255,7 +4255,7 @@ static const u16 sPetililEggMoveLearnset[] = {
     MOVE_ENDURE,
     MOVE_INGRAIN,
     MOVE_WORRY_SEED,
-    MOVE_GRASS_WHISTLE,
+    MOVE_LEAF_WHISTLE,
     MOVE_SWEET_SCENT,
     MOVE_BIDE,
     MOVE_HEALING_WISH,
@@ -4344,7 +4344,7 @@ static const u16 sMaractusEggMoveLearnset[] = {
     MOVE_SEED_BOMB,
     MOVE_WOOD_HAMMER,
     MOVE_SPIKES,
-    MOVE_GRASS_WHISTLE,
+    MOVE_LEAF_WHISTLE,
     MOVE_GRASSY_TERRAIN,
     MOVE_UNAVAILABLE,
 };
@@ -4566,7 +4566,7 @@ static const u16 sDeerlingEggMoveLearnset[] = {
     MOVE_AGILITY,
     MOVE_SLEEP_TALK,
     MOVE_BATON_PASS,
-    MOVE_GRASS_WHISTLE,
+    MOVE_LEAF_WHISTLE,
     MOVE_HEADBUTT,
     MOVE_UNAVAILABLE,
 };
@@ -5446,7 +5446,7 @@ static const u16 sStuffulEggMoveLearnset[] = {
 
 #if P_FAMILY_BOUNSWEET
 static const u16 sBounsweetEggMoveLearnset[] = {
-    MOVE_GRASS_WHISTLE,
+    MOVE_LEAF_WHISTLE,
     MOVE_SYNTHESIS,
     MOVE_PLAY_ROUGH,
     MOVE_FEINT,

@@ -97,7 +97,7 @@
       "MOVE_CURSE",
       "MOVE_ENDURE",
       "MOVE_GIGA_DRAIN",
-      "MOVE_GRASS_WHISTLE",
+      "MOVE_LEAF_WHISTLE",
       "MOVE_GRASSY_TERRAIN",
       "MOVE_INGRAIN",
       "MOVE_LEAF_STORM",
@@ -227,7 +227,7 @@
       "MOVE_CURSE",
       "MOVE_ENDURE",
       "MOVE_GIGA_DRAIN",
-      "MOVE_GRASS_WHISTLE",
+      "MOVE_LEAF_WHISTLE",
       "MOVE_GRASSY_TERRAIN",
       "MOVE_INGRAIN",
       "MOVE_LEAF_STORM",
@@ -374,7 +374,7 @@
       "MOVE_CURSE",
       "MOVE_ENDURE",
       "MOVE_GIGA_DRAIN",
-      "MOVE_GRASS_WHISTLE",
+      "MOVE_LEAF_WHISTLE",
       "MOVE_GRASSY_TERRAIN",
       "MOVE_INGRAIN",
       "MOVE_LEAF_STORM",
@@ -19739,7 +19739,7 @@
       "MOVE_BODY_SLAM",
       "MOVE_COUNTER",
       "MOVE_FLAIL",
-      "MOVE_GRASS_WHISTLE",
+      "MOVE_LEAF_WHISTLE",
       "MOVE_GRASSY_TERRAIN",
       "MOVE_HEAL_PULSE",
       "MOVE_INGRAIN",
@@ -19866,7 +19866,7 @@
       "MOVE_BODY_SLAM",
       "MOVE_COUNTER",
       "MOVE_FLAIL",
-      "MOVE_GRASS_WHISTLE",
+      "MOVE_LEAF_WHISTLE",
       "MOVE_GRASSY_TERRAIN",
       "MOVE_HEAL_PULSE",
       "MOVE_INGRAIN",
@@ -20010,7 +20010,7 @@
       "MOVE_BODY_SLAM",
       "MOVE_COUNTER",
       "MOVE_FLAIL",
-      "MOVE_GRASS_WHISTLE",
+      "MOVE_LEAF_WHISTLE",
       "MOVE_GRASSY_TERRAIN",
       "MOVE_HEAL_PULSE",
       "MOVE_INGRAIN",
@@ -24914,7 +24914,7 @@
       },
       {
         "Level": 7,
-        "Move": "MOVE_GRASS_WHISTLE"
+        "Move": "MOVE_LEAF_WHISTLE"
       },
       {
         "Level": 10,
@@ -24999,7 +24999,7 @@
       "MOVE_CURSE",
       "MOVE_ENCORE",
       "MOVE_ENDURE",
-      "MOVE_GRASS_WHISTLE",
+      "MOVE_LEAF_WHISTLE",
       "MOVE_GRASSY_TERRAIN",
       "MOVE_HELPING_HAND",
       "MOVE_INGRAIN",
@@ -25046,7 +25046,7 @@
       },
       {
         "Level": 7,
-        "Move": "MOVE_GRASS_WHISTLE"
+        "Move": "MOVE_LEAF_WHISTLE"
       },
       {
         "Level": 10,
@@ -25141,7 +25141,7 @@
       "MOVE_CURSE",
       "MOVE_ENCORE",
       "MOVE_ENDURE",
-      "MOVE_GRASS_WHISTLE",
+      "MOVE_LEAF_WHISTLE",
       "MOVE_GRASSY_TERRAIN",
       "MOVE_HELPING_HAND",
       "MOVE_INGRAIN",
@@ -33013,7 +33013,7 @@
       "MOVE_DOUBLE_KICK",
       "MOVE_DRAGON_BREATH",
       "MOVE_ENDEAVOR",
-      "MOVE_GRASS_WHISTLE",
+      "MOVE_LEAF_WHISTLE",
       "MOVE_GRASSY_TERRAIN",
       "MOVE_LEAF_STORM",
       "MOVE_LEECH_SEED",
@@ -33165,7 +33165,7 @@
       "MOVE_DOUBLE_KICK",
       "MOVE_DRAGON_BREATH",
       "MOVE_ENDEAVOR",
-      "MOVE_GRASS_WHISTLE",
+      "MOVE_LEAF_WHISTLE",
       "MOVE_GRASSY_TERRAIN",
       "MOVE_LEAF_STORM",
       "MOVE_LEECH_SEED",
@@ -33337,7 +33337,7 @@
       "MOVE_DOUBLE_KICK",
       "MOVE_DRAGON_BREATH",
       "MOVE_ENDEAVOR",
-      "MOVE_GRASS_WHISTLE",
+      "MOVE_LEAF_WHISTLE",
       "MOVE_GRASSY_TERRAIN",
       "MOVE_LEAF_STORM",
       "MOVE_LEECH_SEED",
@@ -41194,7 +41194,7 @@
       },
       {
         "Level": 22,
-        "Move": "MOVE_GRASS_WHISTLE"
+        "Move": "MOVE_LEAF_WHISTLE"
       },
       {
         "Level": 25,
@@ -41274,7 +41274,7 @@
       "MOVE_BULLET_SEED",
       "MOVE_COTTON_SPORE",
       "MOVE_GIGA_DRAIN",
-      "MOVE_GRASS_WHISTLE",
+      "MOVE_LEAF_WHISTLE",
       "MOVE_LEAF_STORM",
       "MOVE_MIND_READER",
       "MOVE_NATURAL_GIFT",
@@ -43487,7 +43487,7 @@
       "MOVE_DISABLE",
       "MOVE_DYNAMIC_PUNCH",
       "MOVE_FELL_STINGER",
-      "MOVE_GRASS_WHISTLE",
+      "MOVE_LEAF_WHISTLE",
       "MOVE_LOW_KICK",
       "MOVE_MAGICAL_LEAF",
       "MOVE_NASTY_PLOT",
@@ -43577,7 +43577,7 @@
       },
       {
         "Level": 32,
-        "Move": "MOVE_SPIKY_SHIELD"
+        "Move": "MOVE_THORNY_SHIELD"
       },
       {
         "Level": 35,
@@ -43652,7 +43652,7 @@
       "MOVE_DISABLE",
       "MOVE_DYNAMIC_PUNCH",
       "MOVE_FELL_STINGER",
-      "MOVE_GRASS_WHISTLE",
+      "MOVE_LEAF_WHISTLE",
       "MOVE_LOW_KICK",
       "MOVE_MAGICAL_LEAF",
       "MOVE_NASTY_PLOT",
@@ -53046,7 +53046,7 @@
       "MOVE_COTTON_SPORE",
       "MOVE_EXTRASENSORY",
       "MOVE_GIGA_DRAIN",
-      "MOVE_GRASS_WHISTLE",
+      "MOVE_LEAF_WHISTLE",
       "MOVE_LEAF_STORM",
       "MOVE_MIND_READER",
       "MOVE_NATURAL_GIFT",
@@ -53102,7 +53102,7 @@
       "MOVE_ABSORB",
       "MOVE_AROMATHERAPY",
       "MOVE_GIGA_DRAIN",
-      "MOVE_GRASS_WHISTLE",
+      "MOVE_LEAF_WHISTLE",
       "MOVE_GROWTH",
       "MOVE_INGRAIN",
       "MOVE_LEECH_SEED",
@@ -53155,7 +53155,7 @@
       "MOVE_COTTON_SPORE",
       "MOVE_EXTRASENSORY",
       "MOVE_GIGA_DRAIN",
-      "MOVE_GRASS_WHISTLE",
+      "MOVE_LEAF_WHISTLE",
       "MOVE_LEAF_STORM",
       "MOVE_MIND_READER",
       "MOVE_NATURAL_GIFT",
@@ -54573,7 +54573,7 @@
       "MOVE_AROMATHERAPY",
       "MOVE_DEFENSE_CURL",
       "MOVE_FLOWER_SHIELD",
-      "MOVE_GRASS_WHISTLE",
+      "MOVE_LEAF_WHISTLE",
       "MOVE_HEAL_PULSE",
       "MOVE_HEALING_WISH",
       "MOVE_NATURAL_GIFT",
@@ -54686,7 +54686,7 @@
       "MOVE_AROMATHERAPY",
       "MOVE_DEFENSE_CURL",
       "MOVE_FLOWER_SHIELD",
-      "MOVE_GRASS_WHISTLE",
+      "MOVE_LEAF_WHISTLE",
       "MOVE_HEAL_PULSE",
       "MOVE_HEALING_WISH",
       "MOVE_NATURAL_GIFT",
@@ -59176,7 +59176,7 @@
     ],
     "EggMoves": [
       "MOVE_GIGA_DRAIN",
-      "MOVE_GRASS_WHISTLE",
+      "MOVE_LEAF_WHISTLE",
       "MOVE_LEECH_SEED",
       "MOVE_MAGICAL_LEAF",
       "MOVE_RAGE_POWDER",
@@ -59583,7 +59583,7 @@
       },
       {
         "Level": 13,
-        "Move": "MOVE_GRASS_WHISTLE"
+        "Move": "MOVE_LEAF_WHISTLE"
       },
       {
         "Level": 17,
@@ -59703,7 +59703,7 @@
       },
       {
         "Level": 13,
-        "Move": "MOVE_GRASS_WHISTLE"
+        "Move": "MOVE_LEAF_WHISTLE"
       },
       {
         "Level": 17,
@@ -61250,7 +61250,7 @@
       },
       {
         "Level": 17,
-        "Move": "MOVE_GRASS_WHISTLE"
+        "Move": "MOVE_LEAF_WHISTLE"
       },
       {
         "Level": 20,
@@ -66980,7 +66980,7 @@
       "MOVE_BULLET_SEED",
       "MOVE_COVET",
       "MOVE_DISARMING_VOICE",
-      "MOVE_GRASS_WHISTLE",
+      "MOVE_LEAF_WHISTLE",
       "MOVE_LEAF_STORM",
       "MOVE_LOW_KICK",
       "MOVE_MAGICAL_LEAF",
@@ -67088,7 +67088,7 @@
       "MOVE_BULLET_SEED",
       "MOVE_COVET",
       "MOVE_DISARMING_VOICE",
-      "MOVE_GRASS_WHISTLE",
+      "MOVE_LEAF_WHISTLE",
       "MOVE_LEAF_STORM",
       "MOVE_LOW_KICK",
       "MOVE_MAGICAL_LEAF",
@@ -70639,7 +70639,7 @@
     "LevelMoves": [
       {
         "Level": 1,
-        "Move": "MOVE_GRASS_WHISTLE"
+        "Move": "MOVE_LEAF_WHISTLE"
       },
       {
         "Level": 1,
@@ -70794,7 +70794,7 @@
       "MOVE_BUG_BUZZ",
       "MOVE_ENDURE",
       "MOVE_FLAIL",
-      "MOVE_GRASS_WHISTLE",
+      "MOVE_LEAF_WHISTLE",
       "MOVE_PROTECT",
       "MOVE_STICKY_WEB"
     ],
@@ -71341,7 +71341,7 @@
       "MOVE_CAPTIVATE",
       "MOVE_ENCORE",
       "MOVE_FAKE_TEARS",
-      "MOVE_GRASS_WHISTLE",
+      "MOVE_LEAF_WHISTLE",
       "MOVE_MEMENTO",
       "MOVE_NATURAL_GIFT",
       "MOVE_SWITCHEROO",
@@ -71451,7 +71451,7 @@
       "MOVE_CAPTIVATE",
       "MOVE_ENCORE",
       "MOVE_FAKE_TEARS",
-      "MOVE_GRASS_WHISTLE",
+      "MOVE_LEAF_WHISTLE",
       "MOVE_MEMENTO",
       "MOVE_NATURAL_GIFT",
       "MOVE_SWITCHEROO",
@@ -71568,7 +71568,7 @@
       "MOVE_BIDE",
       "MOVE_CHARM",
       "MOVE_ENDURE",
-      "MOVE_GRASS_WHISTLE",
+      "MOVE_LEAF_WHISTLE",
       "MOVE_HEALING_WISH",
       "MOVE_INGRAIN",
       "MOVE_NATURAL_GIFT",
@@ -71670,7 +71670,7 @@
       "MOVE_BIDE",
       "MOVE_CHARM",
       "MOVE_ENDURE",
-      "MOVE_GRASS_WHISTLE",
+      "MOVE_LEAF_WHISTLE",
       "MOVE_HEALING_WISH",
       "MOVE_INGRAIN",
       "MOVE_NATURAL_GIFT",
@@ -72571,7 +72571,7 @@
     "LevelMoves": [
       {
         "Level": 1,
-        "Move": "MOVE_SPIKY_SHIELD"
+        "Move": "MOVE_THORNY_SHIELD"
       },
       {
         "Level": 1,
@@ -72687,7 +72687,7 @@
     "EggMoves": [
       "MOVE_BOUNCE",
       "MOVE_BULLET_SEED",
-      "MOVE_GRASS_WHISTLE",
+      "MOVE_LEAF_WHISTLE",
       "MOVE_GRASSY_TERRAIN",
       "MOVE_LEECH_SEED",
       "MOVE_SEED_BOMB",
@@ -76673,7 +76673,7 @@
       "MOVE_AGILITY",
       "MOVE_BATON_PASS",
       "MOVE_FAKE_TEARS",
-      "MOVE_GRASS_WHISTLE",
+      "MOVE_LEAF_WHISTLE",
       "MOVE_NATURAL_GIFT",
       "MOVE_ODOR_SLEUTH",
       "MOVE_SLEEP_TALK",
@@ -76810,7 +76810,7 @@
       "MOVE_AGILITY",
       "MOVE_BATON_PASS",
       "MOVE_FAKE_TEARS",
-      "MOVE_GRASS_WHISTLE",
+      "MOVE_LEAF_WHISTLE",
       "MOVE_NATURAL_GIFT",
       "MOVE_ODOR_SLEUTH",
       "MOVE_SLEEP_TALK",
@@ -85527,7 +85527,7 @@
       },
       {
         "Level": 36,
-        "Move": "MOVE_SPIKY_SHIELD"
+        "Move": "MOVE_THORNY_SHIELD"
       },
       {
         "Level": 41,
@@ -85559,7 +85559,7 @@
       },
       {
         "Level": 75,
-        "Move": "MOVE_SPIKY_SHIELD"
+        "Move": "MOVE_THORNY_SHIELD"
       }
     ],
     "PreEvoMoves": [],

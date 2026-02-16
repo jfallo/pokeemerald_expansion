@@ -42,18 +42,18 @@ SINGLE_BATTLE_TEST("Psych Up displays the correct battlers when used by the oppo
     }
 }
 
-SINGLE_BATTLE_TEST("Psych Up ignores Spiky Shield and Baneful Bunker but fails against Crafty Shield")
+SINGLE_BATTLE_TEST("Psych Up ignores Thorny Shield and Baneful Bunker but fails against Crafty Shield")
 {
     u32 protectMove = MOVE_NONE;
     bool32 shouldFail = FALSE;
 
-    PARAMETRIZE { protectMove = MOVE_SPIKY_SHIELD; shouldFail = FALSE; }
+    PARAMETRIZE { protectMove = MOVE_THORNY_SHIELD; shouldFail = FALSE; }
     PARAMETRIZE { protectMove = MOVE_BANEFUL_BUNKER; shouldFail = FALSE; }
     PARAMETRIZE { protectMove = MOVE_CRAFTY_SHIELD; shouldFail = TRUE; }
 
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_SWORDS_DANCE) == EFFECT_ATTACK_UP_2);
-        ASSUME(GetMoveEffect(MOVE_SPIKY_SHIELD) == EFFECT_PROTECT);
+        ASSUME(GetMoveEffect(MOVE_THORNY_SHIELD) == EFFECT_PROTECT);
         ASSUME(GetMoveEffect(MOVE_BANEFUL_BUNKER) == EFFECT_PROTECT);
         ASSUME(GetMoveEffect(MOVE_CRAFTY_SHIELD) == EFFECT_PROTECT);
         PLAYER(SPECIES_TORNADUS) { Speed(66); }

@@ -71,7 +71,7 @@
     "EggMoves": [
       "MOVE_CHARM",
       "MOVE_CURSE",
-      "MOVE_GRASS_WHISTLE",
+      "MOVE_LEAF_WHISTLE",
       "MOVE_LIGHT_SCREEN",
       "MOVE_MAGICAL_LEAF",
       "MOVE_PETAL_DANCE",
@@ -173,7 +173,7 @@
     "EggMoves": [
       "MOVE_CHARM",
       "MOVE_CURSE",
-      "MOVE_GRASS_WHISTLE",
+      "MOVE_LEAF_WHISTLE",
       "MOVE_LIGHT_SCREEN",
       "MOVE_MAGICAL_LEAF",
       "MOVE_PETAL_DANCE",
@@ -282,7 +282,7 @@
     "EggMoves": [
       "MOVE_CHARM",
       "MOVE_CURSE",
-      "MOVE_GRASS_WHISTLE",
+      "MOVE_LEAF_WHISTLE",
       "MOVE_LIGHT_SCREEN",
       "MOVE_MAGICAL_LEAF",
       "MOVE_PETAL_DANCE",
@@ -14175,7 +14175,7 @@
       "MOVE_ANCIENT_POWER",
       "MOVE_COUNTER",
       "MOVE_FLAIL",
-      "MOVE_GRASS_WHISTLE",
+      "MOVE_LEAF_WHISTLE",
       "MOVE_INGRAIN",
       "MOVE_LEECH_SEED",
       "MOVE_NATURE_POWER",
@@ -14275,7 +14275,7 @@
       "MOVE_ANCIENT_POWER",
       "MOVE_COUNTER",
       "MOVE_FLAIL",
-      "MOVE_GRASS_WHISTLE",
+      "MOVE_LEAF_WHISTLE",
       "MOVE_INGRAIN",
       "MOVE_LEECH_SEED",
       "MOVE_NATURE_POWER",
@@ -14378,7 +14378,7 @@
       "MOVE_ANCIENT_POWER",
       "MOVE_COUNTER",
       "MOVE_FLAIL",
-      "MOVE_GRASS_WHISTLE",
+      "MOVE_LEAF_WHISTLE",
       "MOVE_INGRAIN",
       "MOVE_LEECH_SEED",
       "MOVE_NATURE_POWER",
@@ -17819,7 +17819,7 @@
     "EggMoves": [
       "MOVE_CURSE",
       "MOVE_ENCORE",
-      "MOVE_GRASS_WHISTLE",
+      "MOVE_LEAF_WHISTLE",
       "MOVE_HELPING_HAND",
       "MOVE_LEECH_SEED",
       "MOVE_NATURE_POWER"
@@ -17905,7 +17905,7 @@
     "EggMoves": [
       "MOVE_CURSE",
       "MOVE_ENCORE",
-      "MOVE_GRASS_WHISTLE",
+      "MOVE_LEAF_WHISTLE",
       "MOVE_HELPING_HAND",
       "MOVE_LEECH_SEED",
       "MOVE_NATURE_POWER"
@@ -29578,7 +29578,7 @@
       },
       {
         "Level": 29,
-        "Move": "MOVE_GRASS_WHISTLE"
+        "Move": "MOVE_LEAF_WHISTLE"
       },
       {
         "Level": 33,
@@ -31255,7 +31255,7 @@
       "MOVE_ACID",
       "MOVE_COUNTER",
       "MOVE_DYNAMIC_PUNCH",
-      "MOVE_GRASS_WHISTLE",
+      "MOVE_LEAF_WHISTLE",
       "MOVE_TEETER_DANCE"
     ],
     "TutorMoves": [
@@ -31367,7 +31367,7 @@
       "MOVE_ACID",
       "MOVE_COUNTER",
       "MOVE_DYNAMIC_PUNCH",
-      "MOVE_GRASS_WHISTLE",
+      "MOVE_LEAF_WHISTLE",
       "MOVE_TEETER_DANCE"
     ],
     "TutorMoves": [

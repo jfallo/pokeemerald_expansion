@@ -182,7 +182,7 @@ static void (*const sScriptCmdTable[])(void) =
 
 static const u16 sMovesWithQuietBGM[] =
 {
-    MOVE_SING, MOVE_PERISH_SONG, MOVE_GRASS_WHISTLE
+    MOVE_SING, MOVE_PERISH_SONG, MOVE_LEAF_WHISTLE
 };
 
 static const u8* const sBattleAnims_StatusConditions[NUM_B_ANIMS_STATUS] =
