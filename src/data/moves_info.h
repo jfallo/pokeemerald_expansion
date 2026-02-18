@@ -527,8 +527,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Gust"),
         .description = COMPOUND_STRING(
-            "Strikes the foe with a gust\n"
-            "of wind whipped up by wings."),
+            "Damage doubles if the foe\n"
+            "is in the air."),
         .effect = EFFECT_HIT,
         .power = 40,
         .type = TYPE_FLYING,
@@ -3858,8 +3858,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Sky Attack"),
         .description = COMPOUND_STRING(
-            "2-turn attack. High critical\n"
-            "hit ratio, and may flinch."),
+            "A 2-turn attack. High critical\n"
+            "hit ratio. May cause flinching."),
         .effect = EFFECT_TWO_TURNS_ATTACK,
         .power = 140,
         .type = TYPE_FLYING,
@@ -8861,8 +8861,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Aerial Ace"),
         .description = COMPOUND_STRING(
-            "An extremely speedy and\n"
-            "unavoidable attack."),
+            "A cutting strike from\n"
+            "the air. Always hits."),
         .effect = EFFECT_HIT,
         .power = 70,
         .type = TYPE_FLYING,
@@ -9721,12 +9721,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Tailwind"),
         .description = COMPOUND_STRING(
-            "Whips up a breeze, doubling\n"
-        #if B_TAILWIND_TURNS >= GEN_5
-            "ally Speed for 4 turns."),
-        #else
-            "ally Speed for 3 turns."),
-        #endif
+            "Whips up a wind current.\n"
+            "Doubles the team's Speed."),
         .effect = EFFECT_TAILWIND,
         .power = 0,
         .type = TYPE_FLYING,
@@ -13156,7 +13152,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Sky Drop"),
         .description = COMPOUND_STRING(
-            "Takes the foe into the sky\n"
+            "Takes the foe into the air\n"
             "then drops it the next turn."),
         .effect = EFFECT_SKY_DROP,
         .power = 80,
@@ -13277,8 +13273,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Acrobatics"),
         .description = COMPOUND_STRING(
-            "Does double damage if the\n"
-            "user has no item."),
+            "Damage doubles if no item\n"
+            "is weighing the user down."),
         .effect = EFFECT_ACROBATICS,
         .power = 55,
         .type = TYPE_FLYING,
@@ -18920,8 +18916,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Dual Wingbeat"),
         .description = COMPOUND_STRING(
-            "User slams the target with\n"
-            "wings twice in a row."),
+            "Slams the target with spread\n"
+            "wings. Hits twice in a row."),
         .effect = EFFECT_HIT,
         .power = 40,
         .type = TYPE_FLYING,
