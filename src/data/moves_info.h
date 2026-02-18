@@ -1504,8 +1504,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Flamethrower"),
         .description = COMPOUND_STRING(
-            "A powerful fire attack.\n"
-            "May inflict a burn."),
+            "A powerful fire attack that\n"
+            "may inflict a burn."),
         .effect = EFFECT_HIT,
         .power = 95,
         .type = TYPE_FIRE,
@@ -10712,7 +10712,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .effect = EFFECT_HIT,
         .power = 100,
         .type = TYPE_DRAGON,
-        .accuracy = 75,
+        .accuracy = 85,
         .pp = 10,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
@@ -12521,8 +12521,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Flame Burst"),
         .description = COMPOUND_STRING(
-            "A bursting flame attack\n"
-            "that damages all foes."),
+            "A bursting flame attack that\n"
+            "slightly damages nearby foes."),
         .effect = EFFECT_HIT,
         .power = 70,
         .type = TYPE_FIRE,
