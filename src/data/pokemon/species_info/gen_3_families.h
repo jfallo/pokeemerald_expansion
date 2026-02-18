@@ -6059,7 +6059,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .teachableLearnset = sRoseliaTeachableLearnset,
         .eggMoveLearnset = sRoseliaEggMoveLearnset,
     #if P_GEN_4_CROSS_EVOS
-        .evolutions = EVOLUTION({EVO_LEVEL, 0, SPECIES_ROSERADE, CONDITIONS({IF_MIN_BEAUTY, 170})}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 0, SPECIES_ROSERADE, CONDITIONS({IF_MIN_BEAUTY, 170},{IF_NOT_TIME, TIME_NIGHT})}),
     #endif
     },
 
