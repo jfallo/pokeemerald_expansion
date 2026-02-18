@@ -1972,8 +1972,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Absorb"),
         .description = COMPOUND_STRING(
-            "An attack that absorbs\n"
-            "half the damage inflicted."),
+            "An attack that absorbs half\n"
+            "the damage inflicted."),
         .effect = EFFECT_ABSORB,
         .power = 25,
         .type = TYPE_GRASS,
@@ -1995,7 +1995,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     [MOVE_MEGA_DRAIN] =
     {
         .name = COMPOUND_STRING("Mega Drain"),
-        .description = sMegaDrainDescription,
+        .description = COMPOUND_STRING(
+            "An attack that drains half\n"
+            "the damage inflicted."),
         .effect = EFFECT_ABSORB,
         .power = 50,
         .type = TYPE_GRASS,
@@ -2020,7 +2022,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Leech Seed"),
         .description = COMPOUND_STRING(
             "Plants a seed on the foe to\n"
-            "steal HP on every turn."),
+            "steal their HP each turn."),
         .effect = EFFECT_LEECH_SEED,
         .power = 0,
         .type = TYPE_GRASS,
@@ -2043,8 +2045,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Growth"),
         .description = COMPOUND_STRING(
-            "Forces the body to grow,\n"
-            "raising Attack and Sp. Atk."),
+            "Focuses energy to grow.\n"
+            "Raises Attack and Sp. Atk."),
         .effect = EFFECT_GROWTH,
         .power = 0,
         .type = TYPE_GRASS,
@@ -2069,7 +2071,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Razor Leaf"),
         .description = COMPOUND_STRING(
-            "Cuts enemies with leaves.\n"
+            "Cuts with sharp leaves.\n"
             "High critical-hit ratio."),
         .effect = EFFECT_HIT,
         .power = 55,
@@ -2196,8 +2198,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Petal Dance"),
         .description = COMPOUND_STRING(
-            "A rampage of 2 to 3 turns\n"
-            "that confuses the user."),
+            "A reckless dance of 2 to 3\n"
+            "turns that confuses the user."),
         .power = 120,
         .effect = EFFECT_HIT,
         .type = TYPE_GRASS,
@@ -5453,7 +5455,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Giga Drain"),
         .description = COMPOUND_STRING(
-            "An attack that steals half\n"
+            "An attack that drains half\n"
             "the damage inflicted."),
         .effect = EFFECT_ABSORB,
         .power = 75,
@@ -6187,7 +6189,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Sweet Scent"),
         .description = COMPOUND_STRING(
             "Allures the foes to harshly\n"
-            "reduce evasiveness."),
+            "lower their evasiveness."),
         .effect = EFFECT_EVASION_DOWN_2,
         .power = 0,
         .type = TYPE_GRASS,
@@ -7170,8 +7172,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Nature Power"),
         .description = COMPOUND_STRING(
-            "The type of attack varies\n"
-            "depending on the location."),
+            "Attacks with the power of\n"
+            "the current environment."),
         .effect = EFFECT_NATURE_POWER,
         .power = 1,
         .type = TYPE_GRASS,
@@ -7390,8 +7392,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Ingrain"),
         .description = COMPOUND_STRING(
-            "Lays roots that restore HP.\n"
-            "The user can't switch out."),
+            "Plants roots to gradually\n"
+            "restore HP. Prevents switching."),
         .effect = EFFECT_INGRAIN,
         .power = 0,
         .type = TYPE_GRASS,
@@ -8347,7 +8349,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Aromatherapy"),
         .description = COMPOUND_STRING(
-            "Heals all status problems\n"
+            "Cures all status problems\n"
             "with a soothing scent."),
         .effect = EFFECT_HEAL_BELL,
         .power = 0,
@@ -10594,7 +10596,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .pp = 15,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
-        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .category = DAMAGE_CATEGORY_SPECIAL,
         .ballisticMove = TRUE,
         .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
         .contestCategory = C_UPDATED_MOVE_CATEGORIES >= GEN_6 ? CONTEST_CATEGORY_TOUGH : CONTEST_CATEGORY_SMART,
@@ -10824,7 +10826,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Energy Ball"),
         .description = COMPOUND_STRING(
-            "Draws power from nature to\n"
+            "Draws energy from nature to\n"
             "attack. May lower Sp. Def."),
         .effect = EFFECT_HIT,
         .power = 90,
@@ -14739,8 +14741,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Petal Blizzard"),
         .description = COMPOUND_STRING(
-            "Stirs up a violent storm\n"
-            "of petals to attack all."),
+            "A violent storm of petals.\n"
+            "Hits all adjacent Pokémon."),
         .effect = EFFECT_HIT,
         .power = 80,
         .type = TYPE_GRASS,
@@ -15331,8 +15333,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Thorny Shield"),
         .description = COMPOUND_STRING(
-            "Blocks attack, and damages\n"
-            "the foe if struck."),
+            "A spiky shield that blocks\n"
+            "and damages if struck."),
         .effect = EFFECT_PROTECT,
         .power = 0,
         .type = TYPE_GRASS,
@@ -16229,8 +16231,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Solar Blade"),
         .description = COMPOUND_STRING(
-            "Charges first turn, then cuts\n"
-            "with a blade of light energy."),
+            "Absorbs light, then cuts with\n"
+            "a blade of solar energy."),
         .effect = EFFECT_SOLAR_BEAM,
         .power = 120,
         .type = TYPE_GRASS,
@@ -16255,7 +16257,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Leafage"),
         .description = COMPOUND_STRING(
-            "Attacks with a flurry of\n"
+            "Strikes with a flurry of\n"
             "small leaves."),
         .effect = EFFECT_HIT,
         .power = 40,
@@ -18217,8 +18219,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Branch Poke"),
         .description = COMPOUND_STRING(
-            "The user pokes the target\n"
-            "with a pointed branch."),
+            "Jabs the target with a\n"
+            "pointed branch."),
         .effect = EFFECT_HIT,
         .power = 40,
         .type = TYPE_GRASS,
@@ -19422,10 +19424,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Chloroblast"),
         .description = COMPOUND_STRING(
-            "A user-hurting blast of\n"
-            "amassed chlorophyll."),
+            "A powerful blast of chlorophyll\n"
+            "with extreme recoil damage."),
         .effect = EFFECT_CHLOROBLAST,
-        .power = 120,
+        .power = 150,
         .type = TYPE_GRASS,
         .accuracy = 95,
         .pp = 5,
@@ -20466,8 +20468,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Leaf Rush"),
         .description = COMPOUND_STRING(
-            "The user attacks suddenly,\n"
-            "raising its Speed."),
+            "A dash attack from the\n"
+            "trees. Raises Speed."),
         .effect = EFFECT_HIT,
         .power = 50,
         .type = TYPE_GRASS,
