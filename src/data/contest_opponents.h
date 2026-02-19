@@ -553,7 +553,7 @@ const struct ContestPokemon gContestOpponents[] =
         .aiPool_Tough = TRUE,
         .moves =
         {
-            MOVE_METAL_CLAW,
+            MOVE_METAL_SLASH,
             MOVE_IRON_DEFENSE,
             MOVE_HEADBUTT,
             MOVE_TAKE_DOWN
@@ -1627,7 +1627,7 @@ const struct ContestPokemon gContestOpponents[] =
         .moves =
         {
             MOVE_METAL_SOUND,
-            MOVE_METAL_CLAW,
+            MOVE_METAL_SLASH,
             MOVE_HARDEN,
             MOVE_TAKE_DOWN
         },

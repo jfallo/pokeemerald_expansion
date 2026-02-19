@@ -2267,7 +2267,7 @@
       "MOVE_COUNTER",
       "MOVE_CRUSH_CLAW",
       "MOVE_FLAIL",
-      "MOVE_METAL_CLAW",
+      "MOVE_METAL_SLASH",
       "MOVE_RAPID_SPIN",
       "MOVE_ROCK_SLIDE",
       "MOVE_SAFEGUARD",
@@ -2372,7 +2372,7 @@
       "MOVE_COUNTER",
       "MOVE_CRUSH_CLAW",
       "MOVE_FLAIL",
-      "MOVE_METAL_CLAW",
+      "MOVE_METAL_SLASH",
       "MOVE_RAPID_SPIN",
       "MOVE_ROCK_SLIDE",
       "MOVE_SAFEGUARD",
@@ -19181,7 +19181,7 @@
     ],
     "EggMoves": [
       "MOVE_COUNTER",
-      "MOVE_METAL_CLAW",
+      "MOVE_METAL_SLASH",
       "MOVE_RAZOR_WIND",
       "MOVE_SAND_TOMB",
       "MOVE_WING_ATTACK"
@@ -19642,7 +19642,7 @@
       },
       {
         "Level": 26,
-        "Move": "MOVE_METAL_CLAW"
+        "Move": "MOVE_METAL_SLASH"
       },
       {
         "Level": 31,
@@ -19921,7 +19921,7 @@
       },
       {
         "Level": 64,
-        "Move": "MOVE_METAL_CLAW"
+        "Move": "MOVE_METAL_SLASH"
       }
     ],
     "PreEvoMoves": [],
@@ -20062,7 +20062,7 @@
       "MOVE_COUNTER",
       "MOVE_CRUNCH",
       "MOVE_FAKE_TEARS",
-      "MOVE_METAL_CLAW",
+      "MOVE_METAL_SLASH",
       "MOVE_SEISMIC_TOSS",
       "MOVE_SLEEP_TALK",
       "MOVE_TAKE_DOWN",
@@ -20179,7 +20179,7 @@
       "MOVE_COUNTER",
       "MOVE_CRUNCH",
       "MOVE_FAKE_TEARS",
-      "MOVE_METAL_CLAW",
+      "MOVE_METAL_SLASH",
       "MOVE_SEISMIC_TOSS",
       "MOVE_SLEEP_TALK",
       "MOVE_TAKE_DOWN",
@@ -26963,7 +26963,7 @@
       },
       {
         "Level": 38,
-        "Move": "MOVE_METAL_CLAW"
+        "Move": "MOVE_METAL_SLASH"
       },
       {
         "Level": 45,
@@ -27075,7 +27075,7 @@
     "PreEvoMoves": [
       "MOVE_DIG",
       "MOVE_FALSE_SWIPE",
-      "MOVE_METAL_CLAW",
+      "MOVE_METAL_SLASH",
       "MOVE_MUD_SLAP"
     ],
     "TMMoves": [
@@ -27167,7 +27167,7 @@
     "PreEvoMoves": [
       "MOVE_DIG",
       "MOVE_FALSE_SWIPE",
-      "MOVE_METAL_CLAW",
+      "MOVE_METAL_SLASH",
       "MOVE_MUD_SLAP"
     ],
     "TMMoves": [
@@ -28400,7 +28400,7 @@
       },
       {
         "Level": 13,
-        "Move": "MOVE_METAL_CLAW"
+        "Move": "MOVE_METAL_SLASH"
       },
       {
         "Level": 17,
@@ -28512,7 +28512,7 @@
       },
       {
         "Level": 13,
-        "Move": "MOVE_METAL_CLAW"
+        "Move": "MOVE_METAL_SLASH"
       },
       {
         "Level": 17,
@@ -28624,7 +28624,7 @@
       },
       {
         "Level": 13,
-        "Move": "MOVE_METAL_CLAW"
+        "Move": "MOVE_METAL_SLASH"
       },
       {
         "Level": 17,
@@ -32784,7 +32784,7 @@
       },
       {
         "Level": 25,
-        "Move": "MOVE_METAL_CLAW"
+        "Move": "MOVE_METAL_SLASH"
       },
       {
         "Level": 31,
@@ -32882,7 +32882,7 @@
       },
       {
         "Level": 25,
-        "Move": "MOVE_METAL_CLAW"
+        "Move": "MOVE_METAL_SLASH"
       },
       {
         "Level": 31,
@@ -35348,7 +35348,7 @@
       },
       {
         "Level": 20,
-        "Move": "MOVE_METAL_CLAW"
+        "Move": "MOVE_METAL_SLASH"
       },
       {
         "Level": 26,
@@ -35444,7 +35444,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_METAL_CLAW"
+        "Move": "MOVE_METAL_SLASH"
       },
       {
         "Level": 1,
@@ -35456,7 +35456,7 @@
       },
       {
         "Level": 20,
-        "Move": "MOVE_METAL_CLAW"
+        "Move": "MOVE_METAL_SLASH"
       },
       {
         "Level": 26,
@@ -35732,7 +35732,7 @@
       },
       {
         "Level": 9,
-        "Move": "MOVE_METAL_CLAW"
+        "Move": "MOVE_METAL_SLASH"
       },
       {
         "Level": 17,

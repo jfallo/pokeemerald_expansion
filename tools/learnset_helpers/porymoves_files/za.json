@@ -5923,7 +5923,7 @@
       },
       {
         "Level": "12",
-        "Move": "MOVE_METAL_CLAW"
+        "Move": "MOVE_METAL_SLASH"
       },
       {
         "Level": "16",
@@ -6892,7 +6892,7 @@
       },
       {
         "Level": "4",
-        "Move": "MOVE_METAL_CLAW"
+        "Move": "MOVE_METAL_SLASH"
       },
       {
         "Level": "8",
@@ -6978,7 +6978,7 @@
       },
       {
         "Level": "4",
-        "Move": "MOVE_METAL_CLAW"
+        "Move": "MOVE_METAL_SLASH"
       },
       {
         "Level": "8",
@@ -7065,7 +7065,7 @@
       },
       {
         "Level": "4",
-        "Move": "MOVE_METAL_CLAW"
+        "Move": "MOVE_METAL_SLASH"
       },
       {
         "Level": "8",
@@ -8787,7 +8787,7 @@
     ],
     "TutorMoves": [
       "MOVE_CONFUSION",
-      "MOVE_METAL_CLAW"
+      "MOVE_METAL_SLASH"
     ],
     "EggMoves": []
   },
@@ -8803,7 +8803,7 @@
       },
       {
         "Level": "1",
-        "Move": "MOVE_METAL_CLAW"
+        "Move": "MOVE_METAL_SLASH"
       },
       {
         "Level": "1",
@@ -9405,7 +9405,7 @@
       },
       {
         "Level": "8",
-        "Move": "MOVE_METAL_CLAW"
+        "Move": "MOVE_METAL_SLASH"
       },
       {
         "Level": "16",
@@ -9477,7 +9477,7 @@
       },
       {
         "Level": "8",
-        "Move": "MOVE_METAL_CLAW"
+        "Move": "MOVE_METAL_SLASH"
       },
       {
         "Level": "16",
@@ -11102,7 +11102,7 @@
       },
       {
         "Level": "7",
-        "Move": "MOVE_METAL_CLAW"
+        "Move": "MOVE_METAL_SLASH"
       },
       {
         "Level": "13",
@@ -11170,7 +11170,7 @@
       },
       {
         "Level": "7",
-        "Move": "MOVE_METAL_CLAW"
+        "Move": "MOVE_METAL_SLASH"
       },
       {
         "Level": "13",
@@ -12018,7 +12018,7 @@
       },
       {
         "Level": "1",
-        "Move": "MOVE_METAL_CLAW"
+        "Move": "MOVE_METAL_SLASH"
       },
       {
         "Level": "9",
@@ -12848,7 +12848,7 @@
       },
       {
         "Level": "1",
-        "Move": "MOVE_METAL_CLAW"
+        "Move": "MOVE_METAL_SLASH"
       },
       {
         "Level": "5",
@@ -17577,7 +17577,7 @@
       },
       {
         "Level": "13",
-        "Move": "MOVE_METAL_CLAW"
+        "Move": "MOVE_METAL_SLASH"
       },
       {
         "Level": "20",

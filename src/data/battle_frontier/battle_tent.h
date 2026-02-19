@@ -923,7 +923,7 @@ const struct TrainerMon gSlateportBattleTentMons[NUM_SLATEPORT_TENT_MONS] =
     },
     [SLATEPORT_TENT_MON_ARON_1] = {
         .species = SPECIES_ARON,
-        .moves = {MOVE_DIG, MOVE_METAL_CLAW, MOVE_IRON_DEFENSE, MOVE_ENDEAVOR},
+        .moves = {MOVE_DIG, MOVE_METAL_SLASH, MOVE_IRON_DEFENSE, MOVE_ENDEAVOR},
         .heldItem = ITEM_NONE,
         .ev = TRAINER_PARTY_EVS(170, 170, 170, 0, 0, 0),
         .nature = NATURE_NAUGHTY
@@ -1871,7 +1871,7 @@ const struct TrainerMon gVerdanturfBattleTentMons[NUM_VERDANTURF_TENT_MONS] =
     },
     [VERDANTURF_TENT_MON_ARON_1] = {
         .species = SPECIES_ARON,
-        .moves = {MOVE_ENDEAVOR, MOVE_METAL_CLAW, MOVE_TACKLE, MOVE_ATTRACT},
+        .moves = {MOVE_ENDEAVOR, MOVE_METAL_SLASH, MOVE_TACKLE, MOVE_ATTRACT},
         .heldItem = ITEM_PECHA_BERRY,
         .ev = TRAINER_PARTY_EVS(0, 252, 252, 0, 0, 0),
         .nature = NATURE_HARDY
@@ -1997,7 +1997,7 @@ const struct TrainerMon gVerdanturfBattleTentMons[NUM_VERDANTURF_TENT_MONS] =
     },
     [VERDANTURF_TENT_MON_ARON_2] = {
         .species = SPECIES_ARON,
-        .moves = {MOVE_TAKE_DOWN, MOVE_METAL_CLAW, MOVE_IRON_DEFENSE, MOVE_ATTRACT},
+        .moves = {MOVE_TAKE_DOWN, MOVE_METAL_SLASH, MOVE_IRON_DEFENSE, MOVE_ATTRACT},
         .heldItem = ITEM_QUICK_CLAW,
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 0),
         .nature = NATURE_MODEST
@@ -2801,14 +2801,14 @@ const struct TrainerMon gFallarborBattleTentMons[NUM_FALLARBOR_TENT_MONS] =
     },
     [FALLARBOR_TENT_MON_ARON_1] = {
         .species = SPECIES_ARON,
-        .moves = {MOVE_METAL_CLAW, MOVE_PROTECT, MOVE_SHOCK_WAVE, MOVE_METAL_SOUND},
+        .moves = {MOVE_METAL_SLASH, MOVE_PROTECT, MOVE_SHOCK_WAVE, MOVE_METAL_SOUND},
         .heldItem = ITEM_SCOPE_LENS,
         .ev = TRAINER_PARTY_EVS(170, 170, 0, 0, 170, 0),
         .nature = NATURE_LONELY
     },
     [FALLARBOR_TENT_MON_ARON_2] = {
         .species = SPECIES_ARON,
-        .moves = {MOVE_SECRET_POWER, MOVE_METAL_CLAW, MOVE_IRON_DEFENSE, MOVE_MUD_SLAP},
+        .moves = {MOVE_SECRET_POWER, MOVE_METAL_SLASH, MOVE_IRON_DEFENSE, MOVE_MUD_SLAP},
         .heldItem = ITEM_SITRUS_BERRY,
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 0),
         .nature = NATURE_GENTLE

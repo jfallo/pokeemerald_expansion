@@ -37,7 +37,7 @@ ASSUMPTIONS
     ASSUME(GetMoveType(MOVE_ROCK_THROW)    == TYPE_ROCK);
     ASSUME(GetMoveType(MOVE_BUG_BITE)      == TYPE_BUG);
     ASSUME(GetMoveType(MOVE_SHADOW_BALL)   == TYPE_GHOST);
-    ASSUME(GetMoveType(MOVE_METAL_CLAW)    == TYPE_STEEL);
+    ASSUME(GetMoveType(MOVE_METAL_SLASH)    == TYPE_STEEL);
     ASSUME(GetMoveType(MOVE_EMBER)         == TYPE_FIRE);
     ASSUME(GetMoveType(MOVE_WATER_GUN)     == TYPE_WATER);
     ASSUME(GetMoveType(MOVE_VINE_WHIP)     == TYPE_GRASS);
@@ -83,7 +83,7 @@ SINGLE_BATTLE_TEST("Inverse battle reverses type matchups")
         MOVE_ROCK_THROW,
         MOVE_BUG_BITE,
         MOVE_SHADOW_BALL,
-        MOVE_METAL_CLAW,
+        MOVE_METAL_SLASH,
         MOVE_EMBER,
         MOVE_WATER_GUN,
         MOVE_VINE_WHIP,

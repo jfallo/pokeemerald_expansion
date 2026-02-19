@@ -451,7 +451,7 @@ static inline bool32 IsMoveSheerForceBoosted(u32 move)
         case MOVE_LAVA_PLUME:
         case MOVE_LIQUIDATION:
         case MOVE_LOW_SWEEP:
-        case MOVE_METAL_CLAW:
+        case MOVE_METAL_SLASH:
         case MOVE_MUD_BOMB:
         case MOVE_MUDDY_WATER:
         case MOVE_MUD_SHOT:

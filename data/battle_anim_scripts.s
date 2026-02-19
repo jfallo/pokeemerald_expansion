@@ -27942,24 +27942,18 @@ gBattleAnimMove_PoisonTail::
 	waitforvisualfinish
 	end
 
-gBattleAnimMove_MetalClaw::
+gBattleAnimMove_MetalSlash::
 	loadspritegfx ANIM_TAG_CLAW_SLASH
 	loopsewithpan SE_M_HARDEN, SOUND_PAN_ATTACKER, 28, 2
 	metallic_shine permanent=0
 	waitforvisualfinish
-	createsprite gHorizontalLungeSpriteTemplate, ANIM_ATTACKER, 2, 6, 4
-	delay 2
+	loadspritegfx ANIM_TAG_SLASH
+	createsprite gSlashSliceSpriteTemplate, ANIM_TARGET, 2, 1, -8, 0
 	playsewithpan SE_M_RAZOR_WIND, SOUND_PAN_TARGET
-	create_claw_slash_sprite ANIM_TARGET, 2, x=-10, y=-10, animation=0
-	create_claw_slash_sprite ANIM_TARGET, 2, x=-10, y=10, animation=0
-	shake_mon_or_platform velocity=-4, shake_timer=1, shake_duration=10, type=3, battler_selector=1
-	delay 8
-	createsprite gHorizontalLungeSpriteTemplate, ANIM_ATTACKER, 2, 6, 4
-	delay 2
+	delay 4
+	createsprite gSlashSliceSpriteTemplate, ANIM_TARGET, 2, 1, 8, 0
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 4, 0, 18, 1
 	playsewithpan SE_M_RAZOR_WIND, SOUND_PAN_TARGET
-	create_claw_slash_sprite ANIM_TARGET, 2, x=10, y=-10, animation=1
-	create_claw_slash_sprite ANIM_TARGET, 2, x=10, y=10, animation=1
-	shake_mon_or_platform velocity=-4, shake_timer=1, shake_duration=10, type=3, battler_selector=1
 	waitforvisualfinish
 	end
 

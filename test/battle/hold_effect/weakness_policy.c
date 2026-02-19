@@ -14,13 +14,13 @@ SINGLE_BATTLE_TEST("Weakness Policy does not activate if Disguise blocks the dam
     PARAMETRIZE { species = SPECIES_MIMIKYU_DISGUISED; }
 
     GIVEN {
-        ASSUME(GetMoveType(MOVE_METAL_CLAW) == TYPE_STEEL);
+        ASSUME(GetMoveType(MOVE_METAL_SLASH) == TYPE_STEEL);
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(species) { Item(ITEM_WEAKNESS_POLICY); Ability(ABILITY_DISGUISE); }
     } WHEN {
-        TURN { MOVE(player, MOVE_METAL_CLAW); }
+        TURN { MOVE(player, MOVE_METAL_SLASH); }
     } SCENE {
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_METAL_CLAW, player);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_METAL_SLASH, player);
         if (species == SPECIES_MIMIKYU_BUSTED)
             ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, opponent);
         else
