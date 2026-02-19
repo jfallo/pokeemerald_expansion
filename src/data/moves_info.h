@@ -1210,11 +1210,11 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .effect = EFFECT_MULTI_HIT,
         .power = 15,
         .type = TYPE_BUG,
-        .accuracy = 95,
-        .pp = 20,
+        .accuracy = 90,
+        .pp = 15,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
-        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .category = DAMAGE_CATEGORY_SPECIAL,
         .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_QUALITY_DEPENDS_ON_TIMING : CONTEST_EFFECT_STARTLE_MON_WITH_JUDGES_ATTENTION,
         .contestCategory = CONTEST_CATEGORY_COOL,
         .contestComboStarterId = 0,
@@ -2229,11 +2229,11 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .description = COMPOUND_STRING(
             "Binds the foe with string\n"
             "to reduce its Speed."),
-        .effect = B_UPDATED_MOVE_DATA >= GEN_6 ? EFFECT_SPEED_DOWN_2 : EFFECT_SPEED_DOWN,
+        .effect = EFFECT_SPEED_DOWN_2,
         .power = 0,
         .type = TYPE_BUG,
-        .accuracy = 95,
-        .pp = 40,
+        .accuracy = 100,
+        .pp = 20,
         .target = MOVE_TARGET_BOTH,
         .priority = 0,
         .category = DAMAGE_CATEGORY_STATUS,
@@ -3811,7 +3811,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "An attack that steals half\n"
             "the damage inflicted."),
         .effect = EFFECT_ABSORB,
-        .power = 80,
+        .power = 75,
         .type = TYPE_BUG,
         .accuracy = 100,
         .pp = 10,
@@ -5110,13 +5110,13 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Mud-Slap"),
         .description = COMPOUND_STRING(
-            "Hurls mud in the foe's face\n"
+            "Kicks mud in the foe's face\n"
             "to reduce its accuracy."),
         .effect = EFFECT_HIT,
-        .power = 20,
+        .power = 25,
         .type = TYPE_GROUND,
         .accuracy = 100,
-        .pp = 20,
+        .pp = 25,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
@@ -8024,14 +8024,14 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Mud Sport"),
         .description = COMPOUND_STRING(
-            "Covers the user in mud to\n"
-            "weaken all Electric moves."),
+            "Covers the field in mud to\n"
+            "weaken Electric-type moves."),
         // in theory this should mention 5 turns (gen 6+)
         .effect = EFFECT_MUD_SPORT,
         .power = 0,
         .type = TYPE_GROUND,
         .accuracy = 0,
-        .pp = 15,
+        .pp = 10,
         .target = MOVE_TARGET_ALL_BATTLERS,
         .priority = 0,
         .category = DAMAGE_CATEGORY_STATUS,
@@ -8290,13 +8290,13 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Astonish"),
         .description = COMPOUND_STRING(
-            "An attack that may shock\n"
-            "the foe into flinching."),
+            "A surprise attack that may\n"
+            "shock the foe into flinching."),
         .effect = EFFECT_HIT,
-        .power = 30,
+        .power = 40,
         .type = TYPE_GHOST,
         .accuracy = 100,
-        .pp = 15,
+        .pp = 30,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
@@ -8496,14 +8496,14 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Silver Wind"),
         .description = COMPOUND_STRING(
-            "A powdery attack that may\n"
-            "raise abilities."),
+            "A powdery wind attack.\n"
+            "May raise all stats."),
         .effect = EFFECT_HIT,
-        .power = 60,
+        .power = 55,
         .type = TYPE_BUG,
         .dualType = TYPE_FLYING,
         .accuracy = 100,
-        .pp = 10,
+        .pp = 15,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
@@ -9082,13 +9082,13 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Mud Shot"),
         .description = COMPOUND_STRING(
-            "Hurls mud at the foe. May\n"
+            "Shoots mud at the foe. May\n"
             "reduce accuracy."),
         .effect = EFFECT_HIT,
         .power = 55,
         .type = TYPE_GROUND,
         .accuracy = 95,
-        .pp = 15,
+        .pp = 20,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
@@ -10633,11 +10633,11 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Slashes with crossed blades.\n"
             "Has a high critical-hit ratio."),
         .effect = EFFECT_HIT,
-        .power = 80,
+        .power = 90,
         .type = TYPE_BUG,
         .accuracy = 100,
         .criticalHitStage = B_UPDATED_MOVE_DATA >= GEN_3 ? 1 : 2,
-        .pp = 15,
+        .pp = 10,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
@@ -11176,10 +11176,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Mud Bomb"),
         .description = COMPOUND_STRING(
-            "Throws a blob of mud to\n"
-            "damage and cut accuracy."),
+            "Launches a blob of mud at\n"
+            "the foe. May cut accuracy."),
         .effect = EFFECT_HIT,
-        .power = 80,
+        .power = 85,
         .type = TYPE_GROUND,
         .accuracy = 90,
         .pp = 10,
@@ -12572,7 +12572,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .power = 0,
         .type = TYPE_BUG,
         .accuracy = 0,
-        .pp = 20,
+        .pp = 10,
         .target = MOVE_TARGET_USER,
         .priority = 0,
         .category = DAMAGE_CATEGORY_STATUS,
@@ -13498,12 +13498,12 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Struggle Bug"),
         .description = COMPOUND_STRING(
             "Resisting, the user attacks\n"
-            "the foes. Lowers Sp. Atk."),
+            "its foes. Lowers Sp. Atk."),
         .effect = EFFECT_HIT,
-        .power = 50,
+        .power = 40,
         .type = TYPE_BUG,
         .accuracy = 100,
-        .pp = 20,
+        .pp = 25,
         .target = MOVE_TARGET_BOTH,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
