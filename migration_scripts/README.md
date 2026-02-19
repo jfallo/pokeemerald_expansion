@@ -178,7 +178,7 @@ Converts trainer data (for `convert_trainer_parties.py`) and partner data (for `
 -        .nature = NATURE_BRAVE,
 -        .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 -        .ev = TRAINER_PARTY_EVS(0, 252, 252, 0, 6, 0),
--        .moves = {MOVE_LIGHT_SCREEN, MOVE_PSYCHIC, MOVE_REFLECT, MOVE_METAL_SLASH},
+-        .moves = {MOVE_LIGHT_SCREEN, MOVE_PSYCHIC, MOVE_REFLECT, MOVE_RAZOR_BLADE},
 -    },
 -    {
 -        .species = SPECIES_SKARMORY,
@@ -216,7 +216,7 @@ Converts trainer data (for `convert_trainer_parties.py`) and partner data (for `
 +- Light Screen
 +- Psychic
 +- Reflect
-+- Metal Slash
++- Razor Blade
 +
 +Skarmory
 +Impish Nature

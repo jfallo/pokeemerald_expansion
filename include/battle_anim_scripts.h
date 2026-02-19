@@ -234,7 +234,7 @@ extern const u8 gBattleAnimMove_Pursuit[];
 extern const u8 gBattleAnimMove_RapidSpin[];
 extern const u8 gBattleAnimMove_SweetScent[];
 extern const u8 gBattleAnimMove_IronTail[];
-extern const u8 gBattleAnimMove_MetalSlash[];
+extern const u8 gBattleAnimMove_RazorBlade[];
 extern const u8 gBattleAnimMove_VitalThrow[];
 extern const u8 gBattleAnimMove_MorningSun[];
 extern const u8 gBattleAnimMove_Synthesis[];

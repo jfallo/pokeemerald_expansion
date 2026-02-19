@@ -465,7 +465,7 @@
       "MOVE_DRAGON_RUSH",
       "MOVE_FLARE_BLITZ",
       "MOVE_FOCUS_PUNCH",
-      "MOVE_METAL_SLASH",
+      "MOVE_RAZOR_BLADE",
       "MOVE_OUTRAGE"
     ],
     "TutorMoves": [
@@ -573,7 +573,7 @@
       "MOVE_DRAGON_RUSH",
       "MOVE_FLARE_BLITZ",
       "MOVE_FOCUS_PUNCH",
-      "MOVE_METAL_SLASH",
+      "MOVE_RAZOR_BLADE",
       "MOVE_OUTRAGE"
     ],
     "TutorMoves": [
@@ -730,7 +730,7 @@
       "MOVE_DRAGON_RUSH",
       "MOVE_FLARE_BLITZ",
       "MOVE_FOCUS_PUNCH",
-      "MOVE_METAL_SLASH",
+      "MOVE_RAZOR_BLADE",
       "MOVE_OUTRAGE"
     ],
     "TutorMoves": [
@@ -2773,7 +2773,7 @@
       "MOVE_CRUSH_CLAW",
       "MOVE_ENDURE",
       "MOVE_FLAIL",
-      "MOVE_METAL_SLASH",
+      "MOVE_RAZOR_BLADE",
       "MOVE_MUD_SHOT",
       "MOVE_NIGHT_SLASH",
       "MOVE_RAPID_SPIN",
@@ -2912,7 +2912,7 @@
       "MOVE_CRUSH_CLAW",
       "MOVE_ENDURE",
       "MOVE_FLAIL",
-      "MOVE_METAL_SLASH",
+      "MOVE_RAZOR_BLADE",
       "MOVE_MUD_SHOT",
       "MOVE_NIGHT_SLASH",
       "MOVE_RAPID_SPIN",
@@ -4976,7 +4976,7 @@
       "MOVE_FELL_STINGER",
       "MOVE_FLAIL",
       "MOVE_LEECH_SEED",
-      "MOVE_METAL_SLASH",
+      "MOVE_RAZOR_BLADE",
       "MOVE_NATURAL_GIFT",
       "MOVE_PSYBEAM",
       "MOVE_PURSUIT",
@@ -5097,7 +5097,7 @@
       "MOVE_FELL_STINGER",
       "MOVE_FLAIL",
       "MOVE_LEECH_SEED",
-      "MOVE_METAL_SLASH",
+      "MOVE_RAZOR_BLADE",
       "MOVE_NATURAL_GIFT",
       "MOVE_PSYBEAM",
       "MOVE_PURSUIT",
@@ -11288,7 +11288,7 @@
       },
       {
         "Level": 21,
-        "Move": "MOVE_METAL_SLASH"
+        "Move": "MOVE_RAZOR_BLADE"
       },
       {
         "Level": 25,
@@ -11410,7 +11410,7 @@
       },
       {
         "Level": 21,
-        "Move": "MOVE_METAL_SLASH"
+        "Move": "MOVE_RAZOR_BLADE"
       },
       {
         "Level": 25,
@@ -18482,7 +18482,7 @@
       "MOVE_FLATTER",
       "MOVE_HYDRO_PUMP",
       "MOVE_ICE_PUNCH",
-      "MOVE_METAL_SLASH",
+      "MOVE_RAZOR_BLADE",
       "MOVE_MUD_SPORT",
       "MOVE_THRASH",
       "MOVE_WATER_PULSE",
@@ -18607,7 +18607,7 @@
       "MOVE_FLATTER",
       "MOVE_HYDRO_PUMP",
       "MOVE_ICE_PUNCH",
-      "MOVE_METAL_SLASH",
+      "MOVE_RAZOR_BLADE",
       "MOVE_MUD_SPORT",
       "MOVE_THRASH",
       "MOVE_WATER_PULSE",
@@ -18746,7 +18746,7 @@
       "MOVE_FLATTER",
       "MOVE_HYDRO_PUMP",
       "MOVE_ICE_PUNCH",
-      "MOVE_METAL_SLASH",
+      "MOVE_RAZOR_BLADE",
       "MOVE_MUD_SPORT",
       "MOVE_THRASH",
       "MOVE_WATER_PULSE",
@@ -24292,7 +24292,7 @@
       "MOVE_CROSS_POISON",
       "MOVE_DOUBLE_EDGE",
       "MOVE_FEINT",
-      "MOVE_METAL_SLASH",
+      "MOVE_RAZOR_BLADE",
       "MOVE_NIGHT_SLASH",
       "MOVE_POISON_TAIL",
       "MOVE_POWER_TRICK",
@@ -24905,7 +24905,7 @@
       },
       {
         "Level": 21,
-        "Move": "MOVE_METAL_SLASH"
+        "Move": "MOVE_RAZOR_BLADE"
       },
       {
         "Level": 25,
@@ -25298,7 +25298,7 @@
       },
       {
         "Level": 22,
-        "Move": "MOVE_METAL_SLASH"
+        "Move": "MOVE_RAZOR_BLADE"
       },
       {
         "Level": 25,
@@ -25504,7 +25504,7 @@
       "MOVE_CRUNCH",
       "MOVE_DOUBLE_EDGE",
       "MOVE_FAKE_TEARS",
-      "MOVE_METAL_SLASH",
+      "MOVE_RAZOR_BLADE",
       "MOVE_NIGHT_SLASH",
       "MOVE_PLAY_ROUGH",
       "MOVE_SEISMIC_TOSS",
@@ -25634,7 +25634,7 @@
       "MOVE_CRUNCH",
       "MOVE_DOUBLE_EDGE",
       "MOVE_FAKE_TEARS",
-      "MOVE_METAL_SLASH",
+      "MOVE_RAZOR_BLADE",
       "MOVE_NIGHT_SLASH",
       "MOVE_PLAY_ROUGH",
       "MOVE_SEISMIC_TOSS",
@@ -26732,7 +26732,7 @@
       },
       {
         "Level": 9,
-        "Move": "MOVE_METAL_SLASH"
+        "Move": "MOVE_RAZOR_BLADE"
       },
       {
         "Level": 12,
@@ -33881,7 +33881,7 @@
       },
       {
         "Level": 21,
-        "Move": "MOVE_METAL_SLASH"
+        "Move": "MOVE_RAZOR_BLADE"
       },
       {
         "Level": 25,
@@ -34023,7 +34023,7 @@
       "MOVE_BIDE",
       "MOVE_DIG",
       "MOVE_FALSE_SWIPE",
-      "MOVE_METAL_SLASH",
+      "MOVE_RAZOR_BLADE",
       "MOVE_MUD_SLAP"
     ],
     "TMMoves": [
@@ -34135,7 +34135,7 @@
       "MOVE_BIDE",
       "MOVE_DIG",
       "MOVE_FALSE_SWIPE",
-      "MOVE_METAL_SLASH",
+      "MOVE_RAZOR_BLADE",
       "MOVE_MUD_SLAP"
     ],
     "TMMoves": [
@@ -35549,7 +35549,7 @@
       },
       {
         "Level": 10,
-        "Move": "MOVE_METAL_SLASH"
+        "Move": "MOVE_RAZOR_BLADE"
       },
       {
         "Level": 13,
@@ -35676,7 +35676,7 @@
       },
       {
         "Level": 10,
-        "Move": "MOVE_METAL_SLASH"
+        "Move": "MOVE_RAZOR_BLADE"
       },
       {
         "Level": 13,
@@ -35804,7 +35804,7 @@
       },
       {
         "Level": 10,
-        "Move": "MOVE_METAL_SLASH"
+        "Move": "MOVE_RAZOR_BLADE"
       },
       {
         "Level": 13,
@@ -39599,7 +39599,7 @@
       "MOVE_FLAIL",
       "MOVE_FURY_SWIPES",
       "MOVE_IRON_TAIL",
-      "MOVE_METAL_SLASH",
+      "MOVE_RAZOR_BLADE",
       "MOVE_NIGHT_SLASH",
       "MOVE_QUICK_GUARD",
       "MOVE_RAZOR_WIND"
@@ -40342,7 +40342,7 @@
       "MOVE_DRAGON_DANCE",
       "MOVE_ENDEAVOR",
       "MOVE_KNOCK_OFF",
-      "MOVE_METAL_SLASH",
+      "MOVE_RAZOR_BLADE",
       "MOVE_MUD_SPORT",
       "MOVE_SUPERPOWER",
       "MOVE_SWITCHEROO",
@@ -40483,7 +40483,7 @@
       "MOVE_DRAGON_DANCE",
       "MOVE_ENDEAVOR",
       "MOVE_KNOCK_OFF",
-      "MOVE_METAL_SLASH",
+      "MOVE_RAZOR_BLADE",
       "MOVE_MUD_SPORT",
       "MOVE_SUPERPOWER",
       "MOVE_SWITCHEROO",
@@ -41006,7 +41006,7 @@
       },
       {
         "Level": 17,
-        "Move": "MOVE_METAL_SLASH"
+        "Move": "MOVE_RAZOR_BLADE"
       },
       {
         "Level": 21,
@@ -41118,7 +41118,7 @@
       },
       {
         "Level": 17,
-        "Move": "MOVE_METAL_SLASH"
+        "Move": "MOVE_RAZOR_BLADE"
       },
       {
         "Level": 21,
@@ -44105,7 +44105,7 @@
     "LevelMoves": [
       {
         "Level": 0,
-        "Move": "MOVE_METAL_SLASH"
+        "Move": "MOVE_RAZOR_BLADE"
       },
       {
         "Level": 0,
@@ -44117,7 +44117,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_METAL_SLASH"
+        "Move": "MOVE_RAZOR_BLADE"
       },
       {
         "Level": 1,
@@ -44225,7 +44225,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_METAL_SLASH"
+        "Move": "MOVE_RAZOR_BLADE"
       },
       {
         "Level": 1,
@@ -44278,7 +44278,7 @@
     ],
     "PreEvoMoves": [
       "MOVE_CONFUSION",
-      "MOVE_METAL_SLASH"
+      "MOVE_RAZOR_BLADE"
     ],
     "TMMoves": [
       "MOVE_PSYSHOCK",
@@ -44558,7 +44558,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_METAL_SLASH"
+        "Move": "MOVE_RAZOR_BLADE"
       },
       {
         "Level": 1,
@@ -44570,7 +44570,7 @@
       },
       {
         "Level": 7,
-        "Move": "MOVE_METAL_SLASH"
+        "Move": "MOVE_RAZOR_BLADE"
       },
       {
         "Level": 13,
@@ -46337,11 +46337,11 @@
     "LevelMoves": [
       {
         "Level": 0,
-        "Move": "MOVE_METAL_SLASH"
+        "Move": "MOVE_RAZOR_BLADE"
       },
       {
         "Level": 1,
-        "Move": "MOVE_METAL_SLASH"
+        "Move": "MOVE_RAZOR_BLADE"
       },
       {
         "Level": 1,
@@ -46470,7 +46470,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_METAL_SLASH"
+        "Move": "MOVE_RAZOR_BLADE"
       },
       {
         "Level": 1,
@@ -46537,7 +46537,7 @@
       "MOVE_BIDE",
       "MOVE_POUND",
       "MOVE_WATER_SPORT",
-      "MOVE_METAL_SLASH"
+      "MOVE_RAZOR_BLADE"
     ],
     "TMMoves": [
       "MOVE_WORK_UP",
@@ -51682,7 +51682,7 @@
       "MOVE_DRAGON_BREATH",
       "MOVE_IRON_HEAD",
       "MOVE_IRON_TAIL",
-      "MOVE_METAL_SLASH",
+      "MOVE_RAZOR_BLADE",
       "MOVE_MUD_SHOT",
       "MOVE_OUTRAGE",
       "MOVE_ROCK_CLIMB",
@@ -51791,7 +51791,7 @@
       "MOVE_DRAGON_BREATH",
       "MOVE_IRON_HEAD",
       "MOVE_IRON_TAIL",
-      "MOVE_METAL_SLASH",
+      "MOVE_RAZOR_BLADE",
       "MOVE_MUD_SHOT",
       "MOVE_OUTRAGE",
       "MOVE_ROCK_CLIMB",
@@ -51924,7 +51924,7 @@
       "MOVE_DRAGON_BREATH",
       "MOVE_IRON_HEAD",
       "MOVE_IRON_TAIL",
-      "MOVE_METAL_SLASH",
+      "MOVE_RAZOR_BLADE",
       "MOVE_MUD_SHOT",
       "MOVE_OUTRAGE",
       "MOVE_ROCK_CLIMB",
@@ -52201,7 +52201,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_METAL_SLASH"
+        "Move": "MOVE_RAZOR_BLADE"
       },
       {
         "Level": 6,
@@ -53758,7 +53758,7 @@
       },
       {
         "Level": 22,
-        "Move": "MOVE_METAL_SLASH"
+        "Move": "MOVE_RAZOR_BLADE"
       },
       {
         "Level": 25,
@@ -55362,7 +55362,7 @@
       "MOVE_CROSS_POISON",
       "MOVE_DOUBLE_EDGE",
       "MOVE_FEINT",
-      "MOVE_METAL_SLASH",
+      "MOVE_RAZOR_BLADE",
       "MOVE_NIGHT_SLASH",
       "MOVE_POISON_TAIL",
       "MOVE_POWER_TRICK",
@@ -56729,7 +56729,7 @@
       },
       {
         "Level": 6,
-        "Move": "MOVE_METAL_SLASH"
+        "Move": "MOVE_RAZOR_BLADE"
       },
       {
         "Level": 10,
@@ -61952,7 +61952,7 @@
       },
       {
         "Level": 15,
-        "Move": "MOVE_METAL_SLASH"
+        "Move": "MOVE_RAZOR_BLADE"
       },
       {
         "Level": 19,
@@ -62077,7 +62077,7 @@
       },
       {
         "Level": 15,
-        "Move": "MOVE_METAL_SLASH"
+        "Move": "MOVE_RAZOR_BLADE"
       },
       {
         "Level": 19,
@@ -69980,7 +69980,7 @@
       },
       {
         "Level": 14,
-        "Move": "MOVE_METAL_SLASH"
+        "Move": "MOVE_RAZOR_BLADE"
       },
       {
         "Level": 18,
@@ -70104,7 +70104,7 @@
       },
       {
         "Level": 14,
-        "Move": "MOVE_METAL_SLASH"
+        "Move": "MOVE_RAZOR_BLADE"
       },
       {
         "Level": 18,
@@ -72866,7 +72866,7 @@
       "MOVE_FIRE_FANG",
       "MOVE_GLARE",
       "MOVE_IRON_TAIL",
-      "MOVE_METAL_SLASH",
+      "MOVE_RAZOR_BLADE",
       "MOVE_POISON_TAIL",
       "MOVE_PURSUIT",
       "MOVE_SNATCH",
@@ -73139,7 +73139,7 @@
       },
       {
         "Level": 25,
-        "Move": "MOVE_METAL_SLASH"
+        "Move": "MOVE_RAZOR_BLADE"
       },
       {
         "Level": 30,
@@ -73281,7 +73281,7 @@
       },
       {
         "Level": 25,
-        "Move": "MOVE_METAL_SLASH"
+        "Move": "MOVE_RAZOR_BLADE"
       },
       {
         "Level": 30,
@@ -74127,7 +74127,7 @@
       },
       {
         "Level": 11,
-        "Move": "MOVE_METAL_SLASH"
+        "Move": "MOVE_RAZOR_BLADE"
       },
       {
         "Level": 16,
@@ -74862,7 +74862,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_METAL_SLASH"
+        "Move": "MOVE_RAZOR_BLADE"
       },
       {
         "Level": 7,
@@ -76145,7 +76145,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_METAL_SLASH"
+        "Move": "MOVE_RAZOR_BLADE"
       },
       {
         "Level": 1,
@@ -89458,7 +89458,7 @@
     "EggMoves": [
       "MOVE_AQUA_JET",
       "MOVE_HARDEN",
-      "MOVE_METAL_SLASH",
+      "MOVE_RAZOR_BLADE",
       "MOVE_SPIKES",
       "MOVE_WIDE_GUARD"
     ],
@@ -89585,7 +89585,7 @@
     "EggMoves": [
       "MOVE_AQUA_JET",
       "MOVE_HARDEN",
-      "MOVE_METAL_SLASH",
+      "MOVE_RAZOR_BLADE",
       "MOVE_SPIKES",
       "MOVE_WIDE_GUARD"
     ],
@@ -91983,7 +91983,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_METAL_SLASH"
+        "Move": "MOVE_RAZOR_BLADE"
       },
       {
         "Level": 7,
@@ -93044,7 +93044,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_METAL_SLASH"
+        "Move": "MOVE_RAZOR_BLADE"
       },
       {
         "Level": 1,
@@ -93773,7 +93773,7 @@
       },
       {
         "Level": 14,
-        "Move": "MOVE_METAL_SLASH"
+        "Move": "MOVE_RAZOR_BLADE"
       },
       {
         "Level": 17,
@@ -93859,7 +93859,7 @@
       "MOVE_FLAIL",
       "MOVE_ICICLE_CRASH",
       "MOVE_ICICLE_SPEAR",
-      "MOVE_METAL_SLASH",
+      "MOVE_RAZOR_BLADE",
       "MOVE_NIGHT_SLASH"
     ],
     "TutorMoves": []
@@ -93896,7 +93896,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_METAL_SLASH"
+        "Move": "MOVE_RAZOR_BLADE"
       }
     ],
     "PreEvoMoves": [
@@ -93963,7 +93963,7 @@
       "MOVE_FLAIL",
       "MOVE_ICICLE_CRASH",
       "MOVE_ICICLE_SPEAR",
-      "MOVE_METAL_SLASH",
+      "MOVE_RAZOR_BLADE",
       "MOVE_NIGHT_SLASH"
     ],
     "TutorMoves": []
@@ -94208,7 +94208,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_METAL_SLASH"
+        "Move": "MOVE_RAZOR_BLADE"
       },
       {
         "Level": 4,
@@ -94332,7 +94332,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_METAL_SLASH"
+        "Move": "MOVE_RAZOR_BLADE"
       },
       {
         "Level": 1,

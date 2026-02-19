@@ -1945,7 +1945,7 @@
     "EggMoves": [
       "MOVE_COUNTER",
       "MOVE_FLAIL",
-      "MOVE_METAL_SLASH",
+      "MOVE_RAZOR_BLADE",
       "MOVE_RAPID_SPIN",
       "MOVE_SAFEGUARD"
     ],
@@ -2031,7 +2031,7 @@
     "EggMoves": [
       "MOVE_COUNTER",
       "MOVE_FLAIL",
-      "MOVE_METAL_SLASH",
+      "MOVE_RAZOR_BLADE",
       "MOVE_RAPID_SPIN",
       "MOVE_SAFEGUARD"
     ],
@@ -15887,7 +15887,7 @@
     ],
     "EggMoves": [
       "MOVE_COUNTER",
-      "MOVE_METAL_SLASH",
+      "MOVE_RAZOR_BLADE",
       "MOVE_RAZOR_WIND",
       "MOVE_WING_ATTACK"
     ],
@@ -16248,7 +16248,7 @@
       },
       {
         "Level": 30,
-        "Move": "MOVE_METAL_SLASH"
+        "Move": "MOVE_RAZOR_BLADE"
       },
       {
         "Level": 36,
@@ -16478,7 +16478,7 @@
       },
       {
         "Level": 65,
-        "Move": "MOVE_METAL_SLASH"
+        "Move": "MOVE_RAZOR_BLADE"
       }
     ],
     "PreEvoMoves": [],
@@ -16608,7 +16608,7 @@
       "MOVE_COUNTER",
       "MOVE_CRUNCH",
       "MOVE_FOCUS_ENERGY",
-      "MOVE_METAL_SLASH",
+      "MOVE_RAZOR_BLADE",
       "MOVE_SEISMIC_TOSS",
       "MOVE_TAKE_DOWN"
     ],
@@ -16701,7 +16701,7 @@
       "MOVE_COUNTER",
       "MOVE_CRUNCH",
       "MOVE_FOCUS_ENERGY",
-      "MOVE_METAL_SLASH",
+      "MOVE_RAZOR_BLADE",
       "MOVE_SEISMIC_TOSS",
       "MOVE_TAKE_DOWN"
     ],

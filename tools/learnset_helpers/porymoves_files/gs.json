@@ -15567,7 +15567,7 @@
     ],
     "EggMoves": [
       "MOVE_COUNTER",
-      "MOVE_METAL_SLASH",
+      "MOVE_RAZOR_BLADE",
       "MOVE_RAZOR_WIND",
       "MOVE_WING_ATTACK"
     ],
@@ -15918,7 +15918,7 @@
       },
       {
         "Level": 30,
-        "Move": "MOVE_METAL_SLASH"
+        "Move": "MOVE_RAZOR_BLADE"
       },
       {
         "Level": 36,

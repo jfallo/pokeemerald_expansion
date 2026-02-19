@@ -27942,7 +27942,7 @@ gBattleAnimMove_PoisonTail::
 	waitforvisualfinish
 	end
 
-gBattleAnimMove_MetalSlash::
+gBattleAnimMove_RazorBlade::
 	loadspritegfx ANIM_TAG_CLAW_SLASH
 	loopsewithpan SE_M_HARDEN, SOUND_PAN_ATTACKER, 28, 2
 	metallic_shine permanent=0

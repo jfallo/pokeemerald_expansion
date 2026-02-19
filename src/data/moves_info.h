@@ -6238,9 +6238,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .validApprenticeMove = TRUE,
     },
 
-    [MOVE_METAL_SLASH] =
+    [MOVE_RAZOR_BLADE] =
     {
-        .name = COMPOUND_STRING("Metal Slash"),
+        .name = COMPOUND_STRING("Razor Blade"),
         .description = COMPOUND_STRING(
             "A claw attack that may\n"
             "raise the user's Attack."),
@@ -6262,7 +6262,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestCategory = CONTEST_CATEGORY_COOL,
         .contestComboStarterId = 0,
         .contestComboMoves = {COMBO_STARTER_METAL_SOUND},
-        .battleAnimScript = gBattleAnimMove_MetalSlash,
+        .battleAnimScript = gBattleAnimMove_RazorBlade,
         .validApprenticeMove = TRUE,
     },
 

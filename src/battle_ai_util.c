@@ -6152,7 +6152,7 @@ s32 BattlerBenefitsFromAbilityScore(u32 battler, enum Ability ability, struct Ai
         break;
     // Also used to Simple Beam SIMPLE_BEAM.
     case ABILITY_SIMPLE:
-        // Prioritize moves like Metal Slash, Charge Beam, or Power up Punch
+        // Prioritize moves like Razor Blade, Charge Beam, or Power up Punch
         if (HasMoveThatRaisesOwnStats(battler))
             return GOOD_EFFECT;
         return NO_INCREASE;

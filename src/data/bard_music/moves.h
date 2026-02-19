@@ -1862,7 +1862,7 @@ static const struct BardSoundTemplate sBardSoundTemplates_Moves[MOVES_COUNT][MAX
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
-    [MOVE_METAL_SLASH] = {
+    [MOVE_RAZOR_BLADE] = {
         { .songId = PHONEME_ID(PH_DRESS_BLEND) },
         { .songId = PHONEME_ID(PH_FOOT_BLEND) },
         { .songId = PHONEME_ID(PH_THOUGHT_BLEND) },
