@@ -11775,7 +11775,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     [MOVE_BUG_BITE] =
     {
         .name = COMPOUND_STRING("Bug Bite"),
-        .description = sPluckDescription,
+        .description = COMPOUND_STRING(
+            "Eats the foe's held Berry,\n"
+            "gaining its effect."),
         .effect = EFFECT_HIT,
         .power = 60,
         .type = TYPE_BUG,

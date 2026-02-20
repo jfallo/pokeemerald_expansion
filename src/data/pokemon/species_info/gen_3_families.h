@@ -2641,34 +2641,24 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .teachableLearnset = sPelipperTeachableLearnset,
     },
 #endif //P_FAMILY_WINGULL
-
-#if P_FAMILY_RALTS
-#define RALTS_FAMILY_TYPE2 (P_UPDATED_TYPES >= GEN_6 ? TYPE_FAIRY : TYPE_PSYCHIC)
-
-#if P_UPDATED_EGG_GROUPS >= GEN_8
-    #define RALTS_FAMILY_EGG_GROUPS MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE, EGG_GROUP_AMORPHOUS)
-#else
-    #define RALTS_FAMILY_EGG_GROUPS MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS)
-#endif
-
     [SPECIES_RALTS] =
     {
-        .baseHP        = 28,
+        .baseHP        = 30,
         .baseAttack    = 25,
         .baseDefense   = 25,
         .baseSpeed     = 40,
         .baseSpAttack  = 45,
         .baseSpDefense = 35,
-        .types = MON_TYPES(TYPE_PSYCHIC, RALTS_FAMILY_TYPE2),
+        .types = MON_TYPES(TYPE_PSYCHIC, TYPE_FAIRY),
         .catchRate = 235,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 40 : 70,
         .evYield_SpAttack = 1,
-        .genderRatio = PERCENT_FEMALE(50),
+        .genderRatio = PERCENT_FEMALE(85),
         .eggCycles = 20,
         .friendship = 35,
         .growthRate = GROWTH_SLOW,
-        .eggGroups = RALTS_FAMILY_EGG_GROUPS,
-        .abilities = { ABILITY_SYNCHRONIZE, ABILITY_TRACE, ABILITY_TELEPATHY },
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
+        .abilities = { ABILITY_TELEPATHY, ABILITY_DANCER, ABILITY_NONE },
         .bodyColor = BODY_COLOR_WHITE,
         .speciesName = _("Ralts"),
         .cryId = CRY_RALTS,
@@ -2717,27 +2707,27 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .levelUpLearnset = sRaltsLevelUpLearnset,
         .teachableLearnset = sRaltsTeachableLearnset,
         .eggMoveLearnset = sRaltsEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 20, SPECIES_KIRLIA}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 15, SPECIES_KIRLIA}),
     },
 
     [SPECIES_KIRLIA] =
     {
-        .baseHP        = 38,
-        .baseAttack    = 35,
-        .baseDefense   = 35,
-        .baseSpeed     = 50,
-        .baseSpAttack  = 65,
-        .baseSpDefense = 55,
-        .types = MON_TYPES(TYPE_PSYCHIC, RALTS_FAMILY_TYPE2),
+        .baseHP        = 55,
+        .baseAttack    = 50,
+        .baseDefense   = 50,
+        .baseSpeed     = 65,
+        .baseSpAttack  = 85,
+        .baseSpDefense = 75,
+        .types = MON_TYPES(TYPE_PSYCHIC, TYPE_FAIRY),
         .catchRate = 120,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 97 : 140,
         .evYield_SpAttack = 2,
-        .genderRatio = PERCENT_FEMALE(50),
+        .genderRatio = PERCENT_FEMALE(85),
         .eggCycles = 20,
         .friendship = 35,
         .growthRate = GROWTH_SLOW,
-        .eggGroups = RALTS_FAMILY_EGG_GROUPS,
-        .abilities = { ABILITY_SYNCHRONIZE, ABILITY_TRACE, ABILITY_TELEPATHY },
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
+        .abilities = { ABILITY_TELEPATHY, ABILITY_DANCER, ABILITY_NONE },
         .bodyColor = BODY_COLOR_WHITE,
         .speciesName = _("Kirlia"),
         .cryId = CRY_KIRLIA,
@@ -2785,22 +2775,19 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         )
         .levelUpLearnset = sKirliaLevelUpLearnset,
         .teachableLearnset = sKirliaTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_GARDEVOIR}
-                            #if P_GEN_4_CROSS_EVOS
-                                ,{EVO_ITEM, ITEM_DAWN_STONE, SPECIES_GALLADE, CONDITIONS({IF_GENDER, MON_MALE})}
-                            #endif
-                            ),
+        .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_GARDEVOIR, CONDITIONS({IF_GENDER, MON_FEMALE})},
+                                {EVO_LEVEL, 30, SPECIES_GALLADE, CONDITIONS({IF_GENDER, MON_MALE})}),
     },
 
     [SPECIES_GARDEVOIR] =
     {
-        .baseHP        = 68,
+        .baseHP        = 70,
         .baseAttack    = 65,
         .baseDefense   = 65,
         .baseSpeed     = 80,
         .baseSpAttack  = 125,
-        .baseSpDefense = 115,
-        .types = MON_TYPES(TYPE_PSYCHIC, RALTS_FAMILY_TYPE2),
+        .baseSpDefense = 110,
+        .types = MON_TYPES(TYPE_PSYCHIC, TYPE_FAIRY),
         .catchRate = 45,
     #if P_UPDATED_EXP_YIELDS >= GEN_8
         .expYield = 259,
@@ -2810,12 +2797,12 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .expYield = 208,
     #endif
         .evYield_SpAttack = 3,
-        .genderRatio = PERCENT_FEMALE(50),
+        .genderRatio = PERCENT_FEMALE(100),
         .eggCycles = 20,
         .friendship = 35,
         .growthRate = GROWTH_SLOW,
-        .eggGroups = RALTS_FAMILY_EGG_GROUPS,
-        .abilities = { ABILITY_SYNCHRONIZE, ABILITY_TRACE, ABILITY_TELEPATHY },
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
+        .abilities = { ABILITY_TELEPATHY, ABILITY_PIXILATE, ABILITY_NONE },
         .bodyColor = BODY_COLOR_WHITE,
         .speciesName = _("Gardevoir"),
         .cryId = CRY_GARDEVOIR,
@@ -2940,12 +2927,12 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
 #if P_GEN_4_CROSS_EVOS
     [SPECIES_GALLADE] =
     {
-        .baseHP        = 68,
-        .baseAttack    = 125,
+        .baseHP        = 70,
+        .baseAttack    = 115,
         .baseDefense   = 65,
-        .baseSpeed     = 80,
-        .baseSpAttack  = 65,
-        .baseSpDefense = 115,
+        .baseSpeed     = 85,
+        .baseSpAttack  = 85,
+        .baseSpDefense = 95,
         .types = MON_TYPES(TYPE_PSYCHIC, TYPE_FIGHTING),
         .catchRate = 45,
     #if P_UPDATED_EXP_YIELDS >= GEN_8
@@ -2960,12 +2947,8 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .eggCycles = 20,
         .friendship = 35,
         .growthRate = GROWTH_SLOW,
-        .eggGroups = RALTS_FAMILY_EGG_GROUPS,
-    #if P_UPDATED_ABILITIES >= GEN_9
-        .abilities = { ABILITY_STEADFAST, ABILITY_SHARPNESS, ABILITY_JUSTIFIED },
-    #else
-        .abilities = { ABILITY_STEADFAST, ABILITY_NONE, ABILITY_JUSTIFIED },
-    #endif
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
+        .abilities = { ABILITY_JUSTIFIED, ABILITY_SHARPNESS, ABILITY_NONE },
         .bodyColor = BODY_COLOR_WHITE,
         .speciesName = _("Gallade"),
         .cryId = CRY_GALLADE,

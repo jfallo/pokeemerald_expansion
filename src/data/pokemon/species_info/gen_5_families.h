@@ -11318,22 +11318,22 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 #if P_FAMILY_PAWNIARD
     [SPECIES_PAWNIARD] =
     {
-        .baseHP        = 45,
+        .baseHP        = 65,
         .baseAttack    = 85,
-        .baseDefense   = 70,
-        .baseSpeed     = 60,
+        .baseDefense   = 75,
+        .baseSpeed     = 55,
         .baseSpAttack  = 40,
         .baseSpDefense = 40,
         .types = MON_TYPES(TYPE_DARK, TYPE_STEEL),
         .catchRate = 120,
         .expYield = 68,
         .evYield_Attack = 1,
-        .genderRatio = PERCENT_FEMALE(50),
+        .genderRatio = PERCENT_FEMALE(15),
         .eggCycles = 20,
         .friendship = 35,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE),
-        .abilities = { ABILITY_DEFIANT, ABILITY_INNER_FOCUS, ABILITY_PRESSURE },
+        .abilities = { ABILITY_DEFIANT, ABILITY_SHARPNESS, ABILITY_NONE },
         .bodyColor = BODY_COLOR_RED,
         .speciesName = _("Pawniard"),
         .cryId = CRY_PAWNIARD,
@@ -11387,14 +11387,14 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .levelUpLearnset = sPawniardLevelUpLearnset,
         .teachableLearnset = sPawniardTeachableLearnset,
         .eggMoveLearnset = sPawniardEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 52, SPECIES_BISHARP}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_BISHARP}),
     },
 
     [SPECIES_BISHARP] =
     {
-        .baseHP        = 65,
+        .baseHP        = 80,
         .baseAttack    = 125,
-        .baseDefense   = 100,
+        .baseDefense   = 110,
         .baseSpeed     = 70,
         .baseSpAttack  = 60,
         .baseSpDefense = 70,
@@ -11408,7 +11408,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = 35,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE),
-        .abilities = { ABILITY_DEFIANT, ABILITY_INNER_FOCUS, ABILITY_PRESSURE },
+        .abilities = { ABILITY_DEFIANT, ABILITY_SHARPNESS, ABILITY_NONE },
         .bodyColor = BODY_COLOR_RED,
         .speciesName = _("Bisharp"),
         .cryId = CRY_BISHARP,
@@ -11455,9 +11455,6 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sBisharpLevelUpLearnset,
         .teachableLearnset = sBisharpTeachableLearnset,
-    #if P_GEN_9_CROSS_EVOS
-        .evolutions = EVOLUTION({EVO_LEVEL, 0, SPECIES_KINGAMBIT, CONDITIONS({IF_DEFEAT_X_WITH_ITEMS, SPECIES_BISHARP, ITEM_LEADERS_CREST, 3})}),
-    #endif
     },
 
 #if P_GEN_9_CROSS_EVOS
