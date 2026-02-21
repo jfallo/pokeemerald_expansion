@@ -32,7 +32,7 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_5",
-      "x": 23,
+      "x": 24,
       "y": 32,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
@@ -58,8 +58,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_NINJA_BOY",
-      "x": 32,
-      "y": 37,
+      "x": 19,
+      "y": 42,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -111,8 +111,8 @@
     {
       "local_id": "LOCALID_RUSTBORO_LITTLE_BOY",
       "graphics_id": "OBJ_EVENT_GFX_LITTLE_BOY",
-      "x": 21,
-      "y": 51,
+      "x": 32,
+      "y": 37,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
@@ -125,8 +125,8 @@
     {
       "local_id": "LOCALID_RUSTBORO_LITTLE_GIRL",
       "graphics_id": "OBJ_EVENT_GFX_LITTLE_GIRL",
-      "x": 22,
-      "y": 51,
+      "x": 33,
+      "y": 37,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
@@ -180,7 +180,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 27,
-      "y": 28,
+      "y": 29,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -207,7 +207,7 @@
       "local_id": "LOCALID_RUSTBORO_RIVAL",
       "graphics_id": "OBJ_EVENT_GFX_VAR_0",
       "x": 14,
-      "y": 53,
+      "y": 54,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
@@ -233,7 +233,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
-      "x": 23,
+      "x": 24,
       "y": 39,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -317,7 +317,7 @@
       "dest_warp_id": "0"
     },
     {
-      "x": 7,
+      "x": 10,
       "y": 51,
       "elevation": 0,
       "dest_map": "MAP_RUSTBORO_CITY_FLAT2_1F",
@@ -506,8 +506,8 @@
     },
     {
       "type": "sign",
-      "x": 26,
-      "y": 32,
+      "x": 33,
+      "y": 33,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "RustboroCity_EventScript_TrainersSchoolSign"
@@ -530,8 +530,8 @@
     },
     {
       "type": "sign",
-      "x": 25,
-      "y": 51,
+      "x": 17,
+      "y": 53,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "RustboroCity_EventScript_CitySign"
