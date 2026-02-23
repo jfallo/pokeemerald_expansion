@@ -1255,7 +1255,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .power = 60,
         .type = TYPE_DARK,
         .accuracy = 100,
-        .pp = 25,
+        .pp = 20,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
@@ -3700,17 +3700,11 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .description = COMPOUND_STRING(
             "Intimidates and frightens\n"
             "the foe into paralysis."),
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .accuracy = 100,
-        #elif B_UPDATED_MOVE_DATA == GEN_5
-            .accuracy = 90,
-        #else
-            .accuracy = 75,
-        #endif
+        .accuracy = 100,
         .effect = EFFECT_NON_VOLATILE_STATUS,
         .power = 0,
         .type = TYPE_DARK,
-        .pp = 30,
+        .pp = 10,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_STATUS,
@@ -4564,13 +4558,13 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Thief"),
         .description = COMPOUND_STRING(
-            "While attacking, it may\n"
-            "steal the foe's held item."),
+            "Attacks and steals the\n"
+            "foe's held item."),
         .effect = EFFECT_STEAL_ITEM,
         .power = 50,
         .type = TYPE_DARK,
         .accuracy = 100,
-        .pp = 25,
+        .pp = 20,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
@@ -6121,13 +6115,13 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Pursuit"),
         .description = COMPOUND_STRING(
-            "Inflicts bad damage if used\n"
-            "on a foe switching out."),
+            "Inflicts double damage if\n"
+            "the foe is switching out."),
         .effect = EFFECT_PURSUIT,
         .power = 40,
         .type = TYPE_DARK,
         .accuracy = 100,
-        .pp = 20,
+        .pp = 25,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
@@ -6493,7 +6487,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Crunch"),
         .description = COMPOUND_STRING(
-            "Crunches with sharp fangs.\n"
+            "Crunches with vicious fangs.\n"
             "May lower Defense."),
         .effect = EFFECT_HIT,
         .power = 80,
@@ -6742,10 +6736,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Beat Up"),
         .description = COMPOUND_STRING(
-            "Summons party Pokémon to\n"
-            "join in the attack."),
+            "Attacks with the power of\n"
+            "all party Pokémon."),
         .effect = EFFECT_BEAT_UP,
-        .power = B_UPDATED_MOVE_DATA >= GEN_5 ? 1 : 10,
+        .power = 1,
         .type = TYPE_DARK,
         .accuracy = 100,
         .pp = 10,
@@ -7226,7 +7220,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .power = 0,
         .type = TYPE_DARK,
         .accuracy = 100,
-        .pp = 20,
+        .pp = 15,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_STATUS,
@@ -7733,12 +7727,12 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Snatch"),
         .description = COMPOUND_STRING(
             "Steals the effects of the\n"
-            "move the target uses next."),
+            "target's next move."),
         .effect = EFFECT_SNATCH,
         .power = 0,
         .type = TYPE_DARK,
         .accuracy = 0,
-        .pp = 10,
+        .pp = 15,
         .target = MOVE_TARGET_DEPENDS,
         .priority = 4,
         .category = DAMAGE_CATEGORY_STATUS,
@@ -10532,12 +10526,12 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Night Slash"),
         .description = COMPOUND_STRING(
-            "Hits as soon as possible.\n"
-            "High critical-hit ratio."),
+            "Strikes when the opportunity\n"
+            "arises. High critical-hit ratio."),
         .effect = EFFECT_HIT,
-        .power = 70,
+        .power = 75,
         .type = TYPE_DARK,
-        .accuracy = 100,
+        .accuracy = 95,
         .criticalHitStage = B_UPDATED_MOVE_DATA >= GEN_3 ? 1 : 2,
         .pp = 15,
         .target = MOVE_TARGET_SELECTED,
@@ -12787,13 +12781,13 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Foul Play"),
         .description = COMPOUND_STRING(
-            "The higher the foe's Attack\n"
-            "the more damage caused."),
+            "User turns the foe's Attack\n"
+            "stat against itself."),
         .effect = EFFECT_FOUL_PLAY,
-        .power = 95,
+        .power = 100,
         .type = TYPE_DARK,
         .accuracy = 100,
-        .pp = 15,
+        .pp = 10,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
@@ -14310,8 +14304,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Snarl"),
         .description = COMPOUND_STRING(
-            "Growls and bares its\n"
-            "teeth, lowering Sp. Atk."),
+            "Growls and bares teeth.\n"
+            "Lowers Sp. Atk."),
         .effect = EFFECT_HIT,
         .power = 55,
         .type = TYPE_DARK,
@@ -16828,7 +16822,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Brutal Swing"),
         .description = COMPOUND_STRING(
             "Violently swings around\n"
-            "to hurt everyone nearby."),
+            "to hurt everything nearby."),
         .effect = EFFECT_HIT,
         .power = 60,
         .type = TYPE_DARK,
@@ -17701,8 +17695,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Jaw Lock"),
         .description = COMPOUND_STRING(
-            "Prevents the user and\n"
-            "the target from escaping."),
+            "Prevents the user and target\n"
+            "from switching out."),
         .effect = EFFECT_HIT,
         .power = 80,
         .type = TYPE_DARK,
@@ -18425,13 +18419,13 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("False Surrender"),
         .description = COMPOUND_STRING(
-            "Bows to surrender to the foe\n"
+            "Bows to surrender to the foe,\n"
             "then attacks. It never misses."),
         .effect = EFFECT_HIT,
-        .power = 80,
+        .power = 70,
         .type = TYPE_DARK,
         .accuracy = 0,
-        .pp = 10,
+        .pp = 20,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
@@ -20160,8 +20154,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "User slashes the foe after\n"
             "kowtowing. It never misses."),
         .effect = EFFECT_HIT,
-        .power = 85,
+        .power = 90,
         .type = TYPE_DARK,
+        .dualType = TYPE_STEEL,
         .accuracy = 0,
         .pp = 10,
         .target = MOVE_TARGET_SELECTED,
