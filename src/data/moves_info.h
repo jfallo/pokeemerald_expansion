@@ -1534,7 +1534,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "reduction of stats."),
         .effect = EFFECT_MIST,
         .power = 0,
-        .type = TYPE_ICE,
+        .type = TYPE_WATER,
         .accuracy = 0,
         .pp = 10,
         .target = MOVE_TARGET_USER,
