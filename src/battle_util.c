@@ -8969,6 +8969,10 @@ static inline uq4_12_t CalcTypeEffectivenessMultiplierInternal(struct DamageCont
     if (IsSlicingMove(ctx->move) && (types[0] == TYPE_GRASS || types[1] == TYPE_GRASS || types[2] == TYPE_GRASS))
         modifier = uq4_12_multiply(modifier, UQ_4_12(2.0));
 
+    // Wind moves are super effective against fire mons
+    if (IsWindMove(ctx->move) && (types[0] == TYPE_FIRE || types[1] == TYPE_FIRE || types[2] == TYPE_FIRE))
+        modifier = uq4_12_multiply(modifier, UQ_4_12(2.0));
+
     // Thousand Arrows ignores type modifiers for flying mons
     if (MoveIgnoresTypeIfFlyingAndUngrounded(ctx->move)
      && !IsBattlerGrounded(ctx->battlerDef, ctx->abilityDef, ctx->holdEffectDef)
