@@ -296,7 +296,7 @@ LilycoveCity_EventScript_BattleMayTreecko::
 	end
 
 LilycoveCity_EventScript_BattleMayTorchic::
-	trainerbattle_no_intro TRAINER_MAY_LILYCOVE_TORCHIC, LilycoveCity_Text_MayDefeat
+	trainerbattle_no_intro TRAINER_MAY_LILYCOVE_CHIMCHAR, LilycoveCity_Text_MayDefeat
 	goto LilycoveCity_EventScript_DefeatedMay
 	end
 
@@ -311,7 +311,7 @@ LilycoveCity_EventScript_BattleBrendanTreecko::
 	end
 
 LilycoveCity_EventScript_BattleBrendanTorchic::
-	trainerbattle_no_intro TRAINER_BRENDAN_LILYCOVE_TORCHIC, LilycoveCity_Text_BrendanDefeat
+	trainerbattle_no_intro TRAINER_BRENDAN_LILYCOVE_CHIMCHAR, LilycoveCity_Text_BrendanDefeat
 	goto LilycoveCity_EventScript_DefeatedBrendan
 	end
 

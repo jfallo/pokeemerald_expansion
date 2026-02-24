@@ -64,7 +64,7 @@ Route103_EventScript_StartMayBattleTreecko::
 	end
 
 Route103_EventScript_StartMayBattleTorchic::
-	trainerbattle_no_intro TRAINER_MAY_ROUTE_103_TORCHIC, Route103_Text_MayDefeated
+	trainerbattle_no_intro TRAINER_MAY_ROUTE_103_CHIMCHAR, Route103_Text_MayDefeated
 	goto Route103_EventScript_AfterMayBattle
 	end
 
@@ -79,7 +79,7 @@ Route103_EventScript_StartBrendanBattleTreecko::
 	end
 
 Route103_EventScript_StartBrendanBattleTorchic::
-	trainerbattle_no_intro TRAINER_BRENDAN_ROUTE_103_TORCHIC, Route103_Text_BrendanDefeated
+	trainerbattle_no_intro TRAINER_BRENDAN_ROUTE_103_CHIMCHAR, Route103_Text_BrendanDefeated
 	goto Route103_EventScript_AfterBrendanBattle
 	end
 
