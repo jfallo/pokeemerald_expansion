@@ -418,7 +418,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Guillotine"),
         .description = COMPOUND_STRING(
-            "A powerful pincer attack\n"
+            "A powerful execution attack\n"
             "that KOs if it hits."),
         .effect = EFFECT_OHKO,
         .power = 1,
@@ -885,7 +885,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .power = 70,
         .type = TYPE_NORMAL,
         .accuracy = 100,
-        .pp = 15,
+        .pp = 20,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
@@ -3032,7 +3032,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .power = 0,
         .type = TYPE_PSYCHIC,
         .accuracy = 0,
-        .pp = 20,
+        .pp = 15,
         .target = MOVE_TARGET_USER,
         .priority = 0,
         .category = DAMAGE_CATEGORY_STATUS,
@@ -6220,13 +6220,13 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Razor Blade"),
         .description = COMPOUND_STRING(
-            "A claw attack that may\n"
+            "Cuts with a sharp edge. May\n"
             "raise the user's Attack."),
         .effect = EFFECT_HIT,
         .power = 50,
         .type = TYPE_STEEL,
-        .accuracy = 95,
-        .pp = 35,
+        .accuracy = 100,
+        .pp = 20,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
@@ -8507,13 +8507,13 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Metal Sound"),
         .description = COMPOUND_STRING(
-            "Emits a horrible screech\n"
-            "that sharply lowers Sp. Def."),
+            "Clangs together its metal\n"
+            "to sharply lower Sp. Def."),
         .effect = EFFECT_SPECIAL_DEFENSE_DOWN_2,
         .power = 0,
         .type = TYPE_STEEL,
-        .accuracy = 85,
-        .pp = 40,
+        .accuracy = 100,
+        .pp = 20,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_STATUS,
@@ -9235,7 +9235,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .power = 0,
         .type = TYPE_PSYCHIC,
         .accuracy = 0,
-        .pp = 20,
+        .pp = 15,
         .target = MOVE_TARGET_USER,
         .priority = 0,
         .category = DAMAGE_CATEGORY_STATUS,
@@ -11553,13 +11553,13 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Iron Head"),
         .description = COMPOUND_STRING(
-            "Slams the foe with a hard\n"
+            "Slams the foe with a metal\n"
             "head. May cause flinching."),
         .effect = EFFECT_HIT,
         .power = 80,
         .type = TYPE_STEEL,
         .accuracy = 100,
-        .pp = 15,
+        .pp = 10,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
@@ -13299,17 +13299,18 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Retaliate"),
         .description = COMPOUND_STRING(
-            "An attack that does more\n"
-            "damage if an ally fainted."),
-        .effect = EFFECT_RETALIATE,
-        .power = 70,
+            "Retaliates any hit with\n"
+            "greater power."),
+        .effect = EFFECT_METAL_BURST,
+        .power = 1,
         .type = TYPE_NORMAL,
         .accuracy = 100,
-        .pp = 5,
-        .target = MOVE_TARGET_SELECTED,
+        .pp = 10,
+        .target = MOVE_TARGET_DEPENDS,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
-        .makesContact = TRUE,
+        .ignoresProtect = B_UPDATED_MOVE_FLAGS < GEN_5,
+        .meFirstBanned = TRUE,
         .contestEffect = CONTEST_EFFECT_AFFECTED_BY_PREV_APPEAL,
         .contestCategory = CONTEST_CATEGORY_COOL,
         .contestComboStarterId = 0,
@@ -19630,12 +19631,13 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Ceaseless Edge"),
         .description = COMPOUND_STRING(
-            "Sets Spikes that hurt the\n"
-            "foe."),
-        .effect = EFFECT_CEASELESS_EDGE,
-        .power = 65,
-        .type = TYPE_DARK,
-        .accuracy = 90,
+            "An endless and cutting pain from\n"
+            "a sharpened edge. Never misses."),
+        .effect = EFFECT_HIT,
+        .power = 70,
+        .type = TYPE_STEEL,
+        .dualType = TYPE_DARK,
+        .accuracy = 0,
         .pp = 15,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
