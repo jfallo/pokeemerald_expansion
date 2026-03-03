@@ -636,6 +636,8 @@ PetalburgCity_Movement_ScottExit0:
 	walk_left
 	walk_left
 	walk_left
+	walk_up
+	walk_up
 	walk_left
 	walk_left
 	walk_left
@@ -660,6 +662,9 @@ PetalburgCity_Movement_ScottExit1:
 	walk_left
 	walk_left
 	walk_left
+	walk_up
+	walk_up
+	walk_up
 	walk_left
 	walk_left
 	walk_left
@@ -684,6 +689,8 @@ PetalburgCity_Movement_ScottExit2:
 	walk_left
 	walk_left
 	walk_left
+	walk_up
+	walk_up
 	walk_left
 	walk_left
 	walk_left
@@ -708,6 +715,9 @@ PetalburgCity_Movement_ScottExit3:
 	walk_left
 	walk_left
 	walk_left
+	walk_up
+	walk_up
+	walk_up
 	walk_left
 	walk_left
 	walk_left
