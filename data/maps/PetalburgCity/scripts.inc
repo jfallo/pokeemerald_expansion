@@ -276,6 +276,7 @@ PetalburgCity_EventScript_ShowGymToPlayer::
 	call_if_eq VAR_0x8008, 2, PetalburgCity_EventScript_LeadPlayerToGym2
 	call_if_eq VAR_0x8008, 3, PetalburgCity_EventScript_LeadPlayerToGym3
 	msgbox PetalburgCity_Text_ThisIsPetalburgGym, MSGBOX_DEFAULT
+	closemessage
 	applymovement LOCALID_GYM_BOY, PetalburgCity_Movement_BoyWalkToGymSign
 	applymovement LOCALID_PLAYER, PetalburgCity_Movement_PlayerWalkToGymSign
 	waitmovement 0
