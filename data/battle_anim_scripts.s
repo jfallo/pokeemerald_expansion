@@ -26818,26 +26818,26 @@ gBattleAnimMove_Gust::
 	end
 
 gBattleAnimMove_WingAttack::
-	loadspritegfx ANIM_TAG_GUST
 	loadspritegfx ANIM_TAG_IMPACT
-	monbg ANIM_DEF_PARTNER
-	splitbgprio ANIM_TARGET
+	loadspritegfx ANIM_TAG_WHITE_FEATHER
 	setalpha 12, 8
-	loopsewithpan SE_M_WING_ATTACK, SOUND_PAN_ATTACKER, 20, 2
-	createvisualtask AnimTask_TranslateMonElliptical, 2, 0, 12, 4, 1, 4
-	createvisualtask AnimTask_AnimateGustTornadoPalette, 5, 1, 70
-	createsprite gGustToTargetSpriteTemplate, ANIM_ATTACKER, 2, -25, 0, 0, 0, 20
-	createsprite gGustToTargetSpriteTemplate, ANIM_ATTACKER, 2, 25, 0, 0, 0, 20
-	delay 24
-	createsprite gSlideMonToOffsetSpriteTemplate, ANIM_ATTACKER, 2, ANIM_ATTACKER, 24, 0, 0, 9
-	delay 17
-	create_basic_hitsplat_sprite ANIM_ATTACKER, 2, x=16, y=0, relative_to=ANIM_TARGET, animation=1
-	create_basic_hitsplat_sprite ANIM_ATTACKER, 2, x=-16, y=0, relative_to=ANIM_TARGET, animation=1
-	loopsewithpan SE_M_DOUBLE_SLAP, SOUND_PAN_TARGET, 5, 2
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 3, 0, 10, 1
+	playsewithpan SE_M_WING_ATTACK, SOUND_PAN_TARGET
+	create_basic_hitsplat_sprite ANIM_TARGET, 2, x=-20, y=10, relative_to=ANIM_TARGET, animation=2
+	delay 1
+	playsewithpan SE_M_WING_ATTACK, SOUND_PAN_TARGET
+	create_basic_hitsplat_sprite ANIM_TARGET, 3, x=-20, y=0, relative_to=ANIM_TARGET, animation=2
+	call WingAttackFeatherScatter
+	delay 1
+	playsewithpan SE_M_WING_ATTACK, SOUND_PAN_TARGET
+	create_basic_hitsplat_sprite ANIM_TARGET, 4, x=-20, y=-10, relative_to=ANIM_TARGET, animation=2
+	delay 1
+	playsewithpan SE_M_WING_ATTACK, SOUND_PAN_TARGET
+	create_basic_hitsplat_sprite ANIM_TARGET, 5, x=-20, y=-20, relative_to=ANIM_TARGET, animation=2
+	delay 1
+	playsewithpan SE_M_WING_ATTACK, SOUND_PAN_TARGET
+	create_basic_hitsplat_sprite ANIM_TARGET, 6, x=-20, y=-30, relative_to=ANIM_TARGET, animation=2
 	waitforvisualfinish
-	createsprite gSlideMonToOriginalPosSpriteTemplate, ANIM_ATTACKER, 2, 0, 0, 11
-	waitforvisualfinish
-	clearmonbg ANIM_DEF_PARTNER
 	blendoff
 	end
 

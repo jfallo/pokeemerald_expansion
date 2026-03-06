@@ -165,7 +165,7 @@ Route104_EventScript_BattleMayTreecko::
 	end
 
 Route104_EventScript_BattleMayTorchic::
-	trainerbattle_no_intro TRAINER_MAY_RUSTBORO_CHIMCHAR, Route104_Text_MayDefeat
+	trainerbattle_no_intro TRAINER_MAY_RUSTBORO_TORCHIC, Route104_Text_MayDefeat
 	setflag FLAG_DEFEATED_RIVAL_ROUTE_104
 	goto Route104_EventScript_MayDefeated
 	end
@@ -232,7 +232,7 @@ Route104_EventScript_BattleBrendanTreecko::
 	end
 
 Route104_EventScript_BattleBrendanTorchic::
-	trainerbattle_no_intro TRAINER_BRENDAN_RUSTBORO_CHIMCHAR, Route104_Text_BrendanDefeat
+	trainerbattle_no_intro TRAINER_BRENDAN_RUSTBORO_TORCHIC, Route104_Text_BrendanDefeat
 	setflag FLAG_DEFEATED_RIVAL_ROUTE_104
 	goto Route104_EventScript_BrendanDefeated
 	end

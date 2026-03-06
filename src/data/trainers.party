@@ -9567,7 +9567,7 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Force Setup First Turn
 
-Chimchar
+Torchic
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Scratch
@@ -9615,7 +9615,7 @@ Combusken
 Level: 31
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
-=== TRAINER_BRENDAN_ROUTE_103_CHIMCHAR ===
+=== TRAINER_BRENDAN_ROUTE_103_TORCHIC ===
 Name: BRENDAN
 Class: Rival
 Pic: Brendan
@@ -9630,7 +9630,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Tackle
 - Growl
 
-=== TRAINER_BRENDAN_ROUTE_110_CHIMCHAR ===
+=== TRAINER_BRENDAN_ROUTE_110_TORCHIC ===
 Name: BRENDAN
 Class: Rival
 Pic: Brendan
@@ -9651,7 +9651,7 @@ Marshtomp
 Level: 20
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-=== TRAINER_BRENDAN_ROUTE_119_CHIMCHAR ===
+=== TRAINER_BRENDAN_ROUTE_119_TORCHIC ===
 Name: BRENDAN
 Class: Rival
 Pic: Brendan
@@ -9738,7 +9738,7 @@ Music: Female
 Double Battle: No
 AI: Basic Trainer
 
-Chimchar
+Torchic
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Scratch
@@ -9786,7 +9786,7 @@ Combusken
 Level: 31
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
-=== TRAINER_MAY_ROUTE_103_CHIMCHAR ===
+=== TRAINER_MAY_ROUTE_103_TORCHIC ===
 Name: MAY
 Class: Rival
 Pic: May
@@ -9801,7 +9801,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Tackle
 - Growl
 
-=== TRAINER_MAY_ROUTE_110_CHIMCHAR ===
+=== TRAINER_MAY_ROUTE_110_TORCHIC ===
 Name: MAY
 Class: Rival
 Pic: May
@@ -9822,7 +9822,7 @@ Marshtomp
 Level: 20
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-=== TRAINER_MAY_ROUTE_119_CHIMCHAR ===
+=== TRAINER_MAY_ROUTE_119_TORCHIC ===
 Name: MAY
 Class: Rival
 Pic: May
@@ -10978,7 +10978,7 @@ Loudred
 Level: 33
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_BRENDAN_RUSTBORO_CHIMCHAR ===
+=== TRAINER_BRENDAN_RUSTBORO_TORCHIC ===
 Name: BRENDAN
 Class: Rival
 Pic: Brendan
@@ -12315,7 +12315,7 @@ Combusken
 Level: 34
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
-=== TRAINER_BRENDAN_LILYCOVE_CHIMCHAR ===
+=== TRAINER_BRENDAN_LILYCOVE_TORCHIC ===
 Name: BRENDAN
 Class: Rival
 Pic: Brendan
@@ -12390,7 +12390,7 @@ Combusken
 Level: 34
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
-=== TRAINER_MAY_LILYCOVE_CHIMCHAR ===
+=== TRAINER_MAY_LILYCOVE_TORCHIC ===
 Name: MAY
 Class: Rival
 Pic: May
@@ -14156,7 +14156,7 @@ Torchic
 Level: 15
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-=== TRAINER_MAY_RUSTBORO_CHIMCHAR ===
+=== TRAINER_MAY_RUSTBORO_TORCHIC ===
 Name: MAY
 Class: Rival
 Pic: May
