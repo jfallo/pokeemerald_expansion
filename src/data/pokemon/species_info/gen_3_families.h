@@ -1819,12 +1819,12 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
 #if P_FAMILY_LOTAD
     [SPECIES_LOTAD] =
     {
-        .baseHP        = 45,
-        .baseAttack    = 35,
-        .baseDefense   = 35,
-        .baseSpeed     = 35,
-        .baseSpAttack  = 45,
-        .baseSpDefense = 55,
+        .baseHP        = 50,
+        .baseAttack    = 40,
+        .baseDefense   = 40,
+        .baseSpeed     = 40,
+        .baseSpAttack  = 50,
+        .baseSpDefense = 60,
         .types = MON_TYPES(TYPE_GRASS, TYPE_WATER),
         .catchRate = 255,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 44 : 74,
@@ -2053,12 +2053,12 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
 #if P_FAMILY_SEEDOT
     [SPECIES_SEEDOT] =
     {
-        .baseHP        = 40,
-        .baseAttack    = 40,
-        .baseDefense   = 60,
-        .baseSpeed     = 20,
-        .baseSpAttack  = 40,
-        .baseSpDefense = 50,
+        .baseHP        = 45,
+        .baseAttack    = 45,
+        .baseDefense   = 65,
+        .baseSpeed     = 25,
+        .baseSpAttack  = 45,
+        .baseSpDefense = 55,
         .types = MON_TYPES(TYPE_GRASS),
         .catchRate = 255,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 44 : 74,
@@ -3200,12 +3200,12 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
 #if P_FAMILY_SHROOMISH
     [SPECIES_SHROOMISH] =
     {
-        .baseHP        = 60,
-        .baseAttack    = 40,
-        .baseDefense   = 60,
-        .baseSpeed     = 35,
+        .baseHP        = 55,
+        .baseAttack    = 35,
+        .baseDefense   = 55,
+        .baseSpeed     = 30,
         .baseSpAttack  = 40,
-        .baseSpDefense = 60,
+        .baseSpDefense = 55,
         .types = MON_TYPES(TYPE_GRASS),
         .catchRate = 255,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 59 : 65,
@@ -3217,11 +3217,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_FLUCTUATING,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FAIRY, EGG_GROUP_GRASS),
-    #if P_UPDATED_ABILITIES >= GEN_4
-        .abilities = { ABILITY_EFFECT_SPORE, ABILITY_POISON_HEAL, ABILITY_QUICK_FEET },
-    #else
-        .abilities = { ABILITY_EFFECT_SPORE, ABILITY_NONE, ABILITY_QUICK_FEET },
-    #endif
+        .abilities = { ABILITY_EFFECT_SPORE, ABILITY_NONE, ABILITY_NONE },
         .bodyColor = BODY_COLOR_BROWN,
         .noFlip = TRUE,
         .speciesName = _("Shroomish"),
@@ -3284,11 +3280,11 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
 
     [SPECIES_BRELOOM] =
     {
-        .baseHP        = 60,
-        .baseAttack    = 130,
-        .baseDefense   = 80,
+        .baseHP        = 80,
+        .baseAttack    = 120,
+        .baseDefense   = 60,
         .baseSpeed     = 70,
-        .baseSpAttack  = 60,
+        .baseSpAttack  = 65,
         .baseSpDefense = 60,
         .types = MON_TYPES(TYPE_GRASS, TYPE_FIGHTING),
         .catchRate = 90,
@@ -3301,11 +3297,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_FLUCTUATING,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FAIRY, EGG_GROUP_GRASS),
-    #if P_UPDATED_ABILITIES >= GEN_4
-        .abilities = { ABILITY_EFFECT_SPORE, ABILITY_POISON_HEAL, ABILITY_TECHNICIAN },
-    #else
-        .abilities = { ABILITY_EFFECT_SPORE, ABILITY_NONE, ABILITY_TECHNICIAN },
-    #endif
+        .abilities = { ABILITY_EFFECT_SPORE, ABILITY_NONE, ABILITY_NONE },
         .bodyColor = BODY_COLOR_GREEN,
         .speciesName = _("Breloom"),
         .cryId = CRY_BRELOOM,
@@ -3365,8 +3357,8 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .baseAttack    = 60,
         .baseDefense   = 60,
         .baseSpeed     = 30,
-        .baseSpAttack  = 35,
-        .baseSpDefense = 35,
+        .baseSpAttack  = 40,
+        .baseSpDefense = 40,
         .types = MON_TYPES(TYPE_NORMAL),
         .catchRate = 255,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 56 : 83,
@@ -3428,14 +3420,14 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .levelUpLearnset = sSlakothLevelUpLearnset,
         .teachableLearnset = sSlakothTeachableLearnset,
         .eggMoveLearnset = sSlakothEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 18, SPECIES_VIGOROTH}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_VIGOROTH}),
     },
 
     [SPECIES_VIGOROTH] =
     {
-        .baseHP        = 80,
-        .baseAttack    = 80,
-        .baseDefense   = 80,
+        .baseHP        = 90,
+        .baseAttack    = 85,
+        .baseDefense   = 85,
         .baseSpeed     = 90,
         .baseSpAttack  = 55,
         .baseSpDefense = 55,
@@ -3500,16 +3492,16 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         )
         .levelUpLearnset = sVigorothLevelUpLearnset,
         .teachableLearnset = sVigorothTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_SLAKING}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 40, SPECIES_SLAKING}),
     },
 
     [SPECIES_SLAKING] =
     {
-        .baseHP        = 150,
+        .baseHP        = 160,
         .baseAttack    = 160,
         .baseDefense   = 100,
-        .baseSpeed     = 100,
-        .baseSpAttack  = 95,
+        .baseSpeed     = 90,
+        .baseSpAttack  = 65,
         .baseSpDefense = 65,
         .types = MON_TYPES(TYPE_NORMAL),
         .catchRate = 45,
