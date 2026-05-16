@@ -1290,3 +1290,11 @@ RustboroCity_Text_YouCanHave2On2Battle:
 	.string "they'll both challenge you.\p"
 	.string "Don't you think it'd be cool if you\n"
 	.string "could beat two TRAINERS by yourself?$"
+
+RustboroCity_EventScript_RouteSignRustboro::
+	msgbox RustboroCity_Text_RouteSignRustboro, MSGBOX_SIGN
+	end
+
+RustboroCity_Text_RouteSignRustboro:
+	.string "ROUTE 116\n"
+	.string "{LEFT_ARROW} RUSTBORO CITY$"

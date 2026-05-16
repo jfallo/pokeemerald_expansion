@@ -7180,6 +7180,8 @@ static const struct LevelUpMove sWurmpleLevelUpLearnset[] = {
 
 static const struct LevelUpMove sSilcoonLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 0, MOVE_HARDEN),
+    LEVEL_UP_MOVE( 1, MOVE_HARDEN),
+    LEVEL_UP_MOVE( 1, MOVE_STRUGGLE_BUG),
     LEVEL_UP_MOVE(11, MOVE_PIN_MISSILE),
     LEVEL_UP_END
 };
@@ -7202,6 +7204,8 @@ static const struct LevelUpMove sBeautiflyLevelUpLearnset[] = {
 
 static const struct LevelUpMove sCascoonLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 0, MOVE_HARDEN),
+    LEVEL_UP_MOVE( 1, MOVE_HARDEN),
+    LEVEL_UP_MOVE( 1, MOVE_STRUGGLE_BUG),
     LEVEL_UP_MOVE(11, MOVE_TWINEEDLE),
     LEVEL_UP_END
 };

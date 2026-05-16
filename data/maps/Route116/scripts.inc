@@ -111,10 +111,6 @@ Route116_Movement_DevonEmployeeExitEast:
 	walk_left
 	step_end
 
-Route116_EventScript_RouteSignRustboro::
-	msgbox Route116_Text_RouteSignRustboro, MSGBOX_SIGN
-	end
-
 Route116_EventScript_RusturfTunnelSign::
 	msgbox Route116_Text_RusturfTunnelSign, MSGBOX_SIGN
 	end
@@ -438,10 +434,6 @@ Route116_Text_NotWhatImLookingFor:
 	.string "Hmm…\n"
 	.string "These are BLACKGLASSES.\l"
 	.string "They're not what I'm looking for…$"
-
-Route116_Text_RouteSignRustboro:
-	.string "ROUTE 116\n"
-	.string "{LEFT_ARROW} RUSTBORO CITY$"
 
 Route116_Text_RusturfTunnelSign:
 	.string "RUSTURF TUNNEL\n"
